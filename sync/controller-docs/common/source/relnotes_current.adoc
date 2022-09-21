@@ -1,64 +1,67 @@
-*Introduced*
+*Automation Controller fixes:*
 
-* Graphical visualization of the automation topology to show the types
-of nodes, the links between them and their statuses
+* Node alias is now saved when job template is changed in the workflow
+* Improved error messages in the API `job_explanation` field for
+specific error scenarios, (e.g., runner worker process is killed), or
+certain failure scenarios (e.g., shutdown)
+* Fixed the Task Manager to fully account for the job's control process
+capacity for jobs running in container groups
+* Fixed a few bugs that caused delays in task processing by adding the
+following file-based settings:::
+  ** `JOB_WAITING_GRACE_PERIOD` increases the threshold for marking jobs
+  stuck in the "waiting" status as failed
+  ** `CLUSTER_NODE_MISSED_HEARTBEAT_TOLERANCE` to allow the heartbeat to
+  be more tolerant to clock skew and other problems
+  ** `K8S_POD_REAPER_GRACE_PERIOD` to allow more time before pod cleanup
+  executes its last attempt to delete pods used by jobs
+  ** `TASK_MANAGER_TIMEOUT` to allow more time in the unlikely event
+  that the Task Manager fails to finish normally
+* Jobs no longer fail for nested submodules in an SCM (git) project and
+the `.git` folder will be omitted
+* Added more logs to help debug database connectivity problems and
+cluster resource limits
+* Removed the `current_user` cookie which was not used by the UI
+* Updated controller to send FQCN data for tasks to analytics
+* Fixed the metrics endpoint (`/api/v2/metrics`) to no longer produce
+erroneous `500` errors
+* Added `remove_superuser` and `remove_system_auditors` to the SAML user
+attribute map
+* Added the ability to allow multiple values in the
+`SOCIAL_AUTH_SAML_USER_FLAGS_BY_ATTR.is_*_[value|role]` settings
+* Unwanted Galaxy credentials are no longer added to the Organization
+while logging in through SAML
+* awx-cli now allows for multiple `--extra_vars` parameters
+* Receptor no longer fails in FIPS mode
+* If an OCP node's record is deleted (either by the `awx-manage` command
+or by the heartbeat task), it will re-register itself
+* Upgrading and changing `node_type` from `execution` to `control` or
+`hybrid` no longer causes cleanup errors
 
-*Added*
+*Execution Environment fixes*:
 
-* For VM-based installs, the controller will now automatically mount the
-system trust store in when jobs run
-* *Log Format For API 4XX Errors* field to the Logging settings form to
-allow customization of 4xx error messages that are produced when the API
-encounters an issue with a request
-* Ability to use labels with inventory
-* Ability to flag users as superusers and auditors in SAML integration
-* Support for expanding and collapsing plays and tasks in the job output
-UI
-* Filtering job output UI by multiple event types
-* Various default search filters to a number of list views
-* Top-level list of instances to now be visible in the UI
-* A pop-up message when a user copies a resource
-* Job Templates tab to Credentials and Inventories to view all the
-templates that use that particular credential or inventory
+None for this release
 
-*Updated*
+*Automation Controller UI fixes*:
 
-* Controller to use Python 3.9
-* Django's `SESSION_COOKIE_NAME` setting to a non-default value. *Note*,
-any external clients that previously used the `sessionid` cookie will
-need to change. Refer to `api_session_auth` for more detail.
-* Controller to support podman-style volume mount syntax in the *Paths
-to expose to isolated jobs* field of the Jobs Settings of the UI
-* Isolated path to be exposed in OCP/K8s as HostPath
-* Upgraded Django from version 2.2 to 3.2
-* Modified usage of `ansible_facts` on Advanced Search to add more
-flexibility to the usage of `ansible_facts` when creating a smart
-inventory
-* The controller node for a job running on an execution node now incurs
-a penalty of 1 unit of capacity to account for the system load that
-controlling a job incurs. This can be adjusted with the file-based
-setting `AWX_CONTROL_NODE_TASK_IMPACT`.
-* Project updates to always run in the `controlplane` instance group
-* Slack notifications to allow replying to a thread instead of just
-channels
-* UI performance to improve job output
-* Job status icons to be more accessible
-* Display of only usable inventories when launching a job
-* Browser tab to show more information about which page the user is
-currently viewing
-* Controller to now load variables _after_ job template extra variables
-to prevent overriding the meta variables injected into each job run
+* The controller UI properly displays job output when `strategy: free`
+is set in the playbook
+* Fixed the pagination displays within the main lists, i.e., Resources
+(Job Templates, Projects, Inventory), Access (Organization, Users,
+Teams, Notifications), and Administration (Instance Groups, )
+* Fixed the Job Output to properly follow and scroll; and improved the
+Page Up/Page Down button behavior
+* Fixed the controller UI to now be able to filter by multiple labels
+* Large workflow templates no longer cause browsers to crash when
+linking nodes near the end of the template
+* Fixed the approval node "Deny" to no longer run the subsequent
+workflow nodes
+* Forks information no longer missing in running job details
+* Upon saving a schedule, the date chooser no longer changes to the day
+before the selected date
+* References to Ansible Tower are replaced with Automation Controller
+throughout the UI, including tooltips where documentation is referenced
+* Corrected translations for the Japanese Subscription settings screen
 
-*Deprecated*
+*Installation fixes specific to Automation Controller*:
 
-* The concept of "committed capacity" from Instance Groups due to the
-removal of RabbitMQ
-* Inventory source option to *Update on project update* - this field
-updates the inventory source if its project pulled a new revision. In
-the future, when updating an inventory source, the controller shall
-automatically run project updates if the project itself is set to
-*Update on launch*.
-
-*Removed*
-
-* Case sensitivity around hostcount
+None for this release
