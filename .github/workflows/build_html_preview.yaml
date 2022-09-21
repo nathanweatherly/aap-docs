@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v3
       with:
         repository: ansible/aap-docs
-        ref: main
+        ref: aap-2.3
     
     - name: config docs-bot
       run: |
@@ -27,15 +27,15 @@ jobs:
 
     - uses: oraNod/asciidocjs-action@v1.3
       with:
-        docs_path: titles/**/
+        docs_path: titles/controller/**/
     
     - name: commit
       run: |
-        git add titles/**/*.html
+        git add titles/controller/**/*.html
         git diff-index --quiet HEAD || git commit -m "Build HTML preview"
     
     - name: push
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.DOCS_BOT_PAT }}
-        branch: main
+        branch: aap-2.3
