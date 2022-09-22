@@ -1,4 +1,5 @@
 [[ag_custom_rebranding]]
-== Using Custom Logos in
+**************************************** Using Custom Logos in
+automation controller****************************************
 
-single: custom logo single: rebranding pair: logo; custom
+include::logos_branding.adoc[]

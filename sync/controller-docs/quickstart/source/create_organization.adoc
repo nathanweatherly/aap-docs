@@ -1,7 +1,5 @@
 == Review the Organization
 
-single: organizations
-
 An organization is a logical collection of users, teams, projects, and
 inventories. It is the highest level object in the controller object
 hierarchy.
@@ -14,10 +12,8 @@ The automation controller creates a default organization automatically.
 Users of Tower with a Self-support level license only have the default
 organization available and should *not* delete it.
 
-image:../../common/source/images/organizations-home-showing-example-organization.png[Organizations
+image:organizations-home-showing-example-organization.png[Organizations
 - default view]
-
-single: organization; default
 
 A default organization has been automatically created and is available
 to all users of the automation controller. It can be used as is or
@@ -34,14 +30,14 @@ ability to add new organizations beyond the default.
 
 To edit the default organization later, expand its properties by
 clicking the Edit
-(image:../../common/source/images/edit-button.png[edit]) button and
+(image:edit-button.png[edit]) button and
 entering the appropriate details, then save your changes.
 
-image:../../common/source/images/qs-organization-list-view-edit-icon.png[image]
+image:qs-organization-list-view-edit-icon.png[image]
 
-image:../../common/source/images/qs-organization-default-expand-properties.png[Organizations
+image:qs-organization-default-expand-properties.png[Organizations
 - default expanded]
 
 Enterprise and Premium license users who want to add a new organization
 should refer to the `Organizations <userguide:ug_organizations>` section
-in the .
+in the Automation Controller User Guide.
