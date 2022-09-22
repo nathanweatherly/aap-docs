@@ -18,9 +18,9 @@
   with_items: "{{ rst_files.files }}"
 - name: variable expansion
   ansible.builtin.shell: |
-    sed -i -e 's/|atversion|/Automation Controller Version 4.3.0/g' \
-      -e 's/|atversionshortest|/Automation Controller 4.3.0/g' \
-      -e 's/|versionshortest|/4.3.0/g' \
+    sed -i -e 's/|atversion|/Automation Controller Version 4.2.1/g' \
+      -e 's/|atversionshortest|/Automation Controller 4.2.1/g' \
+      -e 's/|versionshortest|/4.2.1/g' \
       -e 's/|at|/automation controller/g' \
       -e 's/|At|/Automation controller/g' \
       -e 's/|atqi|/Ansible Automation Platform Quick Installation Guide/g' \
