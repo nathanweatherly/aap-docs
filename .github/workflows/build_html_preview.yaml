@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - 'aap-2.3'
+  workflow_dispatch:
 
 jobs:
   preview:
