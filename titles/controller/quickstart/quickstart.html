@@ -437,9 +437,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Controller quickstart</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_quick_start">1. Quick Start</a></li>
+<li><a href="#_login_as_a_superuser">2. Login as a Superuser</a></li>
+<li><a href="#_examine_the_controller_dashboard">3. Examine the Controller Dashboard</a></li>
+<li><a href="#_the_settings_page">4. The Settings Page</a></li>
+<li><a href="#_review_the_organization">5. Review the Organization</a></li>
+<li><a href="#_create_a_user">6. Create a User</a></li>
+<li><a href="#_create_a_new_inventory">7. Create a new Inventory</a>
+<ul class="sectlevel2">
+<li><a href="#_groups_and_hosts">7.1. Groups and Hosts</a></li>
+</ul>
+</li>
+<li><a href="#_create_a_credential">8. Create a Credential</a></li>
+<li><a href="#_setting_up_a_project">9. Setting up a Project</a></li>
+<li><a href="#_create_a_new_job_template">10. Create a new Job Template</a></li>
+<li><a href="#_launch_it">11. Launch it!</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -449,10 +469,763 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_quick_start"><a class="anchor" href="#_quick_start"></a>1. Quick Start</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Welcome to the Automation Controller Quick Start Guide. At the end of
+the Quick Start, you will have a functioning controller application that
+you can use to launch more sophisticated playbooks. You can expect the
+Quick Start process to take less than thirty minutes.</p>
+</div>
+<div class="paragraph">
+<p>To begin, you must install Ansible Automation Platform and you must
+choose a target system where an initial playbook can be deployed
+(provided by automation controller). Refer to
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_installation_guide/planning-installation">Red
+Hat Ansible Automation Platform Installation Guide</a> for further
+instructions.</p>
+</div>
+<div class="paragraph">
+<p>This first playbook executes simple Ansible tasks, while teaching you
+how to use the controller, as well as ensuring its proper setup. This
+can be any sort of system manageable by Ansible, as described in the
+<a href="https://docs.ansible.com/ansible/latest/user_guide/basic_concepts.html#managed-nodes">Managed
+nodes</a> section of the Ansible documentation.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>Ansible Automation Platform is offered on a subscription basis. These
+subscriptions vary in price and support-levels. For more information
+about subscriptions and features, see <code>subscription-types</code>.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_login_as_a_superuser"><a class="anchor" href="#_login_as_a_superuser"></a>2. Login as a Superuser</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Using the login information provided after your installation completed,
+open a web browser and log in to the controller by browsing to its
+server URL at: <code><a href="https://&lt;CONTROLLER_SERVER_NAME&gt;/" class="bare">https://&lt;CONTROLLER_SERVER_NAME&gt;/</a></code></p>
+</div>
+<div class="paragraph">
+<p>Once the controller UI is accessible, use the credentials specified
+during the installation process to login. The default username is
+<code>admin</code>. The password for <code>admin</code> is the value specified for
+<code>admin_password</code> in your inventory file.</p>
+</div>
+<div class="paragraph">
+<p>These defaults can be changed later by clicking <strong>Users</strong> from the left
+navigation bar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-login-form.png" alt="Login form"></span></p>
+</div>
+<div class="paragraph">
+<p>Available subscriptions or a subscription manifest authorize the use of
+the automation controller. To obtain your automation controller
+subscription, you can either:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Provide your Red Hat or Satellite username and password on the license
+page.</p>
+</li>
+<li>
+<p>Obtain a subscriptions manifest from your Subscription Allocations
+page on the customer portal. See <code>obtain_sub_manifest</code> in the Automation
+Controller User Guide for more detail.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you <strong>have</strong> a Red Hat Ansible Automation Platform subscription, use
+your Red Hat customer credentials when you launch the controller to
+access your subscription information (see instructions below).</p>
+</div>
+<div class="paragraph">
+<p>If you <strong>do not</strong> have a Red Hat Ansible Automation Platform subscription,
+you can request a trial subscription
+<a href="https://www.redhat.com/en/technologies/management/ansible/try-it">here</a>
+or click <strong>Request Subscription</strong> and follow the instructions to request
+one.</p>
+</div>
+<div class="paragraph">
+<p><strong>Disconnected environments with Satellite</strong> will be able to use the login
+flow on vm-based installations if they have configured subscription
+manager on the controller instance to connect to their Satellite
+instance. Recommended workarounds for disconnected environments <strong>without
+Satellite</strong> include [1] downloading a manifest from access.redhat.com in
+a connected environment, then uploading it to the disconnected
+controller instance, or [2] connecting to the Internet through a proxy
+server.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>In order to use a disconnected environment, it is necessary to have a
+valid automation controller entitlement attached to your Satellite
+organization&#8217;s manifest. This can be confirmed by using
+<code>hammer subscription list \--organization &lt;org_name&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>If you have issues with the subscription you have received, please
+contact your Sales Account Manager or Red Hat Customer Service at
+<a href="https://access.redhat.com/support/contact/customerService/" class="bare">https://access.redhat.com/support/contact/customerService/</a>.</p>
+</div>
+<div class="paragraph">
+<p>When the controller launches for the first time, the Subscription screen
+automatically displays.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/no-license.png" alt="no license"></span></p>
+</div>
+<div id="upload_manifest" class="olist arabic">
+<ol class="arabic">
+<li>
+<p>By default, the option to retrieve and import your subscription is to
+upload a subscription manifest you generate from
+<a href="https://access.redhat.com/management/subscription_allocations" class="bare">https://access.redhat.com/management/subscription_allocations</a>. See
+<code>obtain_sub_manifest</code> for more detail. Once you have a subscription
+manifest, you can upload it by browsing to the location where the file
+is saved (the subscription manifest is the complete .zip file, not its
+component parts).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>If the <strong>Browse</strong> button in the subscription manifest option is
+grayed-out, clear the username and password fields to enable the
+<strong>Browse</strong> button.</p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can choose the option to enter your Red Hat customer
+credentials using your username and password. Use your Satellite
+username/password if your controller cluster nodes are registered to
+Satellite via Subscription Manager. Once you entered your credentials,
+click <strong>Get Subscriptions</strong>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>The subscription metadata is then retrieved from the RHSM/Satellite
+API, or from the manifest provided.</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>If it is a subscription manifest, and multiple subscription counts
+were applied in a single installation, the controller will combine the
+counts but use the earliest expiration date as the expiry (at which
+point you will need to refresh your subscription).</p>
+</li>
+<li>
+<p>If you entered your credential information (username/password), the
+controller retrieves your configured subscription service. Then it
+prompts you to choose the subscription you want to run (the example
+below shows multiple subscriptions) and entitles the controller with
+that metadata. You can log in over time and retrieve new subscriptions
+if you have renewed.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>When your subscription expires (you can check this in the Subscription
+details of the Subscription settings window), you will need to renew it
+in the controller by one of these two methods.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/license-password-entered.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>If you encounter the following error message, you will need the proper
+permissions required for the Satellite user with which the controller
+admin uses to apply a subscription.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/tower-license-error-satellite-user.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The Satellite username/password is used to query the Satellite API for
+existing subscriptions. From the Satellite API, the automation
+controller gets back some metadata about those subscriptions, then
+filter through to find valid subscriptions that you could apply, which
+are then displayed as valid subscription options in the UI.</p>
+</div>
+<div class="paragraph">
+<p>The following Satellite roles grant proper access:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Custom with <code>view_subscriptions</code> and <code>view_organizations</code> filter</p>
+</li>
+<li>
+<p>Viewer</p>
+</li>
+<li>
+<p>Administrator</p>
+</li>
+<li>
+<p>Organization Admin</p>
+</li>
+<li>
+<p>Manager</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>As the <em>Custom</em> role is the most restrictive of these, this is the
+recommend role to use for your controller integration. Refer to the
+<a href="https://access.redhat.com/documentation/en-us/red_hat_satellite/6.8/html/administering_red_hat_satellite/chap-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles#sect-Red_Hat_Satellite-Administering_Red_Hat_Satellite-Users_and_Roles-Creating_and_Managing_Roles">Satellite
+documentation</a> on managing users and roles for more detail.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The System Administrator role is not equivalent to the Administrator
+user checkbox, and will not provide sufficient permissions to access the
+subscriptions API page.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Click <strong>Next</strong> to proceed to <strong>Tracking and Insights</strong>. Tracking and
+insights collect data to help Red Hat improve the product by delivering
+you a much better user experience. For more information about data
+collection, refer to <code>usability_data_collection</code>. This option is checked
+by default, but you may opt out of any of the following:</p>
+</li>
+</ol>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>User analytics</strong> collects data from the controller User Interface.</p>
+</li>
+<li>
+<p><strong>Insights Analytics</strong> provides a high level analysis of your automation
+with automation controller, which is used to help you identify trends
+and anomalous use of the controller. For opt-in of Automation Analytics
+to have any effect, your instance of automation controller <strong>must</strong> be
+running on Red Hat Enterprise Linux. See instructions described in the
+<code>user_data_insights</code> section. If you select to opt-in for this option,
+the screen expands and prompts for a username and password to enable
+Insights, if applicable.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>You may change your analytics data collection preferences at any time,
+as described in the <code>usability_data_collection</code> section.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>After you have specified your tracking and insights preferences, click
+<strong>Next</strong> to proceed to the End User Agreement.</p>
+</li>
+<li>
+<p>Review and check the <strong>I agree to the End User License Agreement</strong>
+checkbox and click <strong>Submit</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once your subscription has been accepted, the controller briefly
+displays the subscription details and navigates you to the Dashboard of
+the automation controller interface. For later reference, you can return
+to this screen by clicking <strong>Settings</strong> from the left navigation bar and
+select <strong>Subscription settings</strong> from the Subscription option.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-licenseaccepted.png" alt="license accepted"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_examine_the_controller_dashboard"><a class="anchor" href="#_examine_the_controller_dashboard"></a>3. Examine the Controller Dashboard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Dashboard offers a friendly graphical framework for your IT
+orchestration needs. Along the left side of the Dashboard is the
+navigation menu, where you can quickly display different views, navigate
+to your resources, grant access, and administer certain controller
+features in the UI.</p>
+</div>
+<div class="paragraph">
+<p>Click on the Menu <span class="image"><img src="images/menu-icon.png" alt="menu"></span>
+icon at the top of the left navigation to hide or display the navigation
+bar.</p>
+</div>
+<div class="paragraph">
+<p>On the main Dashboard view, a summary appears listing your current <strong>Job
+Status</strong>. You can filter the job status within a period of time or by job
+type. Also available in their respective tabs are summaries of <strong>Recent
+Jobs</strong> ran and <strong>Recent Templates</strong> used. These can be sorted by various
+attributes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/home-dashboard.png" alt="Home dashboard"></span></p>
+</div>
+<div class="paragraph">
+<p>The very last item in the navigation bar is <strong>Settings</strong>, which provides
+access to the controller configuration Settings.</p>
+</div>
+<div class="paragraph">
+<p>The Settings page allows administrators to configure authentication,
+jobs, system-level attributes, customize the user interface, and product
+license information. Refer to <code>ag_configure_tower</code> section for more
+detail.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/ug-settings-menu-screen.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Regardless of the window or action you&#8217;re performing, the very top of
+each page next to the your user icon is the About
+(<span class="image"><img src="images/help-about-icon.png" alt="about"></span>) icon,
+which provides you the versions of automation controller and Ansible you
+are currently running.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>Keep in mind that the goal of this Quick Start is to launch a simple
+playbook. To do this, a number of configuration options must be setup.
+Completing the quick start configuration tasks now ensures that the
+controller is configured properly and allows for easier executions of
+more involved playbooks later on.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_the_settings_page"><a class="anchor" href="#_the_settings_page"></a>4. The Settings Page</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To enter the Settings window for automation controller, click <strong>Settings</strong>
+from the left navigation bar. This page allows you to modify your
+controller&#8217;s configuration, such as settings associated with
+authentication, jobs, system, user interface, and view or retrieve your
+subscription information.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/ug-settings-menu-screen.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>For more information on configuring these settings, refer to
+<code>ag_configure_tower</code> section of the Automation Controller Administration
+Guide.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_review_the_organization"><a class="anchor" href="#_review_the_organization"></a>5. Review the Organization</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An organization is a logical collection of users, teams, projects, and
+inventories. It is the highest level object in the controller object
+hierarchy.</p>
+</div>
+<div class="paragraph">
+<p>From the left navigation bar, click <strong>Organizations</strong>.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The automation controller creates a default organization automatically.
+Users of Tower with a Self-support level license only have the default
+organization available and should <strong>not</strong> delete it.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/organizations-home-showing-example-organization.png" alt="Organizations - default view"></span></p>
+</div>
+<div class="paragraph">
+<p>A default organization has been automatically created and is available
+to all users of the automation controller. It can be used as is or
+edited later as needed.</p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default
+organization as is.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>If you are using the controller with a Basic subscription, you must use
+the default organization. Only Enterprise or Premium licenses have the
+ability to add new organizations beyond the default.</p>
+</div>
+<div class="paragraph">
+<p>To edit the default organization later, expand its properties by
+clicking the Edit
+(<span class="image"><img src="images/edit-button.png" alt="edit"></span>) button and
+entering the appropriate details, then save your changes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-organization-list-view-edit-icon.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-organization-default-expand-properties.png" alt="Organizations - default expanded"></span></p>
+</div>
+<div class="paragraph">
+<p>Enterprise and Premium license users who want to add a new organization
+should refer to the <code>Organizations &lt;userguide:ug_organizations&gt;</code> section
+in the Automation Controller User Guide.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_user"><a class="anchor" href="#_create_a_user"></a>6. Create a User</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Users associated with an organization are shown in the <strong>Access</strong> tab of
+the Organization.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-organizations-admin-user-default-organization.png" alt="Organizations - default admin user"></span></p>
+</div>
+<div class="paragraph">
+<p>A default <span class="title-ref">admin</span> user with the role of System Administrator
+has been automatically created and is available to all users of
+automation controller. It can be used as is or edited later as needed.
+You may add other users to an organization, but you must create the
+user(s) first. Refer to the <code>Users &lt;userguide:ug_users_create&gt;</code> section
+in the Automation Controller User Guide for detail.</p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default user as is.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_new_inventory"><a class="anchor" href="#_create_a_new_inventory"></a>7. Create a new Inventory</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An inventory is a collection of hosts managed by the controller.
+Organizations are assigned to inventories, while permissions to launch
+playbooks against inventories are controlled at the user and/or team
+level. For more information, refer to
+<code>Inventories &lt;userguide:ug_inventories&gt;</code>,
+<code>Users - Permissions &lt;userguide:ug_users_permissions&gt;</code>, and
+<code>Teams - Permissions &lt;userguide:ug_teams_permissions&gt;</code> in the Automation
+Controller User Guide.</p>
+</div>
+<div class="paragraph">
+<p>To view existing inventories, click <strong>Inventories</strong> from the left
+navigation bar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-inventories-default-list-view.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>automation controller provides a demo inventory for you to use as you
+learn how the controller works. It can be used as is or edited later as
+needed. You may create another inventory if necessary. Refer to
+<code>ug_inventories_add</code> in the Automation Controller User Guide for detail.</p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default inventory
+as is.</p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Demo Inventory</strong> to view its details.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-inventories-demo-details.png" alt="Inventories - Demo inventory details"></span></p>
+</div>
+<div class="paragraph">
+<p>As with organizations, inventories also have associated users and teams
+that you can view through the <strong>Access</strong> tab.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-inventories-default-access-list-view.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>A default admin user with the role of System Administrator has been
+automatically populated for this demo inventory.</p>
+</div>
+<div class="sect2">
+<h3 id="_groups_and_hosts"><a class="anchor" href="#_groups_and_hosts"></a>7.1. Groups and Hosts</h3>
+<div class="paragraph">
+<p>Note that inventories are divided into groups and hosts. A group might
+represent a particular environment (e.g. "Datacenter 1" or "Stage
+Testing"), a server type (e.g. "Application Servers" or "DB Servers"),
+or any other representation of your environment. The groups and hosts
+that belong to the Demo inventory are shown in the <strong>Groups</strong> and <strong>Hosts</strong>
+tabs, respectively.</p>
+</div>
+<div class="paragraph">
+<p>To add new groups, click the <strong>Add</strong> button in the Groups screen.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, in the <strong>Hosts</strong> tab, click the <strong>Add</strong> button to add hosts to
+groups.</p>
+</div>
+<div class="paragraph">
+<p>For the purposes of this Quick Start and to test that the controller is
+setup properly, a local host has been added for your use.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-inventories-default-host.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Suppose that the organization you created earlier has a group of web
+server hosts supporting a particular application. To add these hosts to
+the inventory, create a group and add the web server hosts.</p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Cancel</strong> (if no changes were made) or use the breadcrumb
+navigational links at the top of the automation controller browser to
+return to the Inventories list view. Clicking <strong>Save</strong> does not exit the
+Details dialog.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_credential"><a class="anchor" href="#_create_a_credential"></a>8. Create a Credential</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Credentials authenticate the controller user to launch Ansible
+playbooks, which can include passwords and SSH keys, against inventory
+hosts. You can also require the controller user to enter a password or
+key phrase when a playbook launches using the credentials feature of the
+controller.</p>
+</div>
+<div class="paragraph">
+<p>Access the list of credentials by clicking <strong>Credentials</strong> from the left
+navigation bar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-credentials-list-view.png" alt="Credentials - list view"></span></p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start, a demo credential and a Galaxy
+credential have been provided for your use. The provided Galaxy
+credential serves as a template and can only be copied and not edited.
+You may add more credentials as necessary. Refer to <code>ug_credentials_add</code>
+in the Automation Controller User Guide for detail.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>When setting up additional credentials, keep in mind that the user you
+assign must have root access or be able to use SSH to connect to the
+host machine.</p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Demo Credential</strong> to view its details.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-credentials-demo-details.png" alt="Credentials - review demo credential"></span></p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default demo
+credential as is. But to edit the default credential later - from the
+Details tab, click <strong>Edit</strong>, or from the Credentials list view, click the
+Edit (<span class="image"><img src="images/edit-button.png" alt="edit"></span>) button
+next to the credential name to edit the appropriate details, then save
+your changes.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_a_project"><a class="anchor" href="#_setting_up_a_project"></a>9. Setting up a Project</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A Project is a logical collection of Ansible playbooks, represented in
+the controller.</p>
+</div>
+<div class="paragraph">
+<p>You can manage playbooks and playbook directories by either placing them
+manually under the Project Base Path on your controller server, or by
+placing your playbooks into a source code management (SCM) system
+supported by the controller, including Git, Subversion, and Mercurial.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>It is recommended that, whenever possible, you use source control to
+manage your playbooks. This type of best practice provides the ability
+to treat your infrastructure as code and is in line with DevOps ideals.
+While this Quick Start Guide uses lightweight examples to get you up and
+running, we suggest using source control to manage playbook for
+production purposes.</p>
+</div>
+<div class="paragraph">
+<p>To review existing projects, click <strong>Projects</strong> from the left navigation
+bar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-projects-home.png" alt="Projects - home"></span></p>
+</div>
+<div class="paragraph">
+<p>The automation controller simplifies the startup process by providing
+you with a Demo Project to work with initially.</p>
+</div>
+<div class="paragraph">
+<p>Click on <strong>Demo Project</strong> to view its details.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-demo-project-details.png" alt="Projects - demo project"></span></p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default demo
+project as is. But to edit the default project later - from the Details
+tab, click <strong>Edit</strong>, or from the Projects list view, click the Edit
+(<span class="image"><img src="images/edit-button.png" alt="edit"></span>) button next to
+the project name to edit the appropriate details, then save your
+changes.</p>
+</div>
+<div class="paragraph">
+<p>If you want to fetch the project for latest changes, you can manually
+start an SCM sync for this project. Update the SCM-based demo project
+from the Details tab, click <strong>Sync</strong>, or from the Projects list view,
+click the Sync
+(<span class="image"><img src="images/refresh-button.png" alt="sync"></span>) button next
+to the project name.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-demo-project-sync-icon-hover.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>Please note that immediately after adding new projects setup to use
+source control, a "sync" automatically starts that fetches the project
+details from the configured source control.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_create_a_new_job_template"><a class="anchor" href="#_create_a_new_job_template"></a>10. Create a new Job Template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>A job template combines an Ansible playbook from a project and the
+settings required to launch it. Review existing job templates by
+clicking <strong>Templates</strong> from the left navigation bar.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-job-templates-list-view.png" alt="Job templates - home"></span></p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start, a Demo Job Template has been
+created for your initial use.</p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Demo Job Template</strong> to view its details.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-job-template-demo-details.png" alt="Job templates - review demo template"></span></p>
+</div>
+<div class="paragraph">
+<p>For the purpose of this Quick Start Guide, leave the default demo job
+template as is. But to edit the default template later - from the
+Details tab, click <strong>Edit</strong>, or from the Templates list view, click the
+Edit (<span class="image"><img src="images/edit-button.png" alt="edit"></span>) button
+next to the template name to edit the appropriate details, then save
+your changes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-job-templates-demo-edit.png" alt="Job templates - edit demo"></span></p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Cancel</strong> (if no changes were made) or use the breadcrumb
+navigational links at the top of the automation controller browser to
+return to the Templates list view. Clicking <strong>Save</strong> does not exit the
+Details dialog.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_launch_it"><a class="anchor" href="#_launch_it"></a>11. Launch it!</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>From the Templates list view, click the Launch
+(<span class="image"><img src="images/launch-button.png" alt="launch"></span>) button to
+run the Demo Job Template.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-job-templates-list-view-click-launch.png" alt="Job templates - home launch"></span></p>
+</div>
+<div class="paragraph">
+<p>The initial job launch returns a status page which updates automatically
+using the controller&#8217;s Live Event feature until the job is complete.
+Once complete, the job results look like the following:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/qs-job-templates-demo-complete.png" alt="Job templates - demo run complete"></span></p>
+</div>
+<div class="paragraph">
+<p>For more details on the job results, refer to <code>ug_jobs</code>.</p>
+</div>
+<div class="paragraph">
+<p>Congratulations! Your controller installation is officially setup and
+running properly. To learn more about these controller features or to
+learn about administration tasks, the controller API, etc., refer to the
+following documentation sets:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Automation Controller User Guide &lt;userguide:ug_start&gt;</code></p>
+</li>
+<li>
+<p><a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html-single/red_hat_ansible_automation_platform_installation_guide/index">Red
+Hat Ansible Automation Platform Installation Guide</a></p>
+</li>
+<li>
+<p><code>Automation Controller Administration Guide &lt;administration:ag_start&gt;</code></p>
+</li>
+<li>
+<p><code>Automation Controller API Guide&lt;controllerapi:api_start&gt;</code></p>
+</li>
+<li>
+<p><code>Automation Controller Release Notes &lt;release-notes:releasenotes_start&gt;</code></p>
+</li>
+<li>
+<p><a href="http://docs.ansible.com/">Ansible Documentation</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 11:37:45 UTC
+Last updated 2022-09-28 12:51:42 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

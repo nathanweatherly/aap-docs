@@ -437,7 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>User guide</h1>
 <div id="toc" class="toc2">
@@ -1725,15 +1725,6 @@ select <strong>Subscription settings</strong> from the Subscription option.</p>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="images/qs-licenseaccepted.png" alt="license accepted"></span></p>
-</div>
-<div class="paragraph">
-<p>A status of <em>Compliant</em> indicates your subscription is in compliance
-with the number of hosts you have automated within your subscription
-count. Otherwise, your status will show an <em>Out of Compliance</em> status,
-indicating you have exceeded the number of hosts in your subscription.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="images/qs-license-non-compliant.png" alt="image"></span></p>
 </div>
 </div>
 </div>
@@ -7780,7 +7771,7 @@ filters, or add new ones.</p>
 <div class="paragraph">
 <p>Inventory updates use dynamically-generated YAML files which are parsed
 by their respective inventory plugin. In Automation Controller Version
-4.3.0, users can provide the new style inventory plugin config directly
+4.2.1, users can provide the new style inventory plugin config directly
 to the controller via the inventory source <code>source_vars</code> for all the
 following inventory sources:</p>
 </div>
@@ -8512,19 +8503,8 @@ that project and/or inventory update to finish before proceeding. If
 they are different job templates, they can then both start and run at
 the same time, if the system has the capacity to do so. If you intend to
 use the controller&#8217;s provisioning callback feature with a dynamic
-inventory source, <strong>Update on Launch</strong> should be set for the inventory
+inventory source, "Update on Launch" should be set for the inventory
 group.</p>
-</div>
-<div class="paragraph">
-<p>If you sync an inventory source that uses a project that has <strong>Update On
-Launch</strong> set, then the project may automatically update (according to
-cache timeout rules) before the inventory update starts.</p>
-</div>
-<div class="paragraph">
-<p>You can create a job template that uses an inventory that sources from
-the same project that the template uses. In this case, the project will
-update and then the inventory will update (if updates are not already
-in-progress, or if the cache timeout has not already expired).</p>
 </div>
 <div class="quoteblock">
 <blockquote>
@@ -8676,6 +8656,15 @@ directory or an inventory script.</p>
 <p>You can optionally specify the verbosity, host filter, enabled
 variable/value, and update options as described in the main procedure
 for <code>adding a source &lt;ug_add_inv_common_fields&gt;</code>.</p>
+</li>
+<li>
+<p>In addition to the update options available for cloud inventory
+sources, you can specify whether or not to update on project changes.
+Check the <strong>Update on Project Update</strong> option to refresh the inventory
+from the selected source after every project update where the SCM
+revision changes before executing job tasks. For more detail, refer to
+<code>ag_update_on_project_change</code> in the Automation Controller
+Administration Guide.</p>
 </li>
 <li>
 <p>In order to pass to the custom inventory script, you can optionally
@@ -12231,6 +12220,13 @@ template level. For instructions, see the <code>ug_wf_editor</code> section.</p>
 <div class="sect2">
 <h3 id="_create_a_workflow_template"><a class="anchor" href="#_create_a_workflow_template"></a>24.1. Create a Workflow Template</h3>
 <div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>To create a workflow template, you must have "Workflow Admin"
+permissions assigned at the Org level.</p>
+</div>
+<div class="paragraph">
 <p>To create a new workflow job template:</p>
 </div>
 <div class="olist arabic">
@@ -13274,9 +13270,10 @@ with detailed information about the approval requests, if any.</p>
 template. If you choose to copy a workflow template, it <strong>does not</strong> copy
 any associated schedule, notifications, or permissions. Schedules and
 notifications must be recreated by the user or admin creating the copy
-of the workflow template. The user copying the workflow template will be
-granted the admin permission, but no permissions are assigned (copied)
-to the workflow template.</p>
+of the workflow template. To copy a workflow template, you must have
+"Workflow Admin" permissions assigned at the Org level. The user copying
+the workflow template will be granted the admin permission, but no
+permissions are assigned (copied) to the workflow template.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -13315,13 +13312,14 @@ to complete this template.</p>
 <p>Note</p>
 </div>
 <div class="paragraph">
-<p>If a resource has a related resource that you don&#8217;t have the right level
-of permission to, you cannot copy the resource, such as in the case
-where a project uses a credential that a current user only has <em>Read</em>
-access. However, for a workflow template, if any of its nodes uses an
-unauthorized job template, inventory, or credential, the workflow
-template can still be copied. But in the copied workflow template, the
-corresponding fields in the workflow template node will be absent.</p>
+<p>If a resource has a related resource that you do not have the right
+level of permission to, you cannot copy the resource, such as in the
+case where a project uses a credential that a current user only has
+<em>Read</em> access. However, for a workflow template, if any of its nodes
+uses an unauthorized job template, inventory, or credential, the
+workflow template can still be copied. But in the copied workflow
+template, the corresponding fields in the workflow template node will be
+absent.</p>
 </div>
 </div>
 <div class="sect2">
@@ -16192,7 +16190,7 @@ image:rbac-multiple-resources-scenario.png[image]
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 13:42:48 +0100
+Last updated 2022-09-28 12:51:42 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
