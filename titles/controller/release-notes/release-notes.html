@@ -437,9 +437,55 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Ansible Automation Platform Controller release notes</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#release_notes">1. Release Notes</a>
+<ul class="sectlevel2">
+<li><a href="#_automation_controller_version_4_3">1.1. Automation Controller Version 4.3</a></li>
+<li><a href="#_automation_controller_version_4_2_1">1.2. Automation Controller Version 4.2.1</a></li>
+<li><a href="#_automation_controller_version_4_2">1.3. Automation Controller Version 4.2</a></li>
+<li><a href="#_automation_controller_version_4_1_3">1.4. Automation Controller Version 4.1.3</a></li>
+<li><a href="#_automation_controller_version_4_1_2">1.5. Automation Controller Version 4.1.2</a></li>
+<li><a href="#_automation_controller_version_4_1_1">1.6. Automation Controller Version 4.1.1</a></li>
+<li><a href="#_automation_controller_version_4_1">1.7. Automation Controller Version 4.1</a></li>
+<li><a href="#_automation_controller_version_4_0_1">1.8. Automation Controller Version 4.0.1</a></li>
+<li><a href="#_automation_controller_version_4_0">1.9. Automation Controller Version 4.0</a></li>
+</ul>
+</li>
+<li><a href="#ir_known_issues">2. Known Issues</a>
+<ul class="sectlevel2">
+<li><a href="#_launching_the_ansible_runner_component_not_working_as_expected">2.1. Launching the ansible-runner component not working as expected</a></li>
+<li><a href="#_deleted_default_orgs_produces_duplicate_ansible_galaxy_credentials">2.2. Deleted default orgs produces duplicate Ansible-Galaxy credentials</a></li>
+<li><a href="#_isolated_nodes_unsupported_in_an_openshift_deployment">2.3. Isolated nodes unsupported in an OpenShift deployment</a></li>
+<li><a href="#_browsers_ignoring_the_autocompleteoff_setting">2.4. Browsers ignoring the <code>autocomplete=off</code> setting</a></li>
+<li><a href="#_login_via_http_requires_workaround">2.5. Login via HTTP requires workaround</a></li>
+<li><a href="#_job_slicing_and_limit_interactions">2.6. Job slicing and limit interactions</a></li>
+<li><a href="#_misuse_of_job_slicing_can_cause_errors_in_job_scheduling">2.7. Misuse of job slicing can cause errors in job scheduling</a></li>
+<li><a href="#_default_ldap_directory_must_be_configured_to_use_ldap_authentication">2.8. Default LDAP directory must be configured to use LDAP Authentication</a></li>
+<li><a href="#_potential_security_issue_using_x_forwarded_for_in_remote_host_headers">2.9. Potential security issue using <code>X_FORWARDED_FOR</code> in <code>REMOTE_HOST_HEADERS</code></a></li>
+<li><a href="#_server_error_when_accessing_saml_metadata_via_hostname">2.10. Server error when accessing SAML metadata via hostname</a></li>
+<li><a href="#_saml_authentication_revokes_admin_role_upon_login">2.11. SAML authentication revokes admin role upon login</a></li>
+<li><a href="#_live_events_status_indicators">2.12. Live events status indicators</a></li>
+<li><a href="#_vmware_self_signed_certs">2.13. VMWare Self-Signed Certs</a></li>
+<li><a href="#_awx_manage_inventory_import_user">2.14. awx-manage inventory_import user</a></li>
+<li><a href="#_upgrading_tower_3_8_existing_instance_groups_on_ocp_deployments">2.15. Upgrading Tower 3.8 existing Instance Groups on OCP deployments</a></li>
+<li><a href="#_database_on_disk_becomes_corrupted">2.16. Database on Disk Becomes Corrupted</a></li>
+<li><a href="#_safari_unable_to_establish_connection_to_web_socket">2.17. Safari unable to establish connection to web socket</a></li>
+<li><a href="#_local_management_not_functioning_as_expected">2.18. Local management not functioning as expected</a></li>
+<li><a href="#_problems_when_using_ssh_customization">2.19. Problems when using SSH customization</a></li>
+<li><a href="#_database_server_installed_on_nodes">2.20. Database server installed on nodes</a></li>
+<li><a href="#_reactivating_oauth_authentication_accounts_which_have_been_deleted">2.21. Reactivating OAuth authentication accounts which have been deleted</a></li>
+<li><a href="#_using_vaulted_variables_in_inventory_sourced_from_a_project">2.22. Using vaulted variables in inventory sourced from a project</a></li>
+<li><a href="#_saved_scheduled_and_workflow_configurations_and_surveys">2.23. Saved scheduled and workflow configurations and surveys</a></li>
+</ul>
+</li>
+<li><a href="#_supported_locales">3. Supported Locales</a></li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -449,10 +495,1185 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="release_notes"><a class="anchor" href="#release_notes"></a>1. Release Notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Refer to the latest
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/">Product
+Documentation for Red Hat Ansible Automation Platform</a> for the complete
+Automation Platform documentation.</p>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_3"><a class="anchor" href="#_automation_controller_version_4_3"></a>1.1. Automation Controller Version 4.3</h3>
+<div class="paragraph">
+<p>Unresolved directive in release-notes/relnotes.adoc - include::relnotes_current.adoc[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_2_1"><a class="anchor" href="#_automation_controller_version_4_2_1"></a>1.2. Automation Controller Version 4.2.1</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_2"><a class="anchor" href="#_automation_controller_version_4_2"></a>1.3. Automation Controller Version 4.2</h3>
+<div class="paragraph">
+<p><strong>Introduced</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Graphical visualization of the automation topology to show the types
+of nodes, the links between them and their statuses</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Added</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>For VM-based installs, the controller will now automatically mount the
+system trust store in execution environments when jobs run</p>
+</li>
+<li>
+<p><strong>Log Format For API 4XX Errors</strong> field to the Logging settings form to
+allow customization of 4xx error messages that are produced when the API
+encounters an issue with a request</p>
+</li>
+<li>
+<p>Ability to use labels with inventory</p>
+</li>
+<li>
+<p>Ability to flag users as superusers and auditors in SAML integration</p>
+</li>
+<li>
+<p>Support for expanding and collapsing plays and tasks in the job output
+UI</p>
+</li>
+<li>
+<p>Filtering job output UI by multiple event types</p>
+</li>
+<li>
+<p>Various default search filters to a number of list views</p>
+</li>
+<li>
+<p>Top-level list of instances to now be visible in the UI</p>
+</li>
+<li>
+<p>A pop-up message when a user copies a resource</p>
+</li>
+<li>
+<p>Job Templates tab to Credentials and Inventories to view all the
+templates that use that particular credential or inventory</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Updated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Controller to use Python 3.9</p>
+</li>
+<li>
+<p>Django&#8217;s <code>SESSION_COOKIE_NAME</code> setting to a non-default value. <strong>Note</strong>,
+any external clients that previously used the <code>sessionid</code> cookie will
+need to change. Refer to <code>api_session_auth</code> for more detail.</p>
+</li>
+<li>
+<p>Controller to support podman-style volume mount syntax in the <strong>Paths
+to expose to isolated jobs</strong> field of the Jobs Settings of the UI</p>
+</li>
+<li>
+<p>Isolated path to be exposed in OCP/K8s as HostPath</p>
+</li>
+<li>
+<p>Upgraded Django from version 2.2 to 3.2</p>
+</li>
+<li>
+<p>Modified usage of <code>ansible_facts</code> on Advanced Search to add more
+flexibility to the usage of <code>ansible_facts</code> when creating a smart
+inventory</p>
+</li>
+<li>
+<p>The controller node for a job running on an execution node now incurs
+a penalty of 1 unit of capacity to account for the system load that
+controlling a job incurs. This can be adjusted with the file-based
+setting <code>AWX_CONTROL_NODE_TASK_IMPACT</code>.</p>
+</li>
+<li>
+<p>Project updates to always run in the <code>controlplane</code> instance group</p>
+</li>
+<li>
+<p>Slack notifications to allow replying to a thread instead of just
+channels</p>
+</li>
+<li>
+<p>UI performance to improve job output</p>
+</li>
+<li>
+<p>Job status icons to be more accessible</p>
+</li>
+<li>
+<p>Display of only usable inventories when launching a job</p>
+</li>
+<li>
+<p>Browser tab to show more information about which page the user is
+currently viewing</p>
+</li>
+<li>
+<p>Controller to now load variables <em>after</em> job template extra variables
+to prevent overriding the meta variables injected into each job run</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Deprecated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The concept of "committed capacity" from Instance Groups due to the
+removal of RabbitMQ</p>
+</li>
+<li>
+<p>Inventory source option to <strong>Update on project update</strong> - this field
+updates the inventory source if its project pulled a new revision. In
+the future, when updating an inventory source, the controller shall
+automatically run project updates if the project itself is set to
+<strong>Update on launch</strong>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Removed</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Case sensitivity around hostcount</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_1_3"><a class="anchor" href="#_automation_controller_version_4_1_3"></a>1.4. Automation Controller Version 4.1.3</h3>
+<div class="paragraph">
+<p><strong>Automation Controller fixes:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Receptor no longer fails in FIPS mode</p>
+</li>
+<li>
+<p>Added the ability to exit gracefully and recover quickly when a
+service in the control plane crashes</p>
+</li>
+<li>
+<p>The <code>create_partition</code> method will skip creating a table if it already
+exists</p>
+</li>
+<li>
+<p>Having logging enabled no longer breaks migrations if the migration
+sends logs to an external aggregator</p>
+</li>
+<li>
+<p>Fixed the metrics endpoint (<code>/api/v2/metrics</code>) to no longer produce
+erroneous <code>500</code> errors</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Execution Environment fixes:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enhanced the execution environment copy process to reduce required
+space in the <code>/tmp</code> directory</p>
+</li>
+<li>
+<p>Allowed execution environment images to be pulled from automation
+controller only</p>
+</li>
+<li>
+<p>Added the <strong>ansible-builder-rhel8</strong> image to the setup bundle</p>
+</li>
+<li>
+<p>Modified base execution environment images so that controller backups
+can run in the container</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Automation Controller UI fixes:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upon saving a schedule, the date chooser no longer changes to the day
+before the selected date</p>
+</li>
+<li>
+<p>Fixed the ability to create manual projects in Japanese and other
+supported non-English languages</p>
+</li>
+<li>
+<p>Forks information no longer missing in running job details</p>
+</li>
+<li>
+<p>Project selected for deletion is now removed as expected when running
+a project sync</p>
+</li>
+<li>
+<p>The <strong>Admin</strong> option in the Team Permissions is now disabled so that a
+user cannot select it when it is not applicable to the available
+organization(s)</p>
+</li>
+<li>
+<p>Large workflow templates no longer cause browsers to crash when
+linking nodes near the end of the template</p>
+</li>
+<li>
+<p>References to Ansible Tower are replaced with Automation Controller
+throughout the UI, including tooltips where documentation is referenced</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Installation fixes specific to Automation Controller:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the Receptor to 1.2.3 everywhere as needed</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_1_2"><a class="anchor" href="#_automation_controller_version_4_1_2"></a>1.5. Automation Controller Version 4.1.2</h3>
+<div class="paragraph">
+<p><strong>Automation Controller fixes</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgraded Django version to 3.2 LTS</p>
+</li>
+<li>
+<p>System (management) jobs are now able to be canceled</p>
+</li>
+<li>
+<p>Rsyslog no longer needs manual intervention to send out logs after
+hitting a 40x error</p>
+</li>
+<li>
+<p>Credential lookup plugins now respect the <code>AWX_TASK_ENV</code> setting</p>
+</li>
+<li>
+<p>Fixed the controller to list valid subscriptions from Satellite when
+having multiple quantities from the same SKU</p>
+</li>
+<li>
+<p>Updated Receptor version to 1.2.1, which includes several fixes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Execution Environment fixes</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The host trusted cert store is now exposed to execution environments
+by default. See <code>ag_isolation_variables</code> for detail.</p>
+</li>
+<li>
+<p>Mounting the <code>/etc/ssh</code> or <code>/etc/</code> to isolated jobs now works in
+podman</p>
+</li>
+<li>
+<p>User customization of execution environment mount options and mount
+paths are now supported</p>
+</li>
+<li>
+<p>Fixed SELinux context on <code>/var/lib/awx/.local/share/containers</code> and
+ensure awx as podman storage</p>
+</li>
+<li>
+<p>Fixed failures to no longer occur when the semanage <code>fcontext</code> has
+been already set for the expected directory</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Automation Controller UI fixes</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed the ability to create manual projects in Japanese and other
+suppported non-English languages</p>
+</li>
+<li>
+<p>Fixed the controller UI to list the roles for organizations when using
+non-English web browsers</p>
+</li>
+<li>
+<p>Fixed the job output to display all job type events, including source
+control update events over websockets</p>
+</li>
+<li>
+<p>Fixed the <code>TypeError</code> when running a command on a host in a smart
+inventory</p>
+</li>
+<li>
+<p>Fixed the encrypted password in surveys to no longer show up as
+plaintext in the Edit Order page</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Installation fixes specific to Automation Controller</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fixed duplicate Galaxy credentials with no default organization</p>
+</li>
+<li>
+<p>Running the <code>./setup.sh -b</code> out of the installer directory no longer
+fails to load group vars</p>
+</li>
+<li>
+<p>The installer no longer fails when IPV6 is disabled</p>
+</li>
+<li>
+<p>Fixed unnecessary <code>become_user:root</code> entries in the installation</p>
+</li>
+<li>
+<p>Modified database backup and restore logic to compress dump data</p>
+</li>
+<li>
+<p>Creating default execution environments no longer fails when password
+has special characters</p>
+</li>
+<li>
+<p>Fixed installations of execution environments when installing without
+internet access</p>
+</li>
+<li>
+<p>Upgrading to AAP 2.1 no longer breaks when the Django superuser is
+missing</p>
+</li>
+<li>
+<p>Rekey now allowed with existing key</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_1_1"><a class="anchor" href="#_automation_controller_version_4_1_1"></a>1.6. Automation Controller Version 4.1.1</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Added the ability to specify additional nginx headers</p>
+</li>
+<li>
+<p>Fixed analytics gathering to collect all the data the controller
+needed to collect</p>
+</li>
+<li>
+<p>Fixed the controller to no longer break subsequent installer runs when
+deleting the demo organization</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_1"><a class="anchor" href="#_automation_controller_version_4_1"></a>1.7. Automation Controller Version 4.1</h3>
+<div class="paragraph">
+<p><strong>Introduced</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Connected Receptor nodes to form a control plane and execution <code>mesh</code>
+configurations</p>
+</li>
+<li>
+<p>The special <code>controlplane</code> instance group to allow for the task
+manager code to target an OpenShift Controller node to run the project
+update</p>
+</li>
+<li>
+<p>The ability to render a configured mesh topology in a graph in the
+installer</p>
+</li>
+<li>
+<p>Controller 4.1 execution nodes can be remote</p>
+</li>
+<li>
+<p>Node types for Controller 4.1 (<code>control, hybrid, execution, hop</code>,
+<code>control</code>, <code>hybrid</code>, <code>execution</code>, <code>hop</code>) installed for different sets of
+services and provide different capabilities, allowing for scaling nodes
+that provide the desired capability such as job execution or serving of
+web requests to the API/UI.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Added</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The ability for the platform installer to allow users to install
+execution nodes and express receptor mesh topology in the inventory
+file. The platform installer will also be responsible for deprovisioning
+nodes.</p>
+</li>
+<li>
+<p>Work signing to the receptor mesh so that control plane nodes have the
+exclusive authority to submit receptor work to execution nodes over the
+mesh</p>
+</li>
+<li>
+<p>Support for pre-population of execution environment name, description,
+and image from query parameters when adding a new execution environment
+in the Controller User Interface</p>
+</li>
+<li>
+<p>Ability to trigger a reload of the topology configuration in Receptor
+without interrupting work execution</p>
+</li>
+<li>
+<p>Using Public Key Infrastructure (PKI) for securing the Receptor mesh</p>
+</li>
+<li>
+<p>Added importing execution environments from Automation Hub into the
+controller to improve the platform experience</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Updated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The controller to support new controller control plane and execution
+mesh</p>
+</li>
+<li>
+<p>Task manager will only run project updates and system jobs on nodes
+with <code>node_type</code> of "control" or "hybrid"</p>
+</li>
+<li>
+<p>Task manager will only run jobs, inventory updates, and ad hoc
+commands on nodes with <code>node_type</code> of "hybrid" or "execution"</p>
+</li>
+<li>
+<p>Heartbeat and capacity check to work with Receptor execution nodes</p>
+</li>
+<li>
+<p>Reaper to work with the addition of execution nodes</p>
+</li>
+<li>
+<p>Controller User Interface to not show control instances as an option
+to associate with instance groups</p>
+</li>
+<li>
+<p>The Associate pop-up screen to display host names when adding an
+existing host to a group</p>
+</li>
+<li>
+<p>Validators for editing miscellaneous authentication parameters</p>
+</li>
+<li>
+<p>Advanced search key options to be grouped</p>
+</li>
+<li>
+<p>SAML variables default values</p>
+</li>
+<li>
+<p>Survey validation on Prompt on Launch</p>
+</li>
+<li>
+<p>Login redirect</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Deprecated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Removed</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The ability to delete the default instance group through the User
+Interface</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_0_1"><a class="anchor" href="#_automation_controller_version_4_0_1"></a>1.8. Automation Controller Version 4.0.1</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Upgraded Django version to 3.2 LTS</p>
+</li>
+<li>
+<p>Updated receptor to version 1.2.1</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_automation_controller_version_4_0"><a class="anchor" href="#_automation_controller_version_4_0"></a>1.9. Automation Controller Version 4.0</h3>
+<div class="paragraph">
+<p><strong>Introduced</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Support for automation execution environments. All automation now runs
+in execution environments via containers, either directly via OpenShift,
+or locally via podman</p>
+</li>
+<li>
+<p>New PatternFly 4 based user-interface for increased performance,
+security, and consistency with other Ansible Automation Platform
+components</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Added</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added identity provider support for GitHub Enterprise</p>
+</li>
+<li>
+<p>Support for RHEL system crypto profiles to nginx configuration</p>
+</li>
+<li>
+<p>The ability to disable local system users and only pull users from
+configured identity providers</p>
+</li>
+<li>
+<p>Additional Prometheus metrics for tracking job event processing
+performance</p>
+</li>
+<li>
+<p>New <code>awx-manage</code> command for dumping host automation information</p>
+</li>
+<li>
+<p>Red Hat Insights as an inventory source</p>
+</li>
+<li>
+<p>Ability to set server-side password policies using Django&#8217;s
+<code>AUTH_PASSWORD_VALIDATORS</code> setting</p>
+</li>
+<li>
+<p>Support for Centrify Vault as a credential lookup plugin</p>
+</li>
+<li>
+<p>Support for namespaces in Hashicorp Vault credential plugin</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Updated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OpenShift deployment to be done via an Operator instead of a playbook</p>
+</li>
+<li>
+<p>Python used by application to Python 3.8</p>
+</li>
+<li>
+<p>Nginx used to version 1.18</p>
+</li>
+<li>
+<p>PostgreSQL used to PostgreSQL 12, and moved to partitioned databases
+for performance</p>
+</li>
+<li>
+<p>The “container groups” feature to general availability from Tech
+Preview; now fully utilizes execution environments</p>
+</li>
+<li>
+<p>Insights remediation to use new Red Hat Insights inventory source
+rather than utilizing scan playbooks with arbitrary inventory</p>
+</li>
+<li>
+<p>Subscriptions display to count hosts automated on instead of hosts
+imported</p>
+</li>
+<li>
+<p>Inventory source, credential, and Ansible content collection to
+reference <span class="title-ref">controller</span> instead of <span class="title-ref">tower</span></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Deprecated</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>None</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Removed</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Support for deploying on CentOS (any version) and RHEL 7</p>
+</li>
+<li>
+<p>Support for Mercurial projects</p>
+</li>
+<li>
+<p>Support for custom inventory scripts stored in controller (use
+<code>awx-manage export_custom_scripts</code> to export them)</p>
+</li>
+<li>
+<p>Resource profiling code (<code>AWX_RESOURCE_PROFILING_*</code>)</p>
+</li>
+<li>
+<p>Support for custom Python virtual environments for execution. Use new
+<code>awx-manage</code> tools for assisting in migration</p>
+</li>
+<li>
+<p>Top-level /api/v2/job_events/ API endpoint</p>
+</li>
+<li>
+<p>The ability to disable job isolation</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ir_known_issues"><a class="anchor" href="#ir_known_issues"></a>2. Known Issues</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_launching_the_ansible_runner_component_not_working_as_expected"><a class="anchor" href="#_launching_the_ansible_runner_component_not_working_as_expected"></a>2.1. Launching the ansible-runner component not working as expected</h3>
+<div class="paragraph">
+<p>A change was made to the way the ansible-runner component is launched
+(the executable inside of the execution environment that the controller
+launches to run a playbook), introduced a backward incompatibility. It
+is highly recommended to always rebuild on top of the base execution
+environments that corresponds to the platform version you are using.
+This should be the ideal way to upgrade in general.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_deleted_default_orgs_produces_duplicate_ansible_galaxy_credentials"><a class="anchor" href="#_deleted_default_orgs_produces_duplicate_ansible_galaxy_credentials"></a>2.2. Deleted default orgs produces duplicate Ansible-Galaxy credentials</h3>
+<div class="paragraph">
+<p>Despite being able to run subsequent installs when deleting the default
+organization, it does not automatically remove or fix duplicate
+Ansible-Galaxy credentials. Refer to the KCS article on
+<a href="https://access.redhat.com/solutions/6653321">How to remove duplicated
+Ansible-Galaxy credentials from the database</a> for further detail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_isolated_nodes_unsupported_in_an_openshift_deployment"><a class="anchor" href="#_isolated_nodes_unsupported_in_an_openshift_deployment"></a>2.3. Isolated nodes unsupported in an OpenShift deployment</h3>
+<div class="paragraph">
+<p>Isolated nodes are not currently supported when deploying automation
+controller in OpenShift.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_browsers_ignoring_the_autocompleteoff_setting"><a class="anchor" href="#_browsers_ignoring_the_autocompleteoff_setting"></a>2.4. Browsers ignoring the <code>autocomplete=off</code> setting</h3>
+<div class="paragraph">
+<p>automation controller leverages the <code>autocomplete=off</code> attribute on
+forms to relay to the browser that it should not autocomplete the fields
+within that form. In some scenarios, however, the browser may ignore
+this setting and attempt to save and/or autocomplete fields. This tends
+to happen on forms that appear to contain login fields like username and
+password, such as the <em>User</em> form and some <em>Settings</em> forms. Further
+investigation is underway to deliver options that prevent this behavior.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_login_via_http_requires_workaround"><a class="anchor" href="#_login_via_http_requires_workaround"></a>2.5. Login via HTTP requires workaround</h3>
+<div class="paragraph">
+<p>To access controller nodes behind your load balancer (in traditional
+cluster controller installs) via HTTP, refer to the procedure described
+in the <code>Troubleshooting section &lt;administration:admin_troubleshooting&gt;</code>
+of the Automation Controller Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_job_slicing_and_limit_interactions"><a class="anchor" href="#_job_slicing_and_limit_interactions"></a>2.6. Job slicing and limit interactions</h3>
+<div class="paragraph">
+<p>When passing a limit to a Sliced Job, if the limit causes slices to have
+no hosts assigned, those slices will fail, causing the overall job to
+fail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_misuse_of_job_slicing_can_cause_errors_in_job_scheduling"><a class="anchor" href="#_misuse_of_job_slicing_can_cause_errors_in_job_scheduling"></a>2.7. Misuse of job slicing can cause errors in job scheduling</h3>
+<div class="paragraph">
+<p>Unresolved directive in release-notes/known_issues.adoc - include::job-slicing-rule.adoc[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_default_ldap_directory_must_be_configured_to_use_ldap_authentication"><a class="anchor" href="#_default_ldap_directory_must_be_configured_to_use_ldap_authentication"></a>2.8. Default LDAP directory must be configured to use LDAP Authentication</h3>
+<div class="paragraph">
+<p>The ability to configure up to six LDAP directories for authentication
+requires a value. On the settings page for LDAP, there is a "Default"
+LDAP configuration followed by five-numbered configuration slots. If the
+"Default" is not populated, the controller will not try to authenticate
+using the other directory configurations.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_potential_security_issue_using_x_forwarded_for_in_remote_host_headers"><a class="anchor" href="#_potential_security_issue_using_x_forwarded_for_in_remote_host_headers"></a>2.9. Potential security issue using <code>X_FORWARDED_FOR</code> in <code>REMOTE_HOST_HEADERS</code></h3>
+<div class="paragraph">
+<p>If placing controller nodes behind some sort of proxy, this may pose a
+security issue. This approach assumes traffic is always flowing
+exclusively through your load balancer, and that traffic that
+circumvents the load balancer is suspect to <code>X-Forwarded-For</code> header
+spoofing.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_server_error_when_accessing_saml_metadata_via_hostname"><a class="anchor" href="#_server_error_when_accessing_saml_metadata_via_hostname"></a>2.10. Server error when accessing SAML metadata via hostname</h3>
+<div class="paragraph">
+<p>When the controller is accessed via hostname only (e.g.
+<a href="https://my-little-controller" class="bare">https://my-little-controller</a>), trying to read the SAML metadata from
+/sso/metadata/saml/ generates a <code>sp_acs_url_invalid</code> server error.</p>
+</div>
+<div class="paragraph">
+<p>A configuration in which uses SAML when accessing the controller via
+hostname only instead of an FQDN, is not supported. Doing so will
+generate an error that is captured in the tower.log file and in the
+browser with full traceback information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saml_authentication_revokes_admin_role_upon_login"><a class="anchor" href="#_saml_authentication_revokes_admin_role_upon_login"></a>2.11. SAML authentication revokes admin role upon login</h3>
+<div class="paragraph">
+<p>In previous versions of automation controller, the SAML adapter did not
+evaluate the System Auditor or System Admin roles for a user logging in.
+Because of this, the login process would not change a user&#8217;s system
+roles that were granted through the User Interface. The adapter now has
+a setting called <strong>SAML User Flags Attribute Mapping</strong> to grant users
+logging in these roles based on either SAML attributes or roles, and the
+adapter defaults to removing these roles if unspecified akin to the LDAP
+adapter. Refer to the <code>logic table &lt;ag_auth_saml_user_flags_attr_map&gt;</code>
+that shows the relationship between how the role, attribute, and
+attribute value settings are configured and whether or not a user will
+be granted the System Admin/Auditor roles.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_live_events_status_indicators"><a class="anchor" href="#_live_events_status_indicators"></a>2.12. Live events status indicators</h3>
+<div class="paragraph">
+<p>Live events status dots are either seen as a red or orange dot at the
+top of the automation controller Dashboard when something goes wrong.
+They are not seen at all when the system is in a healthy state. If you
+encounter a red or orange live events status indicator, even when your
+system seems fine, the following suggestions may offer a solution:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Try manually refreshing/reloading your browser page.</p>
+</li>
+<li>
+<p>Try changing web browsers, as Firefox and Safari have been reported to
+have issues trusting self-signed certificates.</p>
+</li>
+<li>
+<p>Try creating a self-signed certificate that matches your DNS and
+import it into your trust manually.</p>
+</li>
+<li>
+<p>Try using an incognito or private browsing session.</p>
+</li>
+<li>
+<p>Try disabling your browser plugins to ensure none are blocking the
+service.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Live event status dots are used for troubleshooting problems with your
+controller instance. You can collect troubleshooting help by running a
+<code>sosreport</code>. As root, run the command <code>sosreport</code> from your system to
+automatically generate a diagnostic tar file, then contact Ansible&#8217;s
+Support team with the collected information for further assistance. For
+more information on <code>sosreport</code>, refer to
+<code>admin_troubleshooting_sosreport</code> in the Automation Controller
+Administration Guide.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_vmware_self_signed_certs"><a class="anchor" href="#_vmware_self_signed_certs"></a>2.13. VMWare Self-Signed Certs</h3>
+<div class="paragraph">
+<p>If you have a VMware instance that uses a self-signed certificate, then
+you will need to add the following to the <span class="title-ref">Source Vars</span>
+configuration of the Cloud Group:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"source_vars": "---\nvalidate_certs: False",</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can set this in inventory source for VMware vCenter as follows:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/ki-vmware-source-variables-example.png" alt="image"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_awx_manage_inventory_import_user"><a class="anchor" href="#_awx_manage_inventory_import_user"></a>2.14. awx-manage inventory_import user</h3>
+<div class="paragraph">
+<p>In general, the use of <code>awx-manage</code> commands is supported when executed
+by the root or awx user. However, in automation controller 4.0, even
+when run as the root user, the command <code>awx-manage inventory_import</code>
+fails to authenticate with the private registry where the Red Hat
+execution environments are hosted. The workaround is to run the command
+as the <code>awx</code> user, given that the images should be pre-pulled by the
+installer which correctly authenticates.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_upgrading_tower_3_8_existing_instance_groups_on_ocp_deployments"><a class="anchor" href="#_upgrading_tower_3_8_existing_instance_groups_on_ocp_deployments"></a>2.15. Upgrading Tower 3.8 existing Instance Groups on OCP deployments</h3>
+<div class="paragraph">
+<p>All job execution occurs in Container Groups for automation controller
+4.0 deployed on OCP 4. Creating new "normal" Instance Groups is disabled
+in the user interface, however upon upgrade, nothing happens to regular
+instance groups. This is a known issue because any resources that
+attempt to use the normal instance group that contains control plane
+pods as instances will have 0 capacity and jobs will stay in the pending
+state indefinitely. The workaround is to delete all of these "normal"
+instance groups. By default, there is a Container Group where job
+execution will occur in the same namespace as the Controller pods are
+deployed. Additional capacity can be provided by configuring other
+Container Groups on the same or any other OpenShift 4 cluster.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database_on_disk_becomes_corrupted"><a class="anchor" href="#_database_on_disk_becomes_corrupted"></a>2.16. Database on Disk Becomes Corrupted</h3>
+<div class="paragraph">
+<p>If the controller is not cleanly shutdown, it leaves a
+<code>/var/lib/awx/beat.db</code> file on disk. If that happens, the dispatcher
+won’t start, and you must manually delete the <code>/var/lib/awx/beat.db</code>
+file and restart the controller before the dispatcher will start
+properly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_safari_unable_to_establish_connection_to_web_socket"><a class="anchor" href="#_safari_unable_to_establish_connection_to_web_socket"></a>2.17. Safari unable to establish connection to web socket</h3>
+<div class="paragraph">
+<p>The following connection error displays in the controller:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/ki-tower-connect-error.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>This error is the result of Safari silently refusing to establish a
+connection to a web socket that is using a self-signed certificate. To
+resolve this issue, you must set Safari to always trust the website upon
+f.adoc[] visiting it:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Close the current browser and revisit the site. An error message
+appears stating Safari can&#8217;t verify the identity of the website.</p>
+</li>
+<li>
+<p>Click <strong>Show Certificate</strong>.</p>
+</li>
+<li>
+<p>Check the <strong>Always trust &#8230;&#8203; when connecting to &#8230;&#8203;</strong> checkbox to allow
+Safari to accept the connection.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If you click <strong>Continue</strong> without checking the checkbox, this error will
+persist.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_local_management_not_functioning_as_expected"><a class="anchor" href="#_local_management_not_functioning_as_expected"></a>2.18. Local management not functioning as expected</h3>
+<div class="paragraph">
+<p>All playbooks are executed by automation controller in a Linux container
+called an automation execution environment.</p>
+</div>
+<div class="paragraph">
+<p>The use of <code>delegate_to: localhost</code> or <code>local_action</code> to manage the
+executing host will not function in this environment, as it will still
+be executing inside the container.</p>
+</div>
+<div class="paragraph">
+<p>To manage the local host where execution is running, you will need to
+use the ssh connection plugin to connect from the container to the local
+host.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_problems_when_using_ssh_customization"><a class="anchor" href="#_problems_when_using_ssh_customization"></a>2.19. Problems when using SSH customization</h3>
+<div class="paragraph">
+<p>The Job Isolation functionality in automation controller limits the
+directories available for playbooks to the project that is in use. If
+you are attempting to customize SSH behavior by using a custom SSH
+configuration in the awx user&#8217;s home directory, this directory must be
+added to the list of directories exposed to the container.</p>
+</div>
+<div class="paragraph">
+<p>For example, to add a custom SSH config in <code>/var/lib/awx/.ssh/config</code>
+and make it available for controller jobs, you can specify the path in
+the <strong>Job Execution Isolation Path</strong> field accessed from the <strong>Jobs</strong> tab of
+the Settings screen:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/ki-job-isolation_path.png" alt="image"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_database_server_installed_on_nodes"><a class="anchor" href="#_database_server_installed_on_nodes"></a>2.20. Database server installed on nodes</h3>
+<div class="paragraph">
+<p>All nodes in the cluster get a database server even if the nodes do not
+have a database. This is unexpected and may take up space.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_reactivating_oauth_authentication_accounts_which_have_been_deleted"><a class="anchor" href="#_reactivating_oauth_authentication_accounts_which_have_been_deleted"></a>2.21. Reactivating OAuth authentication accounts which have been deleted</h3>
+<div class="paragraph">
+<p>Once a user who logs in using social authentication has been deleted,
+the user will not be able to login again or be recreated until the
+system administrator runs a <code>cleanup_deleted</code> action with <code>days=0</code> to
+allow users to login again. Once <code>cleanup_deleted</code> has been run, the
+controller must be restarted using the
+<code>automation-controller-service restart</code> command. Accounts which have
+been deleted prior to having the <code>cleanup_deleted</code> action run will
+receive a "Your account is inactive" message upon trying to login.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_vaulted_variables_in_inventory_sourced_from_a_project"><a class="anchor" href="#_using_vaulted_variables_in_inventory_sourced_from_a_project"></a>2.22. Using vaulted variables in inventory sourced from a project</h3>
+<div class="paragraph">
+<p>When using inventory from a source control project, individual vaulted
+variable values are supported. Vaulted files are not currently
+supported.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saved_scheduled_and_workflow_configurations_and_surveys"><a class="anchor" href="#_saved_scheduled_and_workflow_configurations_and_surveys"></a>2.23. Saved scheduled and workflow configurations and surveys</h3>
+<div class="paragraph">
+<p>If a configuration of a job template is scheduled or added to a workflow
+with answers from a prompted survey, changing the Job Template survey to
+supply different variable names may cause the saved configuration to not
+function. The workaround is to delete the saved schedule
+configuration/workflow node, and recreate it with answers from the
+updated survey.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_supported_locales"><a class="anchor" href="#_supported_locales"></a>3. Supported Locales</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ansible Tower supports the following locales for UTC-friendly date and
+time information.</p>
+</div>
+<div class="paragraph">
+<p>Tower automatically sets the locale preference based on the user&#8217;s
+browser settings. For Safari, Internet Explorer, and older versions of
+Chrome as well as FireFox, this is handled automatically.</p>
+</div>
+<div class="paragraph">
+<p>For newer versions of Chrome (v32 and later) and FireFox (v32 and
+later), Tower uses the language preferences set from your browser&#8217;s
+language settings. The browser lists the user&#8217;s preferred languages and
+selects the first in the array as the user&#8217;s top choice, which Tower
+uses as the preferred locale. This means that you can change your
+browser&#8217;s language and change your Tower locale preferences (although
+you may need to reload/refresh Tower in your browser to see this
+change.)</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>az</code>&#8201;&#8212;&#8201;Cyrillic</p>
+</li>
+<li>
+<p><code>bg</code>&#8201;&#8212;&#8201;Bulgarian</p>
+</li>
+<li>
+<p><code>bs</code>&#8201;&#8212;&#8201;Bosnian</p>
+</li>
+<li>
+<p><code>ca</code>&#8201;&#8212;&#8201;Catalan</p>
+</li>
+<li>
+<p><code>cs</code>&#8201;&#8212;&#8201;Czech</p>
+</li>
+<li>
+<p><code>da</code>&#8201;&#8212;&#8201;Danish</p>
+</li>
+<li>
+<p><code>de</code>&#8201;&#8212;&#8201;German</p>
+</li>
+<li>
+<p><code>el</code>&#8201;&#8212;&#8201;Greek</p>
+</li>
+<li>
+<p><code>en-gb</code>&#8201;&#8212;&#8201;English (United Kingdom)</p>
+</li>
+<li>
+<p><code>es</code>&#8201;&#8212;&#8201;Spanish</p>
+</li>
+<li>
+<p><code>et</code>&#8201;&#8212;&#8201;Estonian</p>
+</li>
+<li>
+<p><code>eu</code>&#8201;&#8212;&#8201;Basque</p>
+</li>
+<li>
+<p><code>fa</code>&#8201;&#8212;&#8201;Persian</p>
+</li>
+<li>
+<p><code>fi</code>&#8201;&#8212;&#8201;Finnish</p>
+</li>
+<li>
+<p><code>fo</code>&#8201;&#8212;&#8201;Faroese</p>
+</li>
+<li>
+<p><code>fr</code>&#8201;&#8212;&#8201;French</p>
+</li>
+<li>
+<p><code>gl</code>&#8201;&#8212;&#8201;Galician</p>
+</li>
+<li>
+<p><code>he</code>&#8201;&#8212;&#8201;Hebrew</p>
+</li>
+<li>
+<p><code>hr</code>&#8201;&#8212;&#8201;Croatian</p>
+</li>
+<li>
+<p><code>hu</code>&#8201;&#8212;&#8201;Hungarian</p>
+</li>
+<li>
+<p><code>id</code>&#8201;&#8212;&#8201;Indonesian</p>
+</li>
+<li>
+<p><code>is</code>&#8201;&#8212;&#8201;Icelandic</p>
+</li>
+<li>
+<p><code>it</code>&#8201;&#8212;&#8201;Italian</p>
+</li>
+<li>
+<p><code>ja</code>&#8201;&#8212;&#8201;Japanese</p>
+</li>
+<li>
+<p><code>ka</code>&#8201;&#8212;&#8201;Georgian</p>
+</li>
+<li>
+<p><code>lt</code>&#8201;&#8212;&#8201;Lithuanian</p>
+</li>
+<li>
+<p><code>lv</code>&#8201;&#8212;&#8201;Latvian</p>
+</li>
+<li>
+<p><code>mk</code>&#8201;&#8212;&#8201;Macedonian</p>
+</li>
+<li>
+<p><code>nb</code>&#8201;&#8212;&#8201;Norwegian</p>
+</li>
+<li>
+<p><code>nl</code>&#8201;&#8212;&#8201;Dutch</p>
+</li>
+<li>
+<p><code>pl</code>&#8201;&#8212;&#8201;Polish</p>
+</li>
+<li>
+<p><code>pt-br</code>&#8201;&#8212;&#8201;Portuguese (Brazil)</p>
+</li>
+<li>
+<p><code>pt</code>&#8201;&#8212;&#8201;Portuguese</p>
+</li>
+<li>
+<p><code>ro</code>&#8201;&#8212;&#8201;Romanian</p>
+</li>
+<li>
+<p><code>ru</code>&#8201;&#8212;&#8201;Russian</p>
+</li>
+<li>
+<p><code>sk</code>&#8201;&#8212;&#8201;Slovak</p>
+</li>
+<li>
+<p><code>sl</code>&#8201;&#8212;&#8201;Slovenian</p>
+</li>
+<li>
+<p><code>sq</code>&#8201;&#8212;&#8201;Albanian</p>
+</li>
+<li>
+<p><code>sr</code>&#8201;&#8212;&#8201;Serbian</p>
+</li>
+<li>
+<p><code>sv</code>&#8201;&#8212;&#8201;Swedish</p>
+</li>
+<li>
+<p><code>th</code>&#8201;&#8212;&#8201;Thai</p>
+</li>
+<li>
+<p><code>tr</code>&#8201;&#8212;&#8201;Turkish</p>
+</li>
+<li>
+<p><code>uk</code>&#8201;&#8212;&#8201;Ukrainian</p>
+</li>
+<li>
+<p><code>vi</code>&#8201;&#8212;&#8201;Vietnamese</p>
+</li>
+<li>
+<p><code>zh-cn</code>&#8201;&#8212;&#8201;Chinese (simplified)</p>
+</li>
+<li>
+<p><code>zh-tw</code>&#8201;&#8212;&#8201;Chinese (traditional)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 11:37:05 UTC
+Last updated 2022-09-28 12:47:45 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">

@@ -437,9 +437,36 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Controller API</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_tools">1. Tools</a></li>
+<li><a href="#api_browsable_api">2. Browsable API</a></li>
+<li><a href="#_conventions">3. Conventions</a></li>
+<li><a href="#_sorting">4. Sorting</a></li>
+<li><a href="#_searching">5. Searching</a></li>
+<li><a href="#_filtering">6. Filtering</a></li>
+<li><a href="#_pagination">7. Pagination</a></li>
+<li><a href="#_access_resources">8. Access Resources</a>
+<ul class="sectlevel2">
+<li><a href="#_configuration_settings">8.1. Configuration Settings</a></li>
+<li><a href="#_identifier_format_protocol">8.2. Identifier Format Protocol</a></li>
+</ul>
+</li>
+<li><a href="#_read_only_fields">9. Read-only Fields</a></li>
+<li><a href="#_authentication_methods_using_the_api">10. Authentication Methods Using the API</a>
+<ul class="sectlevel2">
+<li><a href="#api_session_auth">10.1. Session Authentication</a></li>
+<li><a href="#_basic_authentication">10.2. Basic Authentication</a></li>
+<li><a href="#api_oauth2_auth">10.3. OAuth 2 Token Authentication</a></li>
+<li><a href="#api_sso_auth">10.4. SSO Authentication</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -449,10 +476,1097 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 </div>
+<div class="sect1">
+<h2 id="_tools"><a class="anchor" href="#_tools"></a>1. Tools</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document offers a basic understanding of the REST API used by
+automation controller.</p>
+</div>
+<div class="paragraph">
+<p>REST stands for Representational State Transfer and is sometimes spelled
+as "ReST". It relies on a stateless, client-server, and cacheable
+communications protocol, usually the HTTP protocol.</p>
+</div>
+<div class="paragraph">
+<p>You may find it helpful to see which API calls the user interface makes
+in sequence. To do this, you can use the UI from Firebug or Chrome with
+developer plugins.</p>
+</div>
+<div class="paragraph">
+<p>Another alternative is Charles Proxy (<a href="http://www.charlesproxy.com/" class="bare">http://www.charlesproxy.com/</a>),
+which offers a visualizer that you may find helpful. While it is
+commercial software, it can insert itself as an OS X proxy, for example,
+and intercept both requests from web browsers as well as curl and other
+API consumers.</p>
+</div>
+<div class="paragraph">
+<p>Other alternatives include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fiddler (<a href="http://www.telerik.com/fiddler" class="bare">http://www.telerik.com/fiddler</a>)</p>
+</li>
+<li>
+<p>mitmproxy (<a href="https://mitmproxy.org/" class="bare">https://mitmproxy.org/</a>)</p>
+</li>
+<li>
+<p>Live HTTP headers FireFox extension
+(<a href="https://addons.mozilla.org/en-US/firefox/addon/live-http-headers/" class="bare">https://addons.mozilla.org/en-US/firefox/addon/live-http-headers/</a>)</p>
+</li>
+<li>
+<p>Paros (<a href="http://sourceforge.net/projects/paros/" class="bare">http://sourceforge.net/projects/paros/</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="api_browsable_api"><a class="anchor" href="#api_browsable_api"></a>2. Browsable API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>REST APIs provide access to resources (data entities) via URI paths. You
+can visit the automation controller REST API in a web browser at:
+<code><a href="http://&lt;server" class="bare">http://&lt;server</a> name&gt;/api/</code></p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api.png" alt="REST API"></span></p>
+</div>
+<div class="paragraph">
+<p>automation controller 3.2 introduced version 2 of the API, which can be
+accessed by clicking the v2 link next to "available versions":</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api-available-versions.png" alt="REST API V2"></span></p>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can still access version 1 of the API this way, but
+it <strong>will be removed</strong> in a future release of automation controller.</p>
+</div>
+<div class="paragraph">
+<p>If you perform a <strong>GET</strong> just the <code>/api/</code> endpoint, it gives the
+<code>current_version</code>, which would be the recommended version.</p>
+</div>
+<div class="paragraph">
+<p>Clicking on various links in the API allows you to explore related
+resources.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api-discover-resources.png" alt="REST API - discover resources"></span></p>
+</div>
+<div class="paragraph">
+<p>Clicking on the
+<span class="image"><img src="images/api-questionmark.png" alt="question"></span> next to
+the page name (toward the top of the screen) for an API endpoint gives
+you documentation on the access methods for that particular API endpoint
+and what data is returned when using those methods.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api-docs.png" alt="REST API - docs"></span></p>
+</div>
+<div class="paragraph">
+<p>You can also use PUT and POST verbs on the specific API pages by
+formatting JSON in the various text fields.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api-post-to-api-via-form.png" alt="REST API - POST to API via form"></span></p>
+</div>
+<div class="paragraph">
+<p>You can also view changed settings from factory defaults at
+<code>/api/v2/settings/changed/</code> endpoint. It reflects changes you made in
+the API browser, not changed settings that come from static settings
+files.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/rest-api-changed-settings.png" alt="REST API - Changes to Settings"></span></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_conventions"><a class="anchor" href="#_conventions"></a>3. Conventions</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Ansible Automation Platform controller uses a standard REST API, rooted
+at <code>/api/</code> on the server. The API is versioned for compatibility
+reasons, and currently <code>api/v2/</code> is the latest available version. You
+can see information about what API versions are available by querying
+<code>/api/</code>.</p>
+</div>
+<div class="paragraph">
+<p><code>/api/v1/</code> has been discontinued as of automation controller version
+3.6. Refer to previous versions of the api for details on v1.</p>
+</div>
+<div class="paragraph">
+<p>You may have to specify the content/type on <strong>POST</strong> or <strong>PUT</strong> requests
+accordingly.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>PUT</strong>: Update a specific resource (by an identifier) or a collection
+of resources. PUT can also be used to create a specific resource if the
+resource identifier is known before-hand.</p>
+</li>
+<li>
+<p><strong>POST</strong>: Create a new resource. Also acts as a catch-all verb for
+operations that do not fit into the other categories.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>All URIs not ending with <code>"/"</code> receive a 301 redirect.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>API change: Formatting of extra_vars attached to Job Template records is
+preserved. Previously, YAML would be converted to JSON and returned as
+JSON. In 2.2.0 and newer, YAML is returned as YAML with formatting and
+comments preserved, and JSON is returned as JSON.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_sorting"><a class="anchor" href="#_sorting"></a>4. Sorting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>To provide examples that are easy to follow, the following URL is used
+throughout this guide:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/groups/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To specify that \{\{ model_verbose_name_plural }} are returned in a
+particular order, use the <code>order_by</code> query string parameter on the <strong>GET</strong>
+request.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name_plural?order_by={{ order_field }}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Prefix the field name with a dash (<code>-</code>) to sort in reverse:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name_plural?order_by=-{{ order_field }}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Multiple sorting fields may be specified by separating the field names
+with a comma (<code>,</code>):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name_plural?order_by={{ order_field }},some_other_field</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_searching"><a class="anchor" href="#_searching"></a>5. Searching</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Use the search query string parameter to perform a case-insensitive
+search within all designated text fields of a model (added in AWX 1.4):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name?search=findme</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Search across related fields (added in AWX 1.4 / automation controller
+3.1):</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name?related__search=findme</pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_filtering"><a class="anchor" href="#_filtering"></a>6. Filtering</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Any collection is what the system calls a "queryset" and can be filtered
+via various operators.</p>
+</div>
+<div class="paragraph">
+<p>For example, to find the groups that contain the name "foo":</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;controller server name&gt;/api/v2/groups/?name__contains=foo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To find an exact match:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;controller server name&gt;/api/v2/groups/?name=foo</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If a resource is of an integer type, you must add <code>\_\_int</code> to the end
+to cast your string input value to an integer, like so:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;controller server name&gt;/api/v2/arbitrary_resource/?x__int=5</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Related resources can also be queried, like so:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;controller server name&gt;/api/v2/users/?first_name__icontains=kim</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This will return all users with names that include the string "Kim" in
+them.</p>
+</div>
+<div class="paragraph">
+<p>You can also filter against multiple fields at once:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;controller server name&gt;/api/v2/groups/?name__icontains=test&amp;has_active_failures=false</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This finds all groups containing the name "test" that has no active
+failures.</p>
+</div>
+<div class="paragraph">
+<p>For more about what types of operators are available, refer to:
+<a href="https://docs.djangoproject.com/en/dev/ref/models/querysets/" class="bare">https://docs.djangoproject.com/en/dev/ref/models/querysets/</a></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>You can also watch the API as the UI is being used to see how it is
+filtering on various criteria.</p>
+</div>
+<div class="paragraph">
+<p>Any additional query string parameters may be used to filter the list of
+results returned to those matching a given value. Only fields and
+relations that exist in the database may be used for filtering. Any
+special characters in the specified value should be url-encoded. For
+example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?field=value%20xyz</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Fields may also span relations, only for fields and relationships
+defined in the database:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?other__field=value</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To exclude results matching certain criteria, prefix the field parameter
+with <code>not__</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?not__field=value</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>By default, all query string filters are AND&#8217;ed together, so only the
+results matching all filters will be returned. To combine results
+matching any one of multiple criteria, prefix each query string
+parameter with <code>or__</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?or__field=value&amp;or__field=othervalue
+?or__not__field=value&amp;or__field=othervalue</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The default AND filtering applies all filters simultaneously to each
+related object being filtered across database relationships. The chain
+filter instead applies filters separately for each related object. To
+use, prefix the query string parameter with <code>chain__</code>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?chain__related__field=value&amp;chain__related__field2=othervalue
+?chain__not__related__field=value&amp;chain__related__field2=othervalue</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If the first query above were written as
+<code>?related<em>field=value&amp;related</em>field2=othervalue</code>, it would return only
+the primary objects where the same related object satisfied both
+conditions. As written using the chain filter, it would return the
+intersection of primary objects matching each condition.</p>
+</div>
+<div class="paragraph">
+<p>Field lookups may also be used for more advanced queries, by appending
+the lookup to the field name:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>?field__lookup=value</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The following field lookups are supported:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>exact</code>: Exact match (default lookup if not specified).</p>
+</li>
+<li>
+<p><code>iexact</code>: Case-insensitive version of exact.</p>
+</li>
+<li>
+<p><code>contains</code>: Field contains value.</p>
+</li>
+<li>
+<p><code>icontains</code>: Case-insensitive version of contains.</p>
+</li>
+<li>
+<p><code>startswith</code>: Field starts with value.</p>
+</li>
+<li>
+<p><code>istartswith</code>: Case-insensitive version of startswith.</p>
+</li>
+<li>
+<p><code>endswith</code>: Field ends with value.</p>
+</li>
+<li>
+<p><code>iendswith</code>: Case-insensitive version of endswith.</p>
+</li>
+<li>
+<p><code>regex</code>: Field matches the given regular expression.</p>
+</li>
+<li>
+<p><code>iregex</code>: Case-insensitive version of regex.</p>
+</li>
+<li>
+<p><code>gt</code>: Greater than comparison.</p>
+</li>
+<li>
+<p><code>gte</code>: Greater than or equal to comparison.</p>
+</li>
+<li>
+<p><code>lt</code>: Less than comparison.</p>
+</li>
+<li>
+<p><code>lte</code>: Less than or equal to comparison.</p>
+</li>
+<li>
+<p><code>isnull</code>: Check whether the given field or related object is null;
+expects a boolean value.</p>
+</li>
+<li>
+<p><code>in</code>: Check whether the given field&#8217;s value is present in the list
+provided; expects a list of items.</p>
+</li>
+<li>
+<p>Boolean values may be specified as <code>True</code> or <code>1</code> for true, <code>False</code> or
+<code>0</code> for false (both case-insensitive).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For example, <code>?created__gte=2020-01-01</code> will provide a list of items
+created after 1/1/2020.</p>
+</div>
+<div class="paragraph">
+<p>Null values may be specified as <code>None</code> or <code>Null</code> (both
+case-insensitive), though it is preferred to use the <code>isnull</code> lookup to
+explicitly check for null values.</p>
+</div>
+<div class="paragraph">
+<p>Lists (for the <code>in</code> lookup) may be specified as a comma-separated list
+of values.</p>
+</div>
+<div class="paragraph">
+<p>Filtering based on the requesting user&#8217;s level of access by query string
+parameter (added in automation controller 3.1):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>role_level</code>: Level of role to filter on, such as <code>admin_role</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_pagination"><a class="anchor" href="#_pagination"></a>7. Pagination</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Responses for collections in the API are paginated. This means that
+while a collection may contain tens or hundreds of thousands of objects,
+in each web request, only a limited number of results are returned for
+API performance reasons.</p>
+</div>
+<div class="paragraph">
+<p>When you get back the result for a collection you will see something
+similar to the following:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>{'count': 25, 'next': 'http://testserver/api/v2/some_resource?page=2', 'previous': None, 'results': [ ... ] }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To get the next page, simply request the page given by the 'next'
+sequential URL.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>page_size=XX</code> query string parameter to change the number of
+results returned for each request.</p>
+</div>
+<div class="paragraph">
+<p>The <code>page_size</code> has a default maximum limit configured to 200, which is
+enforced when a user tries a value beyond it, for example,
+<code>?page_size=1000</code>. However, you can change this limit by setting the
+value in <code>/etc/tower/conf.d/&lt;some file&gt;.py</code> to something higher, e.g.
+<code>MAX_PAGE_SIZE=1000</code>.</p>
+</div>
+<div class="paragraph">
+<p>Use the <code>page</code> query string parameter to retrieve a particular page of
+results.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>http://&lt;server name&gt;/api/v2/model_verbose_name?page_size=100&amp;page=2</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The previous and next links returned with the results will set these
+query string parameters automatically.</p>
+</div>
+<div class="paragraph">
+<p>The serializer is quite efficient, but you should probably not request
+page sizes beyond a couple of hundred.</p>
+</div>
+<div class="paragraph">
+<p>The user interface uses smaller values to avoid the user having to do a
+lot of scrolling.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_access_resources"><a class="anchor" href="#_access_resources"></a>8. Access Resources</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Traditionally, automation controller uses a primary key to access
+individual resource objects. Starting in 3.2 and API v2, the named URL
+feature allows you to access controller resources via resource-specific
+human-readable identifiers. In automation controller versions prior to
+3.2, the only way of accessing a resource object without auxiliary query
+string is via resource primary key number, for example, via URL path:
+<code>/api/v2/hosts/2/</code>. Now, you can use a named URL to do the same thing,
+for example, via URL path
+<code>/api/v2/hosts/host_nameinv_nameorg_name/</code>.</p>
+</div>
+<div class="sect2">
+<h3 id="_configuration_settings"><a class="anchor" href="#_configuration_settings"></a>8.1. Configuration Settings</h3>
+<div class="paragraph">
+<p>There are two named-URL-related configuration settings available under
+<code>/api/v2/settings/named-url/</code>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><code>NAMED_URL_FORMATS</code> and <code>NAMED_URL_GRAPH_NODES</code></p>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p><code>NAMED_URL_FORMATS</code> is a read only key-value pair list of all available
+named URL identifier formats. A typical <code>NAMED_URL_FORMATS</code> looks like
+this:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>"NAMED_URL_FORMATS": {
+    "organizations": "&lt;name&gt;",
+    "teams": "&lt;name&gt;++&lt;organization.name&gt;",
+    "credential_types": "&lt;name&gt;+&lt;kind&gt;",
+    "credentials": "&lt;name&gt;++&lt;credential_type.name&gt;+&lt;credential_type.kind&gt;++&lt;organization.name&gt;",
+    "notification_templates": "&lt;name&gt;++&lt;organization.name&gt;",
+    "job_templates": "&lt;name&gt;++&lt;organization.name&gt;",
+    "projects": "&lt;name&gt;++&lt;organization.name&gt;",
+    "inventories": "&lt;name&gt;++&lt;organization.name&gt;",
+    "hosts": "&lt;name&gt;++&lt;inventory.name&gt;++&lt;organization.name&gt;",
+    "groups": "&lt;name&gt;++&lt;inventory.name&gt;++&lt;organization.name&gt;",
+    "inventory_sources": "&lt;name&gt;++&lt;inventory.name&gt;++&lt;organization.name&gt;",
+    "inventory_scripts": "&lt;name&gt;++&lt;organization.name&gt;",
+    "instance_groups": "&lt;name&gt;",
+    "labels": "&lt;name&gt;++&lt;organization.name&gt;",
+    "workflow_job_templates": "&lt;name&gt;++&lt;organization.name&gt;",
+    "workflow_job_template_nodes": "&lt;identifier&gt;++&lt;workflow_job_template.name&gt;++&lt;organization.name&gt;",
+    "applications": "&lt;name&gt;++&lt;organization.name&gt;",
+    "users": "&lt;username&gt;",
+    "instances": "&lt;hostname&gt;"
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For each item in <code>NAMED_URL_FORMATS</code>, the key is the API name of the
+resource to have named URL, the value is a string indicating how to form
+a human-readable unique identifier for that resource.
+<code>NAMED_URL_FORMATS</code> exclusively lists every resource that can have named
+URL, any resource not listed there has no named URL. If a resource can
+have named URL, its objects should have a named_url field which
+represents the object-specific named URL. That field should only be
+visible under detail view, not list view. You can access specified
+resource objects using accurately generated named URL. This includes not
+only the object itself but also its related URLs. For example, if
+<code>/api/v2/res_name/obj_slug/</code> is valid,
+<code>/api/v2/res_name/obj_slug/related_res_name/</code> should also be valid.</p>
+</div>
+<div class="paragraph">
+<p><code>NAMED_URL_FORMATS</code> are instructive enough to compose human-readable
+unique identifier and named URL themselves. For ease-of-use, every
+object of a resource that can have named URL will have a related field
+<code>named_url</code> that displays that object&#8217;s named URL. You can copy and
+paste that field for your own custom use. Also refer to the help text of
+API browser if a resource object has named URL for further guidance.</p>
+</div>
+<div class="paragraph">
+<p>Suppose you want to manually determine the named URL for a label with ID
+5. A typical procedure of composing a named URL for this specific
+resource object using <code>NAMED_URL_FORMATS</code> is to first look up the labels
+field of <code>NAMED_URL_FORMATS</code> to get the identifier format
+<code>&lt;name&gt;++&lt;organization.name&gt;</code>:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p>The first part of the URL format is <code>&lt;name&gt;</code>, which indicates that the
+label resource detail can be found in <code>/api/v2/labels/5/</code>, and look for
+<code>name</code> field in returned JSON. Suppose you have the <code>name</code> field with
+value 'Foo', then the first part of the unique identifier is <strong>Foo</strong>.</p>
+</li>
+<li>
+<p>The second part of the format are double pluses . That is the
+delimiter that separates different parts of a unique identifier. Append
+them to the unique identifier to get *Foo*</p>
+</li>
+<li>
+<p>The third part of the format is <code>&lt;organization.name&gt;</code>, which indicates
+that field is not in the current label object under investigation, but
+in an organization which the label object points to. Thus, as the format
+indicates, look up the organization in the related field of current
+returned JSON. That field may or may not exist. If it exists, follow the
+URL given in that field, for example, <code>/api/v2/organizations/3/</code>, to get
+the detail of the specific organization, extract its <code>name</code> field, for
+example, 'Default', and append it to our current unique identifier.
+Since <code>&lt;organizations.name&gt;</code> is the last part of format, thus,
+generating the resulting named URL: <code>/api/v2/labels/FooDefault/`. In
+the case where organization does not exist in related field of the label
+object detail, append an empty string instead, which essentially does
+not alter the current identifier. So `Foo</code> becomes the final unique
+identifier and the resulting generated named URL becomes
+<code>/api/v2/labels/Foo++/</code>.</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="paragraph">
+<p>An important aspect of generating a unique identifier for named URL has
+to do with reserved characters. Because the identifier is part of a URL,
+the following reserved characters by URL standard is encoded by
+percentage symbols: <code>;/?:@=&amp;[]</code>. For example, if an organization is
+named <code>;/?:@=&amp;[]</code>, its unique identifier should be
+<code>%3B%2F%3F%3A%40%3D%26%5B%5D</code>. Another special reserved character is
+<code>+</code>, which is not reserved by URL standard but used by named URL to link
+different parts of an identifier. It is encoded by <code>[+]</code>. For example,
+if an organization is named <code>[+]</code>, its unique identifier is <code>%5B[+]%5D</code>,
+where original <code>[</code> and <code>]</code> are percent encoded and <code>+</code> is converted to
+<code>[+]</code>.</p>
+</div>
+<div class="paragraph">
+<p>Although <code>NAMED_URL_FORMATS</code> cannot be manually modified, modifications
+do occur automatically and expanded over time, reflecting underlying
+resource modification and expansion. Consult the <code>NAMED_URL_FORMATS</code> on
+the same cluster where you want to use the named URL feature.</p>
+</div>
+<div class="paragraph">
+<p><code>NAMED_URL_GRAPH_NODES</code> is another read-only list of key-value pairs
+that exposes the internal graph data structure used to manage named
+URLs. This is not intended to be human-readable but should be used for
+programmatically generating named URLs. An example script for generating
+named URL given the primary key of arbitrary resource objects that can
+have a named URL, using info provided by <code>NAMED_URL_GRAPH_NODES</code>, can be
+found in GitHub at
+<a href="https://github.com/ansible/awx/blob/devel/tools/scripts/pk_to_named_url.py" class="bare">https://github.com/ansible/awx/blob/devel/tools/scripts/pk_to_named_url.py</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_identifier_format_protocol"><a class="anchor" href="#_identifier_format_protocol"></a>8.2. Identifier Format Protocol</h3>
+<div class="paragraph">
+<p>Resources are identifiable by their unique keys, which are basically
+tuples of resource fields. Every resource is guaranteed to have its
+primary key number alone as a unique key, but there might be multiple
+other unique keys. A resource can generate an identifier format thus,
+have a named URL if it contains at least one unique key that satisfies
+the rules below:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The key must contain only fields that are either the <code>name</code> field, or
+text fields with a finite number of possible choices (like credential
+type resource&#8217;s <code>kind</code> field).</p>
+</li>
+<li>
+<p>The only allowed exceptional fields that breaks rule #1 is a
+many-to-one related field relating to a resource other than itself,
+which is also allowed to have a slug.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Suppose there are resources <code>Foo</code> and <code>Bar</code>, both <code>Foo</code> and <code>Bar</code>
+contain a <code>name</code> field and a <code>choice</code> field that can only have value
+'yes' or 'no'. Additionally, resource <code>Foo</code> contains a many-to-one field
+(a foreign key) relating to <code>Bar</code>, e.g. <code>fk</code>. <code>Foo</code> has a unique key
+tuple (<code>name</code>, <code>choice</code>, <code>fk</code>) and <code>Bar</code> has a unique key tuple (<code>name</code>,
+<code>choice</code>). <code>Bar</code> can have named URL because it satisfies rule #1 above.
+<code>Foo</code> can also have named URL, even though it breaks rule #1, the extra
+field breaking rule #1 is the <code>fk</code> field, which is many-to-one-related
+to <code>Bar</code> and <code>Bar</code> can have named URL.</p>
+</div>
+<div class="paragraph">
+<p>For resources satisfying rule #1 above, their human-readable unique
+identifiers are combinations of foreign key fields, delimited by <code>+</code>. In
+specific, resource <code>Bar</code> in the above example will have slug format
+<code>&lt;name&gt;+&lt;choice&gt;</code>. Note the field order matters in slug format: <code>name</code>
+field always comes first if present, following by all the rest fields
+arranged in lexicographic order of field name. For example, if Bar also
+has an <code>a_choice</code> field satisfying rule #1 and the unique key becomes
+(<code>name</code>, <code>choice</code>, <code>a_choice</code>), its slug format becomes
+<code>&lt;name&gt;+&lt;a_choice&gt;+&lt;choice&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>For resources satisfying rule #2 above, if traced back via the extra
+foreign key fields, the result is a tree of resources that all together
+identify objects of that resource. In order to generate identifier
+format, each resource in the traceback tree generates its own part of
+standalone format in the way previously described, using all fields but
+the foreign keys. Finally all parts are combined by <code>++</code> in the
+following order:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Put stand-alone format as the first identifier component.</p>
+</li>
+<li>
+<p>Recursively generate unique identifiers for each resource. The
+underlying resource is pointing to using a foreign key (a child of a
+traceback tree node).</p>
+</li>
+<li>
+<p>Treat generated unique identifiers as the rest of the identifier
+components. Sort them in lexicographic order of corresponding foreign
+keys.</p>
+</li>
+<li>
+<p>Combine all components together using <code>++</code> to generate the final
+identifier format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In reference to the example above, when generating an identifier format
+for resource <code>Foo</code>, the controller generates the stand-alone formats,
+<code>&lt;name&gt;+&lt;choice&gt;</code> for <code>Foo</code> and <code>&lt;fk.name&gt;+&lt;fk.choice&gt;</code> for <code>Bar</code>, then
+combine them together to be <code>&lt;name&gt;+&lt;choice&gt;++&lt;fk.name&gt;+&lt;fk.choice&gt;</code>.</p>
+</div>
+<div class="paragraph">
+<p>When generating identifiers according to the given identifier format,
+there are cases where a foreign key may point to nowhere. In this case,
+the controller substitutes the part of the format corresponding to the
+resource the foreign key should point to with an empty string ''. For
+example, if a <code>Foo</code> object has the name ='alice', choice ='yes', but
+<code>fk</code> field = None, its resulting identifier will be <code>alice+yes++</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_read_only_fields"><a class="anchor" href="#_read_only_fields"></a>9. Read-only Fields</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Certain fields in the REST API are marked read-only. These usually
+include the URL of a resource, the ID, and occasionally some internal
+fields. For instance, the <code>'created\_by'</code> attribute of each object
+indicates which user created the resource, and cannot be edited.</p>
+</div>
+<div class="paragraph">
+<p>If you post some values and notice that they are not changing, these
+fields may be read-only.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_authentication_methods_using_the_api"><a class="anchor" href="#_authentication_methods_using_the_api"></a>10. Authentication Methods Using the API</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes the numerous enterprise authentication methods,
+the best use case for each, and examples:</p>
+</div>
+<div class="paragraph">
+<p>Automation controller is designed for organizations to centralize and
+control their automation with a visual dashboard for out-of-the box
+control while providing a REST API to integrate with your other tooling
+on a deeper level. Automation controller supports a number of
+authentication methods to make it easy to embed the controller into
+existing tools and processes to help ensure the right people can access
+controller resources.</p>
+</div>
+<div class="sect2">
+<h3 id="api_session_auth"><a class="anchor" href="#api_session_auth"></a>10.1. Session Authentication</h3>
+<div class="paragraph">
+<p>Session authentication is used when logging in directly to automation
+controller’s API or UI to manually create resources (inventory, project,
+job template) and launch jobs in the browser. With this method, you can
+remain logged in for a prolonged period of time, not just for that HTTP
+request, but for instance, when browsing the UI or API in a browser like
+Chrome or Firefox. When a user logs in, a session cookie is created,
+which enables the user to remain logged in when navigating to different
+pages within the automation controller. Below represents the
+communication that occurs between the client and server in a session.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/session-auth-architecture.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Using the curl tool, you can see the activity that occurs when you log
+into the controller.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>GET to the <code>/api/login/</code> endpoint to grab the <code>csrftoken</code> cookie.</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -k -c - https://&lt;controller-host&gt;/api/login/
+
+localhost   FALSE   /   FALSE   0   csrftoken
+AswSFn5p1qQvaX4KoRZN6A5yer0Pq0VG2cXMTzZnzuhaY0L4tiidYqwf5PXZckuj</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>POST to the <code>/api/login/</code> endpoint with username, password, and
+X-CSRFToken=&lt;token-value&gt;.</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -X POST -H 'Content-Type: application/x-www-form-urlencoded' \
+--referer https://&lt;controller-host&gt;/api/login/ \
+-H 'X-CSRFToken: K580zVVm0rWX8pmNylz5ygTPamgUJxifrdJY0UDtMMoOis5Q1UOxRmV9918BUBIN' \
+--data 'username=root&amp;password=reverse' \
+--cookie 'csrftoken=K580zVVm0rWX8pmNylz5ygTPamgUJxifrdJY0UDtMMoOis5Q1UOxRmV9918BUBIN' \
+https://&lt;controller-host&gt;/api/login/ -k -D - -o /dev/null</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>All of this is done by the automation controller when you log in to the
+UI or API in the browser, and should only be used when authenticating in
+the browser. For programmatic integration with automation controller,
+see <code>api_oauth2_auth</code>.</p>
+</div>
+<div class="paragraph">
+<p>A typical response might look like:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>Server: nginx
+Date: &lt;current date&gt;
+Content-Type: text/html; charset=utf-8
+Content-Length: 0
+Connection: keep-alive
+Location: /accounts/profile/
+X-API-Session-Cookie-Name: awx_sessionid
+Expires: &lt;date&gt;
+Cache-Control: max-age=0, no-cache, no-store, must-revalidate, private
+Vary: Cookie, Accept-Language, Origin
+Session-Timeout: 1800
+Content-Language: en
+X-API-Total-Time: 0.377s
+X-API-Request-Id: 700826696425433fb0c8807cd40c00a0
+Access-Control-Expose-Headers: X-API-Request-Id
+Set-Cookie: userLoggedIn=true; Path=/
+Set-Cookie: current_user=&lt;user cookie data&gt;; Path=/
+Set-Cookie: csrftoken=&lt;csrftoken&gt;; Path=/; SameSite=Lax
+Set-Cookie: awx_sessionid=&lt;your session id&gt;; expires=&lt;date&gt;; HttpOnly; Max-Age=1800; Path=/; SameSite=Lax
+Strict-Transport-Security: max-age=15768000</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a user is successfully authenticated with this method, the server
+will respond with a header called <code>X-API-Session-Cookie-Name</code>,
+indicating the configured name of the session cookie. The default value
+is <code>awx_session_id</code> which you can see later in the <code>Set-Cookie</code> headers.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The session expiration time can be changed by specifying it in the
+<code>SESSION_COOKIE_AGE</code> parameter. Refer to <code>ag_session_limits</code> for further
+detail.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_basic_authentication"><a class="anchor" href="#_basic_authentication"></a>10.2. Basic Authentication</h3>
+<div class="paragraph">
+<p>Basic Authentication (Basic Auth) is stateless, thus the base64-encoded
+<code>username</code> and <code>password</code> must be sent along with each request via the
+Authorization header. This can be used for API calls from curl requests,
+python scripts, or individual requests to the API. <code>api_oauth2_auth</code> is
+recommended for accessing the API when at all possible.</p>
+</div>
+<div class="paragraph">
+<p>Example with curl:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -X GET -H 'Authorization: Basic dXNlcjpwYXNzd29yZA==’ https://&lt;controller-host&gt;/api/v2/credentials -k -L
+
+# the --user flag adds this Authorization header for us
+curl -X GET --user 'user:password' https://&lt;controller-host&gt;/api/v2/credentials -k -L</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For more information about the Basic HTTP Authentication scheme, see
+<a href="https://datatracker.ietf.org/doc/html/rfc7617">RFC 7617</a>.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>You can disable the Basic Auth for security purposes from the
+Miscellaneous Authentication settings of the controller UI Settings
+menu:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/configure-tower-auth-basic-off.png" alt="image"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="api_oauth2_auth"><a class="anchor" href="#api_oauth2_auth"></a>10.3. OAuth 2 Token Authentication</h3>
+<div class="paragraph">
+<p>OAuth (Open Authorization) is an open standard for token-based
+authentication and authorization. OAuth 2 authentication is commonly
+used when interacting with the controller API programmatically. Like
+Basic Auth, an OAuth 2 token is supplied with each API request via the
+Authorization header. Unlike Basic Auth, OAuth 2 tokens have a
+configurable timeout and are scopable. Tokens have a configurable
+expiration time and can be easily revoked for one user or for the entire
+automation controller system by an admin if needed. This can be done
+with the <code>ag_manage_utility_revoke_tokens</code> management command, which is
+covered in more detail in Automation Controller Administration Guide or
+by using the API as explained in <code>ag_oauth2_token_revoke</code>.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>By default, external users such as those created by SSO are not allowed
+to generate OAuth tokens for security purposes. This can be changed from
+the Miscellaneous Authentication settings of the controller UI Settings
+menu:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/configure-tower-external-tokens-off.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The different methods for obtaining OAuth 2 Access Tokens in automation
+controller are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Personal access tokens (PAT)</p>
+</li>
+<li>
+<p>Application Token: Password grant type</p>
+</li>
+<li>
+<p>Application Token: Implicit grant type</p>
+</li>
+<li>
+<p>Application Token: Authorization Code grant type</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For more information on the above methods, see <code>ag_oauth2_token_auth</code> in
+the Automation Controller Administration Guide.</p>
+</div>
+<div class="paragraph">
+<p>First, a user needs to create an OAuth 2 Access Token in the API or in
+their User’s <strong>Tokens</strong> tab in the UI. For further detail on creating them
+through the UI, see <code>ug_users_tokens</code>. For the purposes of this example,
+use the PAT method for creating a token in the API. Upon token creation,
+the user can set the scope.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The expiration time of the token can be configured system-wide. See
+<code>ag_use_oauth_pat</code> for more detail.</p>
+</div>
+<div class="paragraph">
+<p>Token authentication is best used for any programmatic use of the
+automation controller API, such as Python scripts or tools like curl, as
+in the example for creating a PAT (without an associated application)
+below.</p>
+</div>
+<div class="paragraph">
+<p><strong>Curl Example</strong></p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -u user:password -k -X POST https://&lt;controller-host&gt;/api/v2/tokens/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This call will return JSON data like:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/api_oauth2_json_returned_token_value.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The value of the <code>token</code> property is what you can now use to perform a
+GET request for an automation controller resource, e.g., Hosts.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -k -X POST \
+  -H “Content-Type: application/json”
+  -H “Authorization: Bearer &lt;oauth2-token-value&gt;” \
+  https://&lt;controller-host&gt;/api/v2/hosts/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Similarly, you can launch a job by making a POST to the job template
+that you want to launch.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>curl -k -X POST \
+  -H "Authorization: Bearer &lt;oauth2-token-value&gt;" \
+  -H "Content-Type: application/json" \
+  --data '{"limit" : "ansible"}' \
+  https://&lt;controller-host&gt;/api/v2/job_templates/14/launch/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Python Example</strong></p>
+</div>
+<div class="paragraph">
+<p><a href="https://pypi.org/project/awxkit/">awxkit</a> is an open source tool that
+makes it easy to use HTTP requests to access the automation controller
+API. You can have awxkit acquire a PAT on your behalf by using the
+<code>awxkit login</code> command. Refer to the
+<a href="https://docs.ansible.com/automation-controller/latest/html/controllercli/index.html">AWX
+Command Line Interface</a> for more detail.</p>
+</div>
+<div class="paragraph">
+<p>For more information on how to use OAuth 2 in the automation controller
+in the context of integrating external applications, see
+<code>ag_oauth2_token_auth</code> in the Automation Controller Administration
+Guide.</p>
+</div>
+<div class="paragraph">
+<p>If you need to write custom requests, you can write a Python script
+using <a href="https://pypi.org/project/requests/">Python library requests</a>, like
+in this example:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>import requests
+oauth2_token_value = 'y1Q8ye4hPvT61aQq63Da6N1C25jiA'   # your token value from controller
+url = 'https://&lt;controller-host&gt;/api/v2/users/'
+payload = {}
+headers = {'Authorization': 'Bearer ' + oauth2_token_value,}
+
+# makes request to controller user endpoint
+response = requests.request('GET', url, headers=headers, data=payload,
+allow_redirects=False, verify=False)
+
+# prints json returned from controller with formatting
+print(json.dumps(response.json(), indent=4, sort_keys=True))</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="api_sso_auth"><a class="anchor" href="#api_sso_auth"></a>10.4. SSO Authentication</h3>
+<div class="paragraph">
+<p>Single sign-on (SSO) authentication methods are fundamentally different
+from other methods because the authentication of the user happens
+external to the automation controller, like Google SSO, Azure SSO, SAML,
+or GitHub. For example, with GitHub SSO, GitHub is the single source of
+truth, which verifies your identity based on the username and password
+you gave the controller.</p>
+</div>
+<div class="paragraph">
+<p>You can configure SSO authentication using the automation controller
+inside a large organization with a central Identity Provider. Once you
+have configured an SSO method in the controller, a button for that SSO
+will be present on the login screen. If you click that button, it will
+redirect you to the Identity Provider, in this case GitHub, where you
+will present your credentials. If the Identity Provider verifies you
+successfully, then the controller will make a user linked to your GitHub
+user (if this is your first time logging in via this SSO method), and
+log you in.</p>
+</div>
+<div class="paragraph">
+<p>For the various types of supported SSO authentication methods, see
+<code>ag_social_auth</code> and <code>ag_ent_auth</code> in the Automation Controller
+Administration Guide.</p>
+</div>
+</div>
+</div>
+</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 11:37:05 UTC
+Last updated 2022-09-28 12:47:45 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
