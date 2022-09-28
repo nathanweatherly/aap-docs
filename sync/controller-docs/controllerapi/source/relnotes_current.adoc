@@ -1,0 +1,68 @@
+*Automation Controller fixes:*
+
+* Node alias is now saved when job template is changed in the workflow
+* Improved error messages in the API `job_explanation` field for
+specific error scenarios, (e.g., runner worker process is killed), or
+certain failure scenarios (e.g., shutdown)
+* Fixed the Task Manager to fully account for the job's control process
+capacity for jobs running in container groups
+* Fixed a few bugs that caused delays in task processing by adding the
+following file-based settings:::
+  ** `JOB_WAITING_GRACE_PERIOD` increases the threshold for marking jobs
+  stuck in the "waiting" status as failed
+  ** `CLUSTER_NODE_MISSED_HEARTBEAT_TOLERANCE` to allow the heartbeat to
+  be more tolerant to clock skew and other problems
+  ** `K8S_POD_REAPER_GRACE_PERIOD` to allow more time before pod cleanup
+  executes its last attempt to delete pods used by jobs
+  ** `TASK_MANAGER_TIMEOUT` to allow more time in the unlikely event
+  that the Task Manager fails to finish normally
+* Jobs no longer fail for nested submodules in an SCM (git) project and
+the `.git` folder will be omitted
+* Added more logs to help debug database connectivity problems and
+cluster resource limits
+* Removed the `current_user` cookie which was not used by the UI
+* Updated controller to send FQCN data for tasks to analytics
+* Fixed the metrics endpoint (`/api/v2/metrics`) to no longer produce
+erroneous `500` errors
+* Added `remove_superuser` and `remove_system_auditors` to the SAML user
+attribute map
+* Added the ability to allow multiple values in the
+`SOCIAL_AUTH_SAML_USER_FLAGS_BY_ATTR.is_*_[value|role]` settings
+* Unwanted Galaxy credentials are no longer added to the Organization
+while logging in through SAML
+* awx-cli now allows for multiple `--extra_vars` parameters
+* Receptor no longer fails in FIPS mode
+* If an OCP node's record is deleted (either by the `awx-manage` command
+or by the heartbeat task), it will re-register itself
+* Upgrading and changing `node_type` from `execution` to `control` or
+`hybrid` no longer causes cleanup errors
+
+*Execution Environment fixes*:
+
+None for this release
+
+*Automation Controller UI fixes*:
+
+* The controller UI properly displays job output when `strategy: free`
+is set in the playbook
+* Fixed the pagination displays within the main lists, i.e., Resources
+(Job Templates, Projects, Inventory), Access (Organization, Users,
+Teams, Notifications), and Administration (Instance Groups, Execution
+Environments)
+* Fixed the Job Output to properly follow and scroll; and improved the
+Page Up/Page Down button behavior
+* Fixed the controller UI to now be able to filter by multiple labels
+* Large workflow templates no longer cause browsers to crash when
+linking nodes near the end of the template
+* Fixed the approval node "Deny" to no longer run the subsequent
+workflow nodes
+* Forks information no longer missing in running job details
+* Upon saving a schedule, the date chooser no longer changes to the day
+before the selected date
+* References to Ansible Tower are replaced with Automation Controller
+throughout the UI, including tooltips where documentation is referenced
+* Corrected translations for the Japanese Subscription settings screen
+
+*Installation fixes specific to Automation Controller*:
+
+None for this release
