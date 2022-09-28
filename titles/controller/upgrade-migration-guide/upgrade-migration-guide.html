@@ -437,22 +437,585 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="article">
 <div id="header">
 <h1>Controller upgrade and migration</h1>
 </div>
 <div id="content">
-<div id="preamble">
-<div class="sectionbody">
 <div class="paragraph">
 <p>Upgrade and migrate Ansible Automation Platform Controller deployments.</p>
+</div>
+<div class="paragraph">
+<p>Release Notes for Automation Controller Version 4.2.1</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Automation Controller fixes:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Node alias is now saved when job template is changed in the workflow</p>
+</li>
+<li>
+<p>Improved error messages in the API <code>job_explanation</code> field for
+specific error scenarios, (e.g., runner worker process is killed), or
+certain failure scenarios (e.g., shutdown)</p>
+</li>
+<li>
+<p>Fixed the Task Manager to fully account for the job&#8217;s control process
+capacity for jobs running in container groups</p>
+</li>
+<li>
+<p>Fixed a few bugs that caused delays in task processing by adding the</p>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">following file-based settings</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p><code>JOB_WAITING_GRACE_PERIOD</code> increases the threshold for marking jobs
+stuck in the "waiting" status as failed</p>
+</li>
+<li>
+<p><code>CLUSTER_NODE_MISSED_HEARTBEAT_TOLERANCE</code> to allow the heartbeat to
+be more tolerant to clock skew and other problems</p>
+</li>
+<li>
+<p><code>K8S_POD_REAPER_GRACE_PERIOD</code> to allow more time before pod cleanup
+executes its last attempt to delete pods used by jobs</p>
+</li>
+<li>
+<p><code>TASK_MANAGER_TIMEOUT</code> to allow more time in the unlikely event
+that the Task Manager fails to finish normally</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</li>
+<li>
+<p>Jobs no longer fail for nested submodules in an SCM (git) project and
+the <code>.git</code> folder will be omitted</p>
+</li>
+<li>
+<p>Added more logs to help debug database connectivity problems and
+cluster resource limits</p>
+</li>
+<li>
+<p>Removed the <code>current_user</code> cookie which was not used by the UI</p>
+</li>
+<li>
+<p>Updated controller to send FQCN data for tasks to analytics</p>
+</li>
+<li>
+<p>Fixed the metrics endpoint (<code>/api/v2/metrics</code>) to no longer produce
+erroneous <code>500</code> errors</p>
+</li>
+<li>
+<p>Added <code>remove_superuser</code> and <code>remove_system_auditors</code> to the SAML user
+attribute map</p>
+</li>
+<li>
+<p>Added the ability to allow multiple values in the
+<code>SOCIAL_AUTH_SAML_USER_FLAGS_BY_ATTR.is_*_[value|role]</code> settings</p>
+</li>
+<li>
+<p>Unwanted Galaxy credentials are no longer added to the Organization
+while logging in through SAML</p>
+</li>
+<li>
+<p>awx-cli now allows for multiple <code>--extra_vars</code> parameters</p>
+</li>
+<li>
+<p>Receptor no longer fails in FIPS mode</p>
+</li>
+<li>
+<p>If an OCP node&#8217;s record is deleted (either by the <code>awx-manage</code> command
+or by the heartbeat task), it will re-register itself</p>
+</li>
+<li>
+<p>Upgrading and changing <code>node_type</code> from <code>execution</code> to <code>control</code> or
+<code>hybrid</code> no longer causes cleanup errors</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Execution Environment fixes</strong>:</p>
+</div>
+<div class="paragraph">
+<p>None for this release</p>
+</div>
+<div class="paragraph">
+<p><strong>Automation Controller UI fixes</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The controller UI properly displays job output when <code>strategy: free</code>
+is set in the playbook</p>
+</li>
+<li>
+<p>Fixed the pagination displays within the main lists, i.e., Resources
+(Job Templates, Projects, Inventory), Access (Organization, Users,
+Teams, Notifications), and Administration (Instance Groups, Execution
+Environments)</p>
+</li>
+<li>
+<p>Fixed the Job Output to properly follow and scroll; and improved the
+Page Up/Page Down button behavior</p>
+</li>
+<li>
+<p>Fixed the controller UI to now be able to filter by multiple labels</p>
+</li>
+<li>
+<p>Large workflow templates no longer cause browsers to crash when
+linking nodes near the end of the template</p>
+</li>
+<li>
+<p>Fixed the approval node "Deny" to no longer run the subsequent
+workflow nodes</p>
+</li>
+<li>
+<p>Forks information no longer missing in running job details</p>
+</li>
+<li>
+<p>Upon saving a schedule, the date chooser no longer changes to the day
+before the selected date</p>
+</li>
+<li>
+<p>References to Ansible Tower are replaced with Automation Controller
+throughout the UI, including tooltips where documentation is referenced</p>
+</li>
+<li>
+<p>Corrected translations for the Japanese Subscription settings screen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Installation fixes specific to Automation Controller</strong>:</p>
+</div>
+<div class="paragraph">
+<p>None for this release</p>
+</div>
+<div class="paragraph">
+<p>== Upgrading to Ansible Automation Platform</p>
+</div>
+<div class="paragraph">
+<p>Automation Hub acts as a content provider for automation controller,
+which requires both an automation controller deployment and an
+Automation Hub deployment running alongside each other. The Ansible
+Automation Platform installer contains both of these. This section
+covers each component of the upgrading process:</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>All upgrades should be no more than two major versions behind what you
+are currently upgrading to. For example, in order to upgrade to
+automation controller 4.0, you must first be on version 3.8.x; i.e.,
+there is no direct upgrade path from version 3.7.x or earlier. Refer to
+the <a href="https://access.redhat.com/articles/4098921">recommended upgrade path
+article</a> on the Red Hat customer portal.</p>
+</div>
+<div class="paragraph">
+<p>In order to run automation controller 4.0, you must also have Ansible
+2.10.</p>
+</div>
+<div id="upgrade_planning" class="paragraph">
+<p>=== Upgrade Planning</p>
+</div>
+<div class="paragraph">
+<p>This section covers changes that you should keep in mind as you attempt
+to upgrade your automation controller instance.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Even if you already have a valid license from a previous version, you
+must still provide your credentials or a subscriptions manifest again
+upon upgrading to the latest automation controller. See
+<code>import_subscription</code> in the Automation Controller User Guide.</p>
+</li>
+<li>
+<p>If you need to upgrade Red Hat Enterprise Linux and automation
+controller, you will need to do a backup and restore of your controller
+data (from the automation controller). Refer to <code>ag_backup_restore</code> in
+the Automation Controller Administration Guide for further detail.</p>
+</li>
+<li>
+<p>Clustered upgrades require special attention to instance and instance
+groups prior to starting the upgrade. See
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/single-machine-scenario#editing_the_red_hat_ansible_automation_platform_installer_inventory_file">Editing
+the Red Hat Ansible Automation Platform installer inventory file</a> and
+<code>ag_clustering</code> for details.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>=== Obtaining the Installer</p>
+</div>
+<div class="paragraph">
+<p>Refer to
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html-single/red_hat_ansible_automation_platform_installation_guide/index#choosing_and_obtaining_a_red_hat_ansible_automation_platform_installer">Choosing
+and obtaining a Red Hat Ansible Automation Platform installer</a> on the
+<a href="https://access.redhat.com/">Red Hat Customer Portal</a> for detail. Be sure
+to use your Red Hat customer login to access the full content.</p>
+</div>
+<div class="paragraph">
+<p>=== Setting up the Inventory File</p>
+</div>
+<div class="paragraph">
+<p>See
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/single-machine-scenario#editing_the_red_hat_ansible_automation_platform_installer_inventory_file">Editing
+the Red Hat Ansible Automation Platform installer inventory file</a> for
+information.</p>
+</div>
+<div class="paragraph">
+<p>=== Running the Setup Playbook</p>
+</div>
+<div class="paragraph">
+<p>The Tower setup playbook script uses the <code>inventory</code> file and is invoked
+as <code>./setup.sh</code> from the path where you unpacked the Tower installer
+tarball.</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>root@localhost:~$ ./setup.sh</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The setup script takes the following arguments:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>-h</code>&#8201;&#8212;&#8201;Show this help message and exit</p>
+</li>
+<li>
+<p><code>-i INVENTORY_FILE</code>&#8201;&#8212;&#8201;Path to Ansible inventory file (default:
+<code>inventory</code>)</p>
+</li>
+<li>
+<p><code>-e EXTRA_VARS</code>&#8201;&#8212;&#8201;Set additional Ansible variables as key=value or
+YAML/JSON (i.e. <code>-e bundle_install=false</code> forces an online installation)</p>
+</li>
+<li>
+<p><code>-b</code>&#8201;&#8212;&#8201;Perform a database backup in lieu of installing</p>
+</li>
+<li>
+<p><code>-r</code>&#8201;&#8212;&#8201;Perform a database restore in lieu of installing (a default
+restore path is used unless EXTRA_VARS are provided with a non-default
+path, as shown in the code example below)</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>./setup.sh -e 'restore_backup_file=/path/to/nondefault/location' -r</pre>
+</div>
+</div>
+<div id="upgrade_venv" class="paragraph">
+<p>== Upgrading to Execution Environments</p>
+</div>
+<div class="paragraph">
+<p>If upgrading from older versions of automation controller to 4.0 or
+later, the controller has the ability to detect previous versions of
+virtual environments associated with Organizations, Inventory, and Job
+Templates; and inform you that you will need to migrate to the new
+execution environment model. A brand new installation of automation
+controller creates two virtualenvs during installation&#8212;&#8203;one is used to
+run the controller itself, while the other is used to run Ansible. Like
+legacy virtual environments, execution environments allow the controller
+to run in a stable environment, while allowing you to add or update
+modules to your execution environment as necessary to run your
+playbooks. For more information, see <code>ug_execution_environments</code> in the
+Automation Controller User Guide.</p>
+</div>
+<div class="paragraph">
+<p>Important</p>
+</div>
+<div class="paragraph">
+<p>When upgrading, it is highly recommended to always rebuild on top of the
+base execution environment that corresponds to the platform version you
+are using. See <code>ug_build_ees</code> for more information.</p>
+</div>
+<div id="migrate_new_venv" class="paragraph">
+<p>=== Migrate legacy venvs to execution environments</p>
+</div>
+<div class="paragraph">
+<p>You can have the exact same setup in an execution environment that you
+had in a prior custom virtual environment by migrating them to the new
+execution environment. Use the <code>awx-manage</code> commands in this section to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>list of all the current custom virtual environments and their paths
+(<code>list_custom_venvs</code>)</p>
+</li>
+<li>
+<p>view the resources that rely a particular custom virtual environment
+(<code>custom_venv_associations</code>)</p>
+</li>
+<li>
+<p>export a particular custom virtual environment to a format that can be
+used to migrate to an execution environment (<code>export_custom_venv</code>)</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Before you migrate, it is recommended that you view all the custom
+virtual environments you currently have running by using the
+<code>awx-manage list</code> command:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ awx-manage list_custom_venvs</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below is an example output when running this command:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/venv-awx-manage-list-custom-venvs.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The above output shows three custom virtual environments and their
+paths. If you have a custom virtual environment that is not located
+within the default <code>/var/lib/awx/venv/</code> directory path, it will not be
+included here.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>Use the <code>_associations</code> command to view what organizations, jobs, and
+inventory sources a custom virtual environment is associated with in
+order to determine which resources rely on them:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ awx-manage custom_venv_associations /this/is/the/path/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Below is an example output when running this command:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/venv-awx-manage-custom-venv-associations.png" alt="image"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Select a path for the virtual environment that you want to migrate and
+specify it in the <code>awx-manage export</code> command:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>$ awx-manage export_custom_venv /this/is/the/path/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The resulting output is essentially the results of executing a
+<code>pip freeze</code> command. The example shows the contents of the selected
+custom virtual environment:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/venv-awx-manage-export-custom-venvs.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>All of these commands can be run with a <code>-q</code> option, which removes the
+instructional content provided on each output.</p>
+</div>
+<div class="paragraph">
+<p>Now that you have the output from this <code>pip freeze</code> data, you can paste
+it into a definition file that can be used to spin up your new execution
+environment using ansible-builder. Anyone (both normal users and admins)
+can use ansible-builder to create an execution environment. See
+<code>ug_build_ees</code> in the Automation Controller User Guide for further
+detail.</p>
+</div>
+<div id="migrate_iso_to_exe" class="paragraph">
+<p>=== Migrate isolated instances to execution nodes</p>
+</div>
+<div class="paragraph">
+<p>The move from isolated instance groups to execution nodes enables
+inbound or outbound connections. Contrast this with versions 3.8 and
+older where only outbound connections were allowed from controller nodes
+to isolated nodes.</p>
+</div>
+<div class="paragraph">
+<p>Migrating legacy isolated instance groups to execution nodes in order to
+function properly in the automation controller mesh architecture in 4.1,
+is a preflight function of the installer that essentially creates an
+inventory file based on your old file. Even though both .ini and .yml
+files are still accepted formats, the generated file output is only an
+.ini file at this time.</p>
+</div>
+<div class="paragraph">
+<p>The preflight check leverages Ansible; and Ansible flattens the concept
+of children, this means that not every single inventory file can be
+replicated exactly, but it is very close. It will be functionally the
+same to Ansible, but may look different to you. The automated preflight
+processing does its best to create child relationships based on
+heuristics, but be aware that the tool lacks the nuance and judgment
+that human users have. Therefore, once the file is created, do <strong>NOT</strong> use
+it as-is. Check the file over and use it as a template to ensure that
+they work well for both you and the Ansible engine.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example of a before and after preflight check, demonstrating
+how Ansible flattens an inventory file and how the installer
+reconstructs a new inventory file. To Ansible, both of these files are
+essentially the same.</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Old style (from Ansible docs)</th>
+<th class="tableblock halign-left valign-top">New style (generated by installer)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[tower]
+localhost ansible_connection=local
+[database]
+[all:vars]
+admin_password='******'
+pg_host=''
+pg_port=''
+pg_database='awx'
+pg_username='awx'
+pg_password='******'
+rabbitmq_port=5672
+rabbitmq_vhost=tower
+rabbitmq_username=tower
+rabbitmq_password='******'
+rabbitmq_cookie=cookiemonster
+# Needs to be true for fqdns and ip addresses
+rabbitmq_use_long_name=false
+
+[isolated_group_restrictedzone]
+isolated-node.c.towertest-188910.internal
+
+[isolated_group_restrictedzone:vars]
+controller=tower</pre>
+</div>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>:</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>[all:vars]
+admin_password='******'
+pg_host=''
+pg_port=''
+pg_database='awx'
+pg_username='awx'
+pg_password='******'
+rabbitmq_port=5672
+rabbitmq_vhost='tower'
+rabbitmq_username='tower'
+rabbitmq_password='******'
+rabbitmq_cookie='cookiemonster'
+rabbitmq_use_long_name='false'
+# In AAP 2.X [tower] has been renamed to [automationcontroller]
+# Nodes in [automationcontroller] will be hybrid by default, capable of executing user jobs.
+# To specify that any of these nodes should be control-only instead, give them a host var of `node_type=control`
+[automationcontroller]
+localhost
+[automationcontroller:vars]
+# in AAP 2.X the controller variable has been replaced with `peers`
+# which allows finer grained control over node communication.
+# `peers` can be set on individual hosts, to a combination of multiple groups and hosts.
+peers='instance_group_restrictedzone'
+ansible_connection='local'
+# in AAP 2.X isolated groups are no longer a special type, and should be renamed to be instance groups
+[instance_group_restrictedzone]
+isolated-node.c.towertest-188910.internal
+[instance_group_restrictedzone:vars]
+# in AAP 2.X Isolated Nodes are converted into Execution Nodes using node_state=iso_migrate
+node_state='iso_migrate'
+# In AAP 2.X Execution Nodes have replaced isolated nodes. All of these nodes will be by default
+# `node_type=execution`. You can specify new nodes that cannot execute jobs and are intermediaries
+# between your control and execution nodes by adding them to [execution_nodes] and setting a host var
+# `node_type=hop` on them.
+[execution_nodes]
+[execution_nodes:children]
+instance_group_restrictedzone</pre>
+</div>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div id="mesh_topology_ee" class="paragraph">
+<p>=== View mesh topology</p>
+</div>
+<div class="paragraph">
+<p>If you configured a <code>mesh</code> topology, the installer can graphically
+validate your mesh configuration through a generated graph rendering
+tool. The graph is generated by reading the contents of the inventory
+file. See the
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.1/html/red_hat_ansible_automation_platform_automation_mesh_guide/index">Red
+Hat Ansible Automation Platform automation mesh guide</a> for further
+detail.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/mesh-topology-rendering.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Any given inventory file must include some sort of execution capacity
+that is governed by at least one control <code>node</code>. That is, it is
+unacceptable to produce an inventory file that only
+contains control-only nodes, execution-only nodes or hop-only nodes.
+There is a tightly coupled relationship
+between control and execution nodes that must be respected at all times.
+The installer will fail if the inventory files aren&#8217;t properly defined.
+The only exception to this rule would be a single hybrid node, as it
+will satisfy the control and execution constraints.</p>
+</div>
+<div class="paragraph">
+<p>In order to run jobs on an execution node, either the installer needs to
+pre-register the node, or user needs to make a PATCH request
+to <code>/api/v2/instances/N/</code> to change the enabled field to true.</p>
+</div>
+<div class="paragraph">
+<p>If you have already deployed a mesh topology and want to view node type,
+node health, and specific details about each node, see
+<code>ag_topology_viewer</code> in the Automation Controller Administration Guide.</p>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 11:37:45 UTC
+Last updated 2022-09-28 13:48:37 +0100
 </div>
 </div>
 <script type="text/x-mathjax-config">
