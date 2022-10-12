@@ -6,3 +6,30 @@ This repository contains technical content synchronized from various repositorie
 You can find the rest of the AAP doc set at:
 
 https://github.com/RedHatInsights/red-hat-ansible-automation-platform-documentation
+
+== Viewing draft documentation
+
+Draft documentation is available at:
+
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/administration/administration.html[Controller Administration Guide]
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/controllerapi/controllerapi.html[Controller API]
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/quickstart/quickstart.html[Controller Quickstart]
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/release-notes/release-notes.html[Controller Release Notes]
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/upgrade-migration-guide/upgrade-migration-guide.html[Controller Upgrade and Migration]
+* link:https://htmlpreview.github.io/?https://github.com/ansible/aap-docs/blob/aap-2.3/titles/controller/userguide/userguide.html[Controller User Guide]
+
+[NOTE]
+====
+Draft documentation does not include images.
+You can link:https://github.com/ansible/aap-docs/tree/aap-2.3/sync/controller-docs/common/source/images/[view images directly in the repository] or clone the repository and open the HTML preview in your browser.
+====
+
+== Cloning and previewing
+
+For local previews that include images you can do the following:
+
+[source,bash]
+----
+$ git clone -b aap-2.3 git@github.com:ansible/aap-docs.git
+$ firefox aap-docs/titles/controller/administration/administration.html
+----
