@@ -437,9 +437,29 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body class="book">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>Controller upgrade and migration</h1>
+<div id="toc" class="toc2">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#_upgrading_to_ansible_automation_platform">1. Upgrading to Ansible Automation Platform</a>
+<ul class="sectlevel2">
+<li><a href="#upgrade_planning">1.1. Upgrade Planning</a></li>
+<li><a href="#_obtaining_the_installer">1.2. Obtaining the Installer</a></li>
+<li><a href="#_setting_up_the_inventory_file">1.3. Setting up the Inventory File</a></li>
+<li><a href="#_running_the_setup_playbook">1.4. Running the Setup Playbook</a></li>
+</ul>
+</li>
+<li><a href="#upgrade_venv">2. Upgrading to Execution Environments</a>
+<ul class="sectlevel2">
+<li><a href="#migrate_new_venv">2.1. Migrate legacy venvs to execution environments</a></li>
+<li><a href="#migrate_iso_to_exe">2.2. Migrate isolated instances to execution nodes</a></li>
+<li><a href="#mesh_topology_ee">2.3. View mesh topology</a></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div id="content">
 <div id="preamble">
@@ -447,29 +467,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="paragraph">
 <p>Upgrade and migrate Ansible Automation Platform Controller deployments.</p>
 </div>
-<div class="paragraph">
-<p>Release Notes for Automation Controller Version 4.3.0</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>Introduced</strong></p>
 </div>
-<div class="paragraph">
-<p><strong>Added</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Updated</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Deprecated</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>Removed</strong></p>
-</div>
-<div class="paragraph">
-<p>== Upgrading to Ansible Automation Platform</p>
-</div>
+<div class="sect1">
+<h2 id="_upgrading_to_ansible_automation_platform"><a class="anchor" href="#_upgrading_to_ansible_automation_platform"></a>1. Upgrading to Ansible Automation Platform</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Automation Hub acts as a content provider for automation controller,
 which requires both an automation controller deployment and an
@@ -492,9 +494,8 @@ article</a> on the Red Hat customer portal.</p>
 <p>In order to run automation controller 4.0, you must also have Ansible
 2.10.</p>
 </div>
-<div id="upgrade_planning" class="paragraph">
-<p>=== Upgrade Planning</p>
-</div>
+<div class="sect2">
+<h3 id="upgrade_planning"><a class="anchor" href="#upgrade_planning"></a>1.1. Upgrade Planning</h3>
 <div class="paragraph">
 <p>This section covers changes that you should keep in mind as you attempt
 to upgrade your automation controller instance.</p>
@@ -522,9 +523,9 @@ the Red Hat Ansible Automation Platform installer inventory file</a> and
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>=== Obtaining the Installer</p>
 </div>
+<div class="sect2">
+<h3 id="_obtaining_the_installer"><a class="anchor" href="#_obtaining_the_installer"></a>1.2. Obtaining the Installer</h3>
 <div class="paragraph">
 <p>Refer to
 <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html-single/red_hat_ansible_automation_platform_installation_guide/index#choosing_and_obtaining_a_red_hat_ansible_automation_platform_installer">Choosing
@@ -532,18 +533,18 @@ and obtaining a Red Hat Ansible Automation Platform installer</a> on the
 <a href="https://access.redhat.com/">Red Hat Customer Portal</a> for detail. Be sure
 to use your Red Hat customer login to access the full content.</p>
 </div>
-<div class="paragraph">
-<p>=== Setting up the Inventory File</p>
 </div>
+<div class="sect2">
+<h3 id="_setting_up_the_inventory_file"><a class="anchor" href="#_setting_up_the_inventory_file"></a>1.3. Setting up the Inventory File</h3>
 <div class="paragraph">
 <p>See
 <a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/single-machine-scenario#editing_the_red_hat_ansible_automation_platform_installer_inventory_file">Editing
 the Red Hat Ansible Automation Platform installer inventory file</a> for
 information.</p>
 </div>
-<div class="paragraph">
-<p>=== Running the Setup Playbook</p>
 </div>
+<div class="sect2">
+<h3 id="_running_the_setup_playbook"><a class="anchor" href="#_running_the_setup_playbook"></a>1.4. Running the Setup Playbook</h3>
 <div class="paragraph">
 <p>The Tower setup playbook script uses the <code>inventory</code> file and is invoked
 as <code>./setup.sh</code> from the path where you unpacked the Tower installer
@@ -585,9 +586,12 @@ path, as shown in the code example below)</p>
 <pre>./setup.sh -e 'restore_backup_file=/path/to/nondefault/location' -r</pre>
 </div>
 </div>
-<div id="upgrade_venv" class="paragraph">
-<p>== Upgrading to Execution Environments</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="upgrade_venv"><a class="anchor" href="#upgrade_venv"></a>2. Upgrading to Execution Environments</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>If upgrading from older versions of automation controller to 4.0 or
 later, the controller has the ability to detect previous versions of
@@ -610,9 +614,8 @@ Automation Controller User Guide.</p>
 base execution environment that corresponds to the platform version you
 are using. See <code>ug_build_ees</code> for more information.</p>
 </div>
-<div id="migrate_new_venv" class="paragraph">
-<p>=== Migrate legacy venvs to execution environments</p>
-</div>
+<div class="sect2">
+<h3 id="migrate_new_venv"><a class="anchor" href="#migrate_new_venv"></a>2.1. Migrate legacy venvs to execution environments</h3>
 <div class="paragraph">
 <p>You can have the exact same setup in an execution environment that you
 had in a prior custom virtual environment by migrating them to the new
@@ -716,9 +719,9 @@ can use ansible-builder to create an execution environment. See
 <code>ug_build_ees</code> in the Automation Controller User Guide for further
 detail.</p>
 </div>
-<div id="migrate_iso_to_exe" class="paragraph">
-<p>=== Migrate isolated instances to execution nodes</p>
 </div>
+<div class="sect2">
+<h3 id="migrate_iso_to_exe"><a class="anchor" href="#migrate_iso_to_exe"></a>2.2. Migrate isolated instances to execution nodes</h3>
 <div class="paragraph">
 <p>The move from isolated instance groups to execution nodes enables
 inbound or outbound connections. Contrast this with versions 3.8 and
@@ -840,9 +843,9 @@ instance_group_restrictedzone</pre>
 </tr>
 </tbody>
 </table>
-<div id="mesh_topology_ee" class="paragraph">
-<p>=== View mesh topology</p>
 </div>
+<div class="sect2">
+<h3 id="mesh_topology_ee"><a class="anchor" href="#mesh_topology_ee"></a>2.3. View mesh topology</h3>
 <div class="paragraph">
 <p>If you configured a <code>mesh</code> topology, the installer can graphically
 validate your mesh configuration through a generated graph rendering
@@ -880,10 +883,9 @@ node health, and specific details about each node, see
 </div>
 </div>
 </div>
-</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-20 13:25:06 UTC
+Last updated 2022-10-20 13:53:08 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
