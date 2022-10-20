@@ -525,262 +525,269 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#ag_topology_viewer">8. Topology Viewer</a></li>
-<li><a href="#_controller_logfiles">9. Controller Logfiles</a></li>
-<li><a href="#ag_logging">10. Logging and Aggregation</a>
+<li><a href="#ag_instances">8. Managing Capacity With Instances</a>
 <ul class="sectlevel2">
-<li><a href="#_loggers">10.1. Loggers</a>
-<ul class="sectlevel3">
-<li><a href="#_log_message_schema">10.1.1. Log message schema</a></li>
-<li><a href="#_activity_stream_schema">10.1.2. Activity stream schema</a></li>
-<li><a href="#_job_event_schema">10.1.3. Job event schema</a></li>
-<li><a href="#_scan_fact_system_tracking_data_schema">10.1.4. Scan / fact / system tracking data schema</a></li>
-<li><a href="#_job_status_changes">10.1.5. Job status changes</a></li>
-<li><a href="#_controller_logs">10.1.6. Controller logs</a></li>
-<li><a href="#_logging_aggregator_services">10.1.7. Logging Aggregator Services</a></li>
+<li><a href="#_prerequisites">8.1. Prerequisites</a></li>
+<li><a href="#_manage_instances">8.2. Manage instances</a></li>
+<li><a href="#_add_an_instance">8.3. Add an instance</a></li>
 </ul>
 </li>
-<li><a href="#ag_ctit_logging">10.2. Set Up Logging</a>
-<ul class="sectlevel3">
-<li><a href="#_log_aggregation">10.2.1. Log Aggregation</a></li>
-<li><a href="#logging-api-400-error-config">10.2.2. API 4XX Error Configuration</a></li>
-</ul>
-</li>
-<li><a href="#_troubleshoot_logging">10.3. Troubleshoot Logging</a>
-<ul class="sectlevel3">
-<li><a href="#_logging_aggregation">10.3.1. Logging Aggregation</a></li>
-<li><a href="#_api_4xx_errors">10.3.2. API 4XX Errors</a></li>
-<li><a href="#_ldap">10.3.3. LDAP</a></li>
-<li><a href="#_saml">10.3.4. SAML</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#ag_metrics">11. Metrics</a>
+<li><a href="#ag_topology_viewer">9. Topology Viewer</a></li>
+<li><a href="#_controller_logfiles">10. Controller Logfiles</a></li>
+<li><a href="#ag_logging">11. Logging and Aggregation</a>
 <ul class="sectlevel2">
-<li><a href="#_set_up_prometheus">11.1. Set up Prometheus</a></li>
-</ul>
-</li>
-<li><a href="#ag_secret_handling">12. Secret handling and connection security</a>
-<ul class="sectlevel2">
-<li><a href="#_secret_handling">12.1. Secret Handling</a>
+<li><a href="#_loggers">11.1. Loggers</a>
 <ul class="sectlevel3">
-<li><a href="#_user_passwords_for_local_users">12.1.1. User passwords for local users</a></li>
-<li><a href="#_secret_handling_for_operational_use">12.1.2. Secret handling for operational use</a></li>
-<li><a href="#_secret_handling_for_automation_use">12.1.3. Secret handling for automation use</a></li>
+<li><a href="#_log_message_schema">11.1.1. Log message schema</a></li>
+<li><a href="#_activity_stream_schema">11.1.2. Activity stream schema</a></li>
+<li><a href="#_job_event_schema">11.1.3. Job event schema</a></li>
+<li><a href="#_scan_fact_system_tracking_data_schema">11.1.4. Scan / fact / system tracking data schema</a></li>
+<li><a href="#_job_status_changes">11.1.5. Job status changes</a></li>
+<li><a href="#_controller_logs">11.1.6. Controller logs</a></li>
+<li><a href="#_logging_aggregator_services">11.1.7. Logging Aggregator Services</a></li>
 </ul>
 </li>
-<li><a href="#_connection_security">12.2. Connection Security</a>
+<li><a href="#ag_ctit_logging">11.2. Set Up Logging</a>
 <ul class="sectlevel3">
-<li><a href="#_internal_services">12.2.1. Internal Services</a></li>
-<li><a href="#_external_access">12.2.2. External Access</a></li>
-<li><a href="#_managed_nodes">12.2.3. Managed Nodes</a></li>
+<li><a href="#_log_aggregation">11.2.1. Log Aggregation</a></li>
+<li><a href="#logging-api-400-error-config">11.2.2. API 4XX Error Configuration</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#ag_security_best_practices">13. Security Best Practices</a>
-<ul class="sectlevel2">
-<li><a href="#_general_best_practices">13.1. General best practices</a></li>
-<li><a href="#_understand_the_architecture_of_ansible_and_the_controller">13.2. Understand the architecture of Ansible and the controller</a></li>
-<li><a href="#_granting_access">13.3. Granting access</a>
+<li><a href="#_troubleshoot_logging">11.3. Troubleshoot Logging</a>
 <ul class="sectlevel3">
-<li><a href="#_minimize_administrative_accounts">13.3.1. Minimize administrative accounts</a></li>
-<li><a href="#_minimize_local_system_access">13.3.2. Minimize local system access</a></li>
-<li><a href="#_remove_access_to_credentials_from_users">13.3.3. Remove access to credentials from users</a></li>
-<li><a href="#_enforce_separation_of_duties">13.3.4. Enforce separation of duties</a></li>
+<li><a href="#_logging_aggregation">11.3.1. Logging Aggregation</a></li>
+<li><a href="#_api_4xx_errors">11.3.2. API 4XX Errors</a></li>
+<li><a href="#_ldap">11.3.3. LDAP</a></li>
+<li><a href="#_saml">11.3.4. SAML</a></li>
 </ul>
 </li>
-<li><a href="#_available_resources">13.4. Available resources</a>
+</ul>
+</li>
+<li><a href="#ag_metrics">12. Metrics</a>
+<ul class="sectlevel2">
+<li><a href="#_set_up_prometheus">12.1. Set up Prometheus</a></li>
+</ul>
+</li>
+<li><a href="#ag_secret_handling">13. Secret handling and connection security</a>
+<ul class="sectlevel2">
+<li><a href="#_secret_handling">13.1. Secret Handling</a>
 <ul class="sectlevel3">
-<li><a href="#_audit_and_logging_functionality">13.4.1. Audit and logging functionality</a></li>
-<li><a href="#_existing_security_functionality">13.4.2. Existing security functionality</a></li>
-<li><a href="#_external_account_stores">13.4.3. External account stores</a></li>
-<li><a href="#ag_security_django_password">13.4.4. Django password policies</a></li>
+<li><a href="#_user_passwords_for_local_users">13.1.1. User passwords for local users</a></li>
+<li><a href="#_secret_handling_for_operational_use">13.1.2. Secret handling for operational use</a></li>
+<li><a href="#_secret_handling_for_automation_use">13.1.3. Secret handling for automation use</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#ag_manage_utility">14. The <em>awx-manage</em> Utility</a>
-<ul class="sectlevel2">
-<li><a href="#_inventory_import">14.1. Inventory Import</a></li>
-<li><a href="#_cleanup_of_old_data">14.2. Cleanup of old data</a></li>
-<li><a href="#_cluster_management">14.3. Cluster management</a></li>
-<li><a href="#ag_token_utility">14.4. Token and session management</a>
+<li><a href="#_connection_security">13.2. Connection Security</a>
 <ul class="sectlevel3">
-<li><a href="#_create_oauth2_token">14.4.1. <code>create_oauth2_token</code></a></li>
-<li><a href="#ag_manage_utility_revoke_tokens">14.4.2. <code>revoke_oauth2_tokens</code></a></li>
-<li><a href="#_cleartokens">14.4.3. <code>cleartokens</code></a></li>
-<li><a href="#_expire_sessions">14.4.4. <code>expire_sessions</code></a></li>
-<li><a href="#_clearsessions">14.4.5. <code>clearsessions</code></a></li>
+<li><a href="#_internal_services">13.2.1. Internal Services</a></li>
+<li><a href="#_external_access">13.2.2. External Access</a></li>
+<li><a href="#_managed_nodes">13.2.3. Managed Nodes</a></li>
 </ul>
 </li>
-<li><a href="#_analytics_gathering">14.5. Analytics gathering</a></li>
 </ul>
 </li>
-<li><a href="#ag_configure_tower">15. Controller Configuration</a></li>
-<li><a href="#_authentication">16. Authentication</a></li>
-<li><a href="#configure_tower_jobs">17. Jobs</a></li>
-<li><a href="#configure_tower_system">18. System</a></li>
-<li><a href="#configure_tower_ui">19. User Interface</a></li>
-<li><a href="#_usability_analytics_and_data_collection">20. Usability Analytics and Data Collection</a>
+<li><a href="#ag_security_best_practices">14. Security Best Practices</a>
 <ul class="sectlevel2">
-<li><a href="#_custom_logos_and_images">20.1. Custom Logos and Images</a></li>
-</ul>
-</li>
-<li><a href="#_license">21. License</a></li>
-<li><a href="#ag_oauth2_token_auth">22. Token-Based Authentication</a>
-<ul class="sectlevel2">
-<li><a href="#_managing_oauth_2_applications_and_tokens">22.1. Managing OAuth 2 Applications and Tokens</a>
+<li><a href="#_general_best_practices">14.1. General best practices</a></li>
+<li><a href="#_understand_the_architecture_of_ansible_and_the_controller">14.2. Understand the architecture of Ansible and the controller</a></li>
+<li><a href="#_granting_access">14.3. Granting access</a>
 <ul class="sectlevel3">
-<li><a href="#_access_rules_for_applications">22.1.1. Access Rules for Applications</a></li>
-<li><a href="#_access_rules_for_tokens">22.1.2. Access rules for tokens</a></li>
+<li><a href="#_minimize_administrative_accounts">14.3.1. Minimize administrative accounts</a></li>
+<li><a href="#_minimize_local_system_access">14.3.2. Minimize local system access</a></li>
+<li><a href="#_remove_access_to_credentials_from_users">14.3.3. Remove access to credentials from users</a></li>
+<li><a href="#_enforce_separation_of_duties">14.3.4. Enforce separation of duties</a></li>
 </ul>
 </li>
-<li><a href="#ag_use_oauth_pat">22.2. Using OAuth 2 Token System for Personal Access Tokens (PAT)</a>
+<li><a href="#_available_resources">14.4. Available resources</a>
 <ul class="sectlevel3">
-<li><a href="#_token_scope_mask_over_rbac_system">22.2.1. Token scope mask over RBAC system</a></li>
+<li><a href="#_audit_and_logging_functionality">14.4.1. Audit and logging functionality</a></li>
+<li><a href="#_existing_security_functionality">14.4.2. Existing security functionality</a></li>
+<li><a href="#_external_account_stores">14.4.3. External account stores</a></li>
+<li><a href="#ag_security_django_password">14.4.4. Django password policies</a></li>
 </ul>
 </li>
-<li><a href="#ag_oauth2_token_auth_grant_types">22.3. Application Functions</a>
+</ul>
+</li>
+<li><a href="#ag_manage_utility">15. The <em>awx-manage</em> Utility</a>
+<ul class="sectlevel2">
+<li><a href="#_inventory_import">15.1. Inventory Import</a></li>
+<li><a href="#_cleanup_of_old_data">15.2. Cleanup of old data</a></li>
+<li><a href="#_cluster_management">15.3. Cluster management</a></li>
+<li><a href="#ag_token_utility">15.4. Token and session management</a>
 <ul class="sectlevel3">
-<li><a href="#_application_using_authorization_code_grant_type">22.3.1. Application using <code>authorization code</code> grant type</a></li>
-<li><a href="#_application_using_password_grant_type">22.3.2. Application using <code>password</code> grant type</a></li>
+<li><a href="#_create_oauth2_token">15.4.1. <code>create_oauth2_token</code></a></li>
+<li><a href="#ag_manage_utility_revoke_tokens">15.4.2. <code>revoke_oauth2_tokens</code></a></li>
+<li><a href="#_cleartokens">15.4.3. <code>cleartokens</code></a></li>
+<li><a href="#_expire_sessions">15.4.4. <code>expire_sessions</code></a></li>
+<li><a href="#_clearsessions">15.4.5. <code>clearsessions</code></a></li>
 </ul>
 </li>
-<li><a href="#_application_token_functions">22.4. Application Token Functions</a>
+<li><a href="#_analytics_gathering">15.5. Analytics gathering</a></li>
+</ul>
+</li>
+<li><a href="#ag_configure_tower">16. Controller Configuration</a></li>
+<li><a href="#_authentication">17. Authentication</a></li>
+<li><a href="#configure_tower_jobs">18. Jobs</a></li>
+<li><a href="#configure_tower_system">19. System</a></li>
+<li><a href="#configure_tower_ui">20. User Interface</a></li>
+<li><a href="#_usability_analytics_and_data_collection">21. Usability Analytics and Data Collection</a>
+<ul class="sectlevel2">
+<li><a href="#_custom_logos_and_images">21.1. Custom Logos and Images</a></li>
+</ul>
+</li>
+<li><a href="#_license">22. License</a></li>
+<li><a href="#ag_oauth2_token_auth">23. Token-Based Authentication</a>
+<ul class="sectlevel2">
+<li><a href="#_managing_oauth_2_applications_and_tokens">23.1. Managing OAuth 2 Applications and Tokens</a>
 <ul class="sectlevel3">
-<li><a href="#_refresh_an_existing_access_token">22.4.1. Refresh an existing access token</a></li>
-<li><a href="#ag_oauth2_token_revoke">22.4.2. Revoke an access token</a></li>
+<li><a href="#_access_rules_for_applications">23.1.1. Access Rules for Applications</a></li>
+<li><a href="#_access_rules_for_tokens">23.1.2. Access rules for tokens</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#ag_social_auth">23. Setting up Social Authentication</a>
-<ul class="sectlevel2">
-<li><a href="#ag_auth_github">23.1. GitHub settings</a>
+<li><a href="#ag_use_oauth_pat">23.2. Using OAuth 2 Token System for Personal Access Tokens (PAT)</a>
 <ul class="sectlevel3">
-<li><a href="#ag_auth_github_org">23.1.1. GitHub Organization settings</a></li>
-<li><a href="#ag_auth_github_team">23.1.2. GitHub Team settings</a></li>
-<li><a href="#_github_enterprise_settings">23.1.3. GitHub Enterprise settings</a></li>
-<li><a href="#_github_enterprise_organization_settings">23.1.4. GitHub Enterprise Organization settings</a></li>
-<li><a href="#_github_enterprise_team_settings">23.1.5. GitHub Enterprise Team settings</a></li>
+<li><a href="#_token_scope_mask_over_rbac_system">23.2.1. Token scope mask over RBAC system</a></li>
 </ul>
 </li>
-<li><a href="#ag_auth_google_oauth2">23.2. Google OAuth2 settings</a></li>
-<li><a href="#ag_org_team_maps">23.3. Organization and Team Mapping</a>
+<li><a href="#ag_oauth2_token_auth_grant_types">23.3. Application Functions</a>
 <ul class="sectlevel3">
-<li><a href="#_organization_mapping">23.3.1. Organization mapping</a></li>
-<li><a href="#_team_mapping">23.3.2. Team mapping</a></li>
+<li><a href="#_application_using_authorization_code_grant_type">23.3.1. Application using <code>authorization code</code> grant type</a></li>
+<li><a href="#_application_using_password_grant_type">23.3.2. Application using <code>password</code> grant type</a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li><a href="#ag_ent_auth">24. Setting up Enterprise Authentication</a>
-<ul class="sectlevel2">
-<li><a href="#ag_auth_azure">24.1. Azure AD settings</a></li>
-<li><a href="#_ldap_authentication">24.2. LDAP Authentication</a></li>
-<li><a href="#ag_auth_radius">24.3. RADIUS settings</a></li>
-<li><a href="#ag_auth_saml">24.4. SAML settings</a>
+<li><a href="#_application_token_functions">23.4. Application Token Functions</a>
 <ul class="sectlevel3">
-<li><a href="#_transparent_saml_logins">24.4.1. Transparent SAML Logins</a></li>
-<li><a href="#_enabling_logging_for_saml">24.4.2. Enabling Logging for SAML</a></li>
+<li><a href="#_refresh_an_existing_access_token">23.4.1. Refresh an existing access token</a></li>
+<li><a href="#ag_oauth2_token_revoke">23.4.2. Revoke an access token</a></li>
 </ul>
 </li>
-<li><a href="#ag_auth_tacacs">24.5. TACACS+ settings</a></li>
 </ul>
 </li>
-<li><a href="#ag_auth_ldap">25. Setting up LDAP Authentication</a>
+<li><a href="#ag_social_auth">24. Setting up Social Authentication</a>
 <ul class="sectlevel2">
-<li><a href="#_referrals">25.1. Referrals</a></li>
-<li><a href="#ldap_logging">25.2. Enabling Logging for LDAP</a></li>
-<li><a href="#ag_ldap_org_team_maps">25.3. LDAP Organization and Team Mapping</a></li>
-</ul>
-</li>
-<li><a href="#_changing_the_default_timeout_for_authentication">26. Changing the Default Timeout for Authentication</a></li>
-<li><a href="#_user_authentication_with_kerberos">27. User Authentication with Kerberos</a>
-<ul class="sectlevel2">
-<li><a href="#_ad_and_kerberos_credentials">27.1. AD and Kerberos Credentials</a></li>
-<li><a href="#_working_with_kerberos_tickets">27.2. Working with Kerberos Tickets</a></li>
-</ul>
-</li>
-<li><a href="#ag_session_limits">28. Working with Session Limits</a></li>
-<li><a href="#ag_backup_restore">29. Backing Up and Restoring</a>
-<ul class="sectlevel2">
-<li><a href="#_backuprestore_playbooks">29.1. Backup/Restore Playbooks</a></li>
-<li><a href="#_backup_and_restoration_considerations">29.2. Backup and Restoration Considerations</a></li>
-<li><a href="#ag_clustering_backup_restore">29.3. Backup and Restore for Clustered Environments</a>
+<li><a href="#ag_auth_github">24.1. GitHub settings</a>
 <ul class="sectlevel3">
-<li><a href="#ag_clustering_backup_restore_diff_cluster">29.3.1. Restoring to a different cluster</a></li>
+<li><a href="#ag_auth_github_org">24.1.1. GitHub Organization settings</a></li>
+<li><a href="#ag_auth_github_team">24.1.2. GitHub Team settings</a></li>
+<li><a href="#_github_enterprise_settings">24.1.3. GitHub Enterprise settings</a></li>
+<li><a href="#_github_enterprise_organization_settings">24.1.4. GitHub Enterprise Organization settings</a></li>
+<li><a href="#_github_enterprise_team_settings">24.1.5. GitHub Enterprise Team settings</a></li>
+</ul>
+</li>
+<li><a href="#ag_auth_google_oauth2">24.2. Google OAuth2 settings</a></li>
+<li><a href="#ag_org_team_maps">24.3. Organization and Team Mapping</a>
+<ul class="sectlevel3">
+<li><a href="#_organization_mapping">24.3.1. Organization mapping</a></li>
+<li><a href="#_team_mapping">24.3.2. Team mapping</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#ag_custom_rebranding">30. Using Custom Logos in automation controller</a></li>
-<li><a href="#usability_data_collection">31. Usability Analytics and Data Collection</a></li>
-<li><a href="#user_data_insights">32. Automation Analytics</a>
+<li><a href="#ag_ent_auth">25. Setting up Enterprise Authentication</a>
 <ul class="sectlevel2">
-<li><a href="#_usage_by_organization">32.1. Usage by organization</a></li>
-<li><a href="#_job_runs_by_organization">32.2. Job runs by organization</a></li>
-<li><a href="#_organization_status">32.3. Organization status</a></li>
+<li><a href="#ag_auth_azure">25.1. Azure AD settings</a></li>
+<li><a href="#_ldap_authentication">25.2. LDAP Authentication</a></li>
+<li><a href="#ag_auth_radius">25.3. RADIUS settings</a></li>
+<li><a href="#ag_auth_saml">25.4. SAML settings</a>
+<ul class="sectlevel3">
+<li><a href="#_transparent_saml_logins">25.4.1. Transparent SAML Logins</a></li>
+<li><a href="#_enabling_logging_for_saml">25.4.2. Enabling Logging for SAML</a></li>
 </ul>
 </li>
-<li><a href="#_details_of_data_collection">33. Details of data collection</a>
-<ul class="sectlevel2">
-<li><a href="#_manifest_json">33.1. manifest.json</a></li>
-<li><a href="#_config_json">33.2. config.json</a></li>
-<li><a href="#_instance_info_json">33.3. instance_info.json</a></li>
-<li><a href="#_counts_json">33.4. counts.json</a></li>
-<li><a href="#_org_counts_json">33.5. org_counts.json</a></li>
-<li><a href="#_cred_type_counts_json">33.6. cred_type_counts.json</a></li>
-<li><a href="#_inventory_counts_json">33.7. inventory_counts.json</a></li>
-<li><a href="#_projects_by_scm_type_json">33.8. projects_by_scm_type.json</a></li>
-<li><a href="#_query_info_json">33.9. query_info.json</a></li>
-<li><a href="#_job_counts_json">33.10. job_counts.json</a></li>
-<li><a href="#_job_instance_counts_json">33.11. job_instance_counts.json</a></li>
-<li><a href="#_unified_job_template_table_csv">33.12. unified_job_template_table.csv</a></li>
-<li><a href="#_unified_jobs_table_csv">33.13. unified_jobs_table.csv</a></li>
-<li><a href="#_workflow_job_template_node_table_csv">33.14. workflow_job_template_node_table.csv</a></li>
-<li><a href="#_workflow_job_node_table_csv">33.15. workflow_job_node_table.csv</a></li>
-<li><a href="#_events_table_csv">33.16. events_table.csv</a></li>
+<li><a href="#ag_auth_tacacs">25.5. TACACS+ settings</a></li>
 </ul>
 </li>
-<li><a href="#admin_troubleshooting">34. Troubleshooting the controller</a>
+<li><a href="#ag_auth_ldap">26. Setting up LDAP Authentication</a>
 <ul class="sectlevel2">
-<li><a href="#_error_logs">34.1. Error logs</a></li>
-<li><a href="#admin_troubleshooting_sosreport">34.2. sosreport</a></li>
-<li><a href="#_problems_connecting_to_your_host">34.3. Problems connecting to your host</a></li>
-<li><a href="#_unable_to_login_to_the_controller_via_http">34.4. Unable to login to the controller via HTTP</a></li>
-<li><a href="#_websockets_port_for_live_events_not_working">34.5. WebSockets port for live events not working</a></li>
-<li><a href="#_problems_running_a_playbook">34.6. Problems running a playbook</a></li>
-<li><a href="#_problems_when_running_a_job">34.7. Problems when running a job</a></li>
-<li><a href="#_playbooks_arent_showing_up_in_the_job_template_drop_down">34.8. Playbooks aren&#8217;t showing up in the "Job Template" drop-down</a></li>
-<li><a href="#_playbook_stays_in_pending">34.9. Playbook stays in pending</a></li>
-<li><a href="#_cancel_a_controller_job">34.10. Cancel a controller job</a></li>
-<li><a href="#_reusing_an_external_database_causes_installations_to_fail">34.11. Reusing an external database causes installations to fail</a></li>
-<li><a href="#_private_ec2_vpc_instances_in_the_controller_inventory">34.12. Private EC2 VPC Instances in the controller Inventory</a></li>
-<li><a href="#_troubleshooting_error_provided_hosts_list_is_empty">34.13. Troubleshooting "Error: provided hosts list is empty"</a></li>
+<li><a href="#_referrals">26.1. Referrals</a></li>
+<li><a href="#ldap_logging">26.2. Enabling Logging for LDAP</a></li>
+<li><a href="#ag_ldap_org_team_maps">26.3. LDAP Organization and Team Mapping</a></li>
 </ul>
 </li>
-<li><a href="#tips_and_tricks">35. Controller Tips and Tricks</a>
+<li><a href="#_changing_the_default_timeout_for_authentication">27. Changing the Default Timeout for Authentication</a></li>
+<li><a href="#_user_authentication_with_kerberos">28. User Authentication with Kerberos</a>
 <ul class="sectlevel2">
-<li><a href="#_using_the_controller_cli_tool">35.1. Using the Controller CLI Tool</a></li>
-<li><a href="#tips_change_password">35.2. Changing the Controller Admin Password</a></li>
-<li><a href="#_creating_a_controller_admin_from_the_commandline">35.3. Creating a controller Admin from the commandline</a></li>
-<li><a href="#_setting_up_a_jump_host_to_use_with_the_controller">35.4. Setting up a jump host to use with the controller</a></li>
-<li><a href="#_view_ansible_outputs_for_json_commands_when_using_the_controller">35.5. View Ansible outputs for JSON commands when using the controller</a></li>
-<li><a href="#_locate_and_configure_the_ansible_configuration_file">35.6. Locate and configure the Ansible configuration file</a></li>
-<li><a href="#_view_a_listing_of_all_ansible_variables">35.7. View a listing of all ansible_ variables</a></li>
-<li><a href="#ag_tips_jinja_extravars">35.8. The ALLOW_JINJA_IN_EXTRA_VARS variable</a></li>
-<li><a href="#_using_execution_environments">35.9. Using execution environments</a></li>
-<li><a href="#_configuring_the_controllerhost_hostname_for_notifications">35.10. Configuring the <code>controllerhost</code> hostname for notifications</a></li>
-<li><a href="#launch_jobs_curl">35.11. Launching Jobs with curl</a></li>
-<li><a href="#_dynamic_inventory_and_private_ip_addresses">35.12. Dynamic Inventory and private IP addresses</a></li>
-<li><a href="#_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller">35.13. Filtering instances returned by the dynamic inventory sources in the controller</a></li>
-<li><a href="#_using_an_unreleased_module_from_ansible_source_with_the_controller">35.14. Using an unreleased module from Ansible source with the controller</a></li>
-<li><a href="#_using_callback_plugins_with_the_controller">35.15. Using callback plugins with the controller</a></li>
-<li><a href="#_connecting_to_windows_with_winrm">35.16. Connecting to Windows with winrm</a></li>
-<li><a href="#_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller">35.17. Importing existing inventory files and host/group vars into the controller</a></li>
+<li><a href="#_ad_and_kerberos_credentials">28.1. AD and Kerberos Credentials</a></li>
+<li><a href="#_working_with_kerberos_tickets">28.2. Working with Kerberos Tickets</a></li>
+</ul>
+</li>
+<li><a href="#ag_session_limits">29. Working with Session Limits</a></li>
+<li><a href="#ag_backup_restore">30. Backing Up and Restoring</a>
+<ul class="sectlevel2">
+<li><a href="#_backuprestore_playbooks">30.1. Backup/Restore Playbooks</a></li>
+<li><a href="#_backup_and_restoration_considerations">30.2. Backup and Restoration Considerations</a></li>
+<li><a href="#ag_clustering_backup_restore">30.3. Backup and Restore for Clustered Environments</a>
+<ul class="sectlevel3">
+<li><a href="#ag_clustering_backup_restore_diff_cluster">30.3.1. Restoring to a different cluster</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#ag_custom_rebranding">31. Using Custom Logos in automation controller</a></li>
+<li><a href="#usability_data_collection">32. Usability Analytics and Data Collection</a></li>
+<li><a href="#user_data_insights">33. Automation Analytics</a>
+<ul class="sectlevel2">
+<li><a href="#_usage_by_organization">33.1. Usage by organization</a></li>
+<li><a href="#_job_runs_by_organization">33.2. Job runs by organization</a></li>
+<li><a href="#_organization_status">33.3. Organization status</a></li>
+</ul>
+</li>
+<li><a href="#_details_of_data_collection">34. Details of data collection</a>
+<ul class="sectlevel2">
+<li><a href="#_manifest_json">34.1. manifest.json</a></li>
+<li><a href="#_config_json">34.2. config.json</a></li>
+<li><a href="#_instance_info_json">34.3. instance_info.json</a></li>
+<li><a href="#_counts_json">34.4. counts.json</a></li>
+<li><a href="#_org_counts_json">34.5. org_counts.json</a></li>
+<li><a href="#_cred_type_counts_json">34.6. cred_type_counts.json</a></li>
+<li><a href="#_inventory_counts_json">34.7. inventory_counts.json</a></li>
+<li><a href="#_projects_by_scm_type_json">34.8. projects_by_scm_type.json</a></li>
+<li><a href="#_query_info_json">34.9. query_info.json</a></li>
+<li><a href="#_job_counts_json">34.10. job_counts.json</a></li>
+<li><a href="#_job_instance_counts_json">34.11. job_instance_counts.json</a></li>
+<li><a href="#_unified_job_template_table_csv">34.12. unified_job_template_table.csv</a></li>
+<li><a href="#_unified_jobs_table_csv">34.13. unified_jobs_table.csv</a></li>
+<li><a href="#_workflow_job_template_node_table_csv">34.14. workflow_job_template_node_table.csv</a></li>
+<li><a href="#_workflow_job_node_table_csv">34.15. workflow_job_node_table.csv</a></li>
+<li><a href="#_events_table_csv">34.16. events_table.csv</a></li>
+</ul>
+</li>
+<li><a href="#admin_troubleshooting">35. Troubleshooting the controller</a>
+<ul class="sectlevel2">
+<li><a href="#_error_logs">35.1. Error logs</a></li>
+<li><a href="#admin_troubleshooting_sosreport">35.2. sosreport</a></li>
+<li><a href="#_problems_connecting_to_your_host">35.3. Problems connecting to your host</a></li>
+<li><a href="#_unable_to_login_to_the_controller_via_http">35.4. Unable to login to the controller via HTTP</a></li>
+<li><a href="#_websockets_port_for_live_events_not_working">35.5. WebSockets port for live events not working</a></li>
+<li><a href="#_problems_running_a_playbook">35.6. Problems running a playbook</a></li>
+<li><a href="#_problems_when_running_a_job">35.7. Problems when running a job</a></li>
+<li><a href="#_playbooks_arent_showing_up_in_the_job_template_drop_down">35.8. Playbooks aren&#8217;t showing up in the "Job Template" drop-down</a></li>
+<li><a href="#_playbook_stays_in_pending">35.9. Playbook stays in pending</a></li>
+<li><a href="#_cancel_a_controller_job">35.10. Cancel a controller job</a></li>
+<li><a href="#_reusing_an_external_database_causes_installations_to_fail">35.11. Reusing an external database causes installations to fail</a></li>
+<li><a href="#_private_ec2_vpc_instances_in_the_controller_inventory">35.12. Private EC2 VPC Instances in the controller Inventory</a></li>
+<li><a href="#_troubleshooting_error_provided_hosts_list_is_empty">35.13. Troubleshooting "Error: provided hosts list is empty"</a></li>
+</ul>
+</li>
+<li><a href="#tips_and_tricks">36. Controller Tips and Tricks</a>
+<ul class="sectlevel2">
+<li><a href="#_using_the_controller_cli_tool">36.1. Using the Controller CLI Tool</a></li>
+<li><a href="#tips_change_password">36.2. Changing the Controller Admin Password</a></li>
+<li><a href="#_creating_a_controller_admin_from_the_commandline">36.3. Creating a controller Admin from the commandline</a></li>
+<li><a href="#_setting_up_a_jump_host_to_use_with_the_controller">36.4. Setting up a jump host to use with the controller</a></li>
+<li><a href="#_view_ansible_outputs_for_json_commands_when_using_the_controller">36.5. View Ansible outputs for JSON commands when using the controller</a></li>
+<li><a href="#_locate_and_configure_the_ansible_configuration_file">36.6. Locate and configure the Ansible configuration file</a></li>
+<li><a href="#_view_a_listing_of_all_ansible_variables">36.7. View a listing of all ansible_ variables</a></li>
+<li><a href="#ag_tips_jinja_extravars">36.8. The ALLOW_JINJA_IN_EXTRA_VARS variable</a></li>
+<li><a href="#_using_execution_environments">36.9. Using execution environments</a></li>
+<li><a href="#_configuring_the_controllerhost_hostname_for_notifications">36.10. Configuring the <code>controllerhost</code> hostname for notifications</a></li>
+<li><a href="#launch_jobs_curl">36.11. Launching Jobs with curl</a></li>
+<li><a href="#_dynamic_inventory_and_private_ip_addresses">36.12. Dynamic Inventory and private IP addresses</a></li>
+<li><a href="#_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller">36.13. Filtering instances returned by the dynamic inventory sources in the controller</a></li>
+<li><a href="#_using_an_unreleased_module_from_ansible_source_with_the_controller">36.14. Using an unreleased module from Ansible source with the controller</a></li>
+<li><a href="#_using_callback_plugins_with_the_controller">36.15. Using callback plugins with the controller</a></li>
+<li><a href="#_connecting_to_windows_with_winrm">36.16. Connecting to Windows with winrm</a></li>
+<li><a href="#_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller">36.17. Importing existing inventory files and host/group vars into the controller</a></li>
 </ul>
 </li>
 </ul>
@@ -2694,7 +2701,354 @@ that setting will be passed along to the container.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_topology_viewer"><a class="anchor" href="#ag_topology_viewer"></a>8. Topology Viewer</h2>
+<h2 id="ag_instances"><a class="anchor" href="#ag_instances"></a>8. Managing Capacity With Instances</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Scaling your mesh is only available on Openshift deployments of Ansible
+Automation Platform and is possible through adding or removing nodes
+from your cluster dynamically, through the <strong>Instances</strong> resource of the
+automation controller User Interface, without running the installation
+script.</p>
+</div>
+<div class="sect2">
+<h3 id="_prerequisites"><a class="anchor" href="#_prerequisites"></a>8.1. Prerequisites</h3>
+<div class="paragraph">
+<p>Be sure you have the minimum requirements for the RHEL virtual machine
+before proceeding. Refer to
+<a href="https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.2/html/red_hat_ansible_automation_platform_installation_guide/planning-installation#red_hat_ansible_automation_platform_system_requirements">Red
+Hat Ansible Automation Platform system requirements</a> for details.</p>
+</div>
+<div class="paragraph">
+<p>RHEL nodes must properly be subscribed to:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>RHEL subscription and with <strong>baseos</strong> and <strong>appstream</strong> repositories
+enabled</p>
+</li>
+<li>
+<p>subscription and the proper channel enabled:</p>
+</li>
+</ul>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ansible-automation-platform-2.3-for-rhel-8-x86_64-rpms for RHEL 8
+ansible-automation-platform-2.3-for-rhel-9-x86_64-rpms for RHEL 9</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_manage_instances"><a class="anchor" href="#_manage_instances"></a>8.2. Manage instances</h3>
+<div class="paragraph">
+<p>Click <strong>Instances</strong> from the left side navigation menu to access the
+Instances list.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_list_view.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The Instances list displays all the current nodes in your topology,
+along with relevant details:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Host Name</strong></p>
+</li>
+</ul>
+</div>
+<div id="node_statuses" class="ulist">
+<ul>
+<li>
+<p><strong>Status</strong> indicates the state of the node:</p>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Installed</strong>: a node that has successfully installed and configured,
+but has not yet passed the periodic health check</p>
+</li>
+<li>
+<p><strong>Ready</strong>: a node that is available to run jobs or route traffic
+between nodes on the mesh. This replaces the previously “Healthy” node
+state used in the mesh topology</p>
+</li>
+<li>
+<p><strong>Provisioning</strong>: a node that is in the process of being added to a
+current mesh, but is awaiting the job to install all of the packages
+(currently not yet supported and is subject to change in a future
+release)</p>
+</li>
+<li>
+<p><strong>Deprovisioning</strong>: a node that is in the process of being removed from
+a current mesh and is finishing up jobs currently running on it</p>
+</li>
+<li>
+<p><strong>Unavailable</strong>: a node that did not pass the most recent health check,
+indicating connectivity or receptor problems</p>
+</li>
+<li>
+<p><strong>Provisioning Failure</strong>: a node that failed during provisioning
+(currently not yet supported and is subject to change in a future
+release)</p>
+</li>
+<li>
+<p><strong>De-provisioning Failure</strong>: a node that failed during deprovisioning
+(currently not yet supported and is subject to change in a future
+release)</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+</li>
+<li>
+<p><strong>Node Type</strong> specifies whether the node is a control, hybrid, hop, or
+execution node. See <code>node</code> for further detail.</p>
+</li>
+<li>
+<p><strong>Capacity Adjustment</strong> allows you to adjust the number of forks in your
+nodes</p>
+</li>
+<li>
+<p><strong>Used Capacity</strong> indicates how much capacity has been used</p>
+</li>
+<li>
+<p><strong>Actions</strong> allow you to enable or disable the instance to control
+whether jobs can be assigned to it</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>From this page, you can add, remove or run health checks on your nodes.
+Use the check boxes next to an instance to select it to remove or run a
+health check against. When a button is grayed-out, you do not have
+permission for that particular action. Contact your Administrator to
+grant you the required level of access. If you are able to remove an
+instance, you will receive a prompt for confirmation, like the one
+below:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_delete_prompt.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>You can still remove an instance even if it is active and jobs are
+running on it. The controller will attempt to wait for any jobs running
+on this node to complete before actually removing it.</p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Remove</strong> to confirm.</p>
+</div>
+<div id="health_check" class="paragraph">
+<p>If running a health check on an instance, at the top of the Details
+page, a message displays that the health check is in progress.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_health_check.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Click <strong>Reload</strong> to refresh the instance status.</p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>Health checks are ran asynchronously, and may take up to a minute for
+the instance status to update, even with a refresh. The status may or
+may not change after the health check. At the bottom of the Details
+page, a timer/clock icon displays next to the last known health check
+date and time stamp if the health check task is currently running.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_health_check_pending.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The example health check shows the status updates with an error on node
+'one':</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/topology-viewer-instance-with-errors.png" alt="image"></span></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_add_an_instance"><a class="anchor" href="#_add_an_instance"></a>8.3. Add an instance</h3>
+<div class="paragraph">
+<p>One of the ways to expand capacity is to create an instance, which
+serves as a node in your topology.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click <strong>Instances</strong> from the left side navigation menu.</p>
+</li>
+<li>
+<p>In the Instances list view, click the <strong>Add</strong> button and the Create new
+Instance window opens.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_create_new.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>An instance has several attributes that may be configured:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Enter a fully qualified domain name or IP address for your instance in
+the <strong>Host Name</strong> field (required). This field is equivalent to <code>hostname</code>
+in the API.</p>
+</li>
+<li>
+<p>Optionally enter a <strong>Description</strong> for the instance</p>
+</li>
+<li>
+<p>The <strong>Instance State</strong> field is auto-populated, indicating that it is
+being installed, and cannot be modified</p>
+</li>
+<li>
+<p>The <strong>Listener Port</strong> is pre-populated with the most optimal port,
+however you can change the port to one that is more appropriate for your
+configuration. This field is equivalent to <code>listener_port</code> in the API.</p>
+</li>
+<li>
+<p>The <strong>Instance Type</strong> field is auto-populated and cannot be modified.
+Only execution nodes can be created at this time.</p>
+</li>
+<li>
+<p>Check the <strong>Enable Instance</strong> box to make it available for jobs to run
+on it</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>Once the attributes are configured, click <strong>Save</strong> to proceed.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Upon successful creation, the Details of the created instance opens.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_create_details.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>The proceeding steps 4-8 are intended to be ran from any computer that
+has SSH access to the newly created instance. It should not be ran from
+a machine that is part of the AAP deployment.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>Click the download button next to the <strong>Install Bundle</strong> field to
+download the tarball that includes this new instance and the files
+relevant to install the node into the mesh.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_install_bundle.png" alt="image"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>Extract the downloaded <code>tar.gz</code> file from the location you downloaded
+it. The install bundle contains yaml files, certificates, and keys that
+will be used in the installation process.</p>
+</li>
+<li>
+<p>Before running the <code>ansible-playbook</code> command, edit the following
+fields in the <code>inventory.yml</code> file:</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>ansible_user</code> with the username running the installation</p>
+</li>
+<li>
+<p><code>ansible_ssh_private_key_file</code> to contain the filename of the private
+key used to connect to the instance</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_edit_inventory_yaml.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>The content of the <code>inventory.yml</code> file serves as a template and
+contains variables for roles that are applied during the installation
+and configuration of a receptor node in a mesh topology. You may modify
+some of the other fields, or replace the file in its entirety for
+advanced scenarios. Refer to
+<a href="https://github.com/ansible/receptor-collection/blob/main/README.md">Role
+Variables</a> for more information on each variable.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>Save the file to continue.</p>
+</li>
+<li>
+<p>Run the following command on the machine you want to update your mesh:</p>
+</li>
+</ol>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>ansible-playbook -i inventory.yml install_receptor.yml</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="9">
+<li>
+<p>To view other instances within the same topology, click the <strong>Peers</strong>
+tab associated with the control node.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Note</p>
+</div>
+<div class="paragraph">
+<p>You will only be able to view peers of the control plane nodes at this
+time, which are the execution nodes. Since you are limited to creating
+execution nodes in this release, you will be unable to create or view
+peers of execution nodes.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/instances_peers_tab.png" alt="image"></span></p>
+</div>
+<div class="paragraph">
+<p>You may run a health check by selecting the node and clicking the <strong>Run
+health check</strong> button from its Details page.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="10">
+<li>
+<p>To view a graphical representation of your updated topology, refer to
+the <code>ag_topology_viewer</code> section of this guide.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="ag_topology_viewer"><a class="anchor" href="#ag_topology_viewer"></a>9. Topology Viewer</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Note</p>
@@ -2840,7 +3194,7 @@ to <code>ag_instances</code> in this guide for more detail.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_controller_logfiles"><a class="anchor" href="#_controller_logfiles"></a>9. Controller Logfiles</h2>
+<h2 id="_controller_logfiles"><a class="anchor" href="#_controller_logfiles"></a>10. Controller Logfiles</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The controller logfiles have been consolidated and can be easily
@@ -2981,7 +3335,7 @@ by Tower (and the Ansible Automation Platform):</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_logging"><a class="anchor" href="#ag_logging"></a>10. Logging and Aggregation</h2>
+<h2 id="ag_logging"><a class="anchor" href="#ag_logging"></a>11. Logging and Aggregation</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Logging is a feature that provides the capability to send detailed logs
@@ -3058,7 +3412,7 @@ events (while Splunk is offline) but you can make that more than 1GB if
 necessary, or change the path where you save the queue.</p>
 </div>
 <div class="sect2">
-<h3 id="_loggers"><a class="anchor" href="#_loggers"></a>10.1. Loggers</h3>
+<h3 id="_loggers"><a class="anchor" href="#_loggers"></a>11.1. Loggers</h3>
 <div class="paragraph">
 <p>Below are special loggers (except for <code>awx</code>, which constitutes generic
 server logs) that provide large amount of information in a predictable
@@ -3103,7 +3457,7 @@ the standard controller logs.</p>
 from the list of System options.</p>
 </div>
 <div class="sect3">
-<h4 id="_log_message_schema"><a class="anchor" href="#_log_message_schema"></a>10.1.1. Log message schema</h4>
+<h4 id="_log_message_schema"><a class="anchor" href="#_log_message_schema"></a>11.1.1. Log message schema</h4>
 <div class="paragraph">
 <p>Common schema for all loggers:</p>
 </div>
@@ -3133,7 +3487,7 @@ levels as appropriate</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_activity_stream_schema"><a class="anchor" href="#_activity_stream_schema"></a>10.1.2. Activity stream schema</h4>
+<h4 id="_activity_stream_schema"><a class="anchor" href="#_activity_stream_schema"></a>11.1.2. Activity stream schema</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -3162,7 +3516,7 @@ consistent with what we show in the activity stream</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_job_event_schema"><a class="anchor" href="#_job_event_schema"></a>10.1.3. Job event schema</h4>
+<h4 id="_job_event_schema"><a class="anchor" href="#_job_event_schema"></a>11.1.3. Job event schema</h4>
 <div class="paragraph">
 <p>This logger reflects the data being saved into job events, except when
 they would otherwise conflict with expected standard fields from the
@@ -3176,7 +3530,7 @@ different fields depending on the specifics of the Ansible event.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_scan_fact_system_tracking_data_schema"><a class="anchor" href="#_scan_fact_system_tracking_data_schema"></a>10.1.4. Scan / fact / system tracking data schema</h4>
+<h4 id="_scan_fact_system_tracking_data_schema"><a class="anchor" href="#_scan_fact_system_tracking_data_schema"></a>11.1.4. Scan / fact / system tracking data schema</h4>
 <div class="paragraph">
 <p>These contain a detailed dictionary-type fields that are either
 services, packages, or files.</p>
@@ -3207,7 +3561,7 @@ elastic search in names, and are replaced with "_" by our log formatter</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_job_status_changes"><a class="anchor" href="#_job_status_changes"></a>10.1.5. Job status changes</h4>
+<h4 id="_job_status_changes"><a class="anchor" href="#_job_status_changes"></a>11.1.5. Job status changes</h4>
 <div class="paragraph">
 <p>This is a intended to be a lower-volume source of information about
 changes in job states compared to job events, and also intended to
@@ -3220,7 +3574,7 @@ job model.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_controller_logs"><a class="anchor" href="#_controller_logs"></a>10.1.6. Controller logs</h4>
+<h4 id="_controller_logs"><a class="anchor" href="#_controller_logs"></a>11.1.6. Controller logs</h4>
 <div class="paragraph">
 <p>In addition to the common fields, this contains a <code>msg</code> field with the
 log message. Errors contain a separate <code>traceback</code> field. These logs can
@@ -3229,7 +3583,7 @@ the Logging settings page.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_logging_aggregator_services"><a class="anchor" href="#_logging_aggregator_services"></a>10.1.7. Logging Aggregator Services</h4>
+<h4 id="_logging_aggregator_services"><a class="anchor" href="#_logging_aggregator_services"></a>11.1.7. Logging Aggregator Services</h4>
 <div class="paragraph">
 <p>The logging aggregator service works with the following monitoring and
 data analysis systems:</p>
@@ -3333,9 +3687,9 @@ are using.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_ctit_logging"><a class="anchor" href="#ag_ctit_logging"></a>10.2. Set Up Logging</h3>
+<h3 id="ag_ctit_logging"><a class="anchor" href="#ag_ctit_logging"></a>11.2. Set Up Logging</h3>
 <div class="sect3">
-<h4 id="_log_aggregation"><a class="anchor" href="#_log_aggregation"></a>10.2.1. Log Aggregation</h4>
+<h4 id="_log_aggregation"><a class="anchor" href="#_log_aggregation"></a>11.2.1. Log Aggregation</h4>
 <div class="paragraph">
 <p>To set up logging to any of the aggregator types:</p>
 </div>
@@ -3480,7 +3834,7 @@ make sure the <strong>Enable External Logging</strong> toggle is set to ON.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="logging-api-400-error-config"><a class="anchor" href="#logging-api-400-error-config"></a>10.2.2. API 4XX Error Configuration</h4>
+<h4 id="logging-api-400-error-config"><a class="anchor" href="#logging-api-400-error-config"></a>11.2.2. API 4XX Error Configuration</h4>
 <div class="paragraph">
 <p>When the API encounters an issue with a request, it will typically
 return an HTTP error code in the 400 range along with an error. When
@@ -3539,9 +3893,9 @@ specified, the HTTP status as text</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_troubleshoot_logging"><a class="anchor" href="#_troubleshoot_logging"></a>10.3. Troubleshoot Logging</h3>
+<h3 id="_troubleshoot_logging"><a class="anchor" href="#_troubleshoot_logging"></a>11.3. Troubleshoot Logging</h3>
 <div class="sect3">
-<h4 id="_logging_aggregation"><a class="anchor" href="#_logging_aggregation"></a>10.3.1. Logging Aggregation</h4>
+<h4 id="_logging_aggregation"><a class="anchor" href="#_logging_aggregation"></a>11.3.1. Logging Aggregation</h4>
 <div class="paragraph">
 <p>If you have sent a message with the test button to your configured
 logging service via http/https, but did not receive the message, check
@@ -3552,7 +3906,7 @@ will not exist.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_api_4xx_errors"><a class="anchor" href="#_api_4xx_errors"></a>10.3.2. API 4XX Errors</h4>
+<h4 id="_api_4xx_errors"><a class="anchor" href="#_api_4xx_errors"></a>11.3.2. API 4XX Errors</h4>
 <div class="paragraph">
 <p>You can include the API error message for 4XX errors by modifying the
 log format for those messages. Refer to the
@@ -3560,14 +3914,14 @@ log format for those messages. Refer to the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_ldap"><a class="anchor" href="#_ldap"></a>10.3.3. LDAP</h4>
+<h4 id="_ldap"><a class="anchor" href="#_ldap"></a>11.3.3. LDAP</h4>
 <div class="paragraph">
 <p>You can enable logging messages for the LDAP adapter. Refer to the
 <code>ldap_logging</code> section for more detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_saml"><a class="anchor" href="#_saml"></a>10.3.4. SAML</h4>
+<h4 id="_saml"><a class="anchor" href="#_saml"></a>11.3.4. SAML</h4>
 <div class="paragraph">
 <p>You can enable logging messages for the SAML adapter the same way you
 can enable logging for LDAP. Refer to the <code>ldap_logging</code> section for
@@ -3578,7 +3932,7 @@ more detail.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_metrics"><a class="anchor" href="#ag_metrics"></a>11. Metrics</h2>
+<h2 id="ag_metrics"><a class="anchor" href="#ag_metrics"></a>12. Metrics</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>A metrics endpoint is available in the API: <code>/api/v2/metrics/</code> that
@@ -3598,7 +3952,7 @@ Prometheus in conjunction with other software like Grafana or
 Metricsbeat to visualize that data and set up alerts.</p>
 </div>
 <div class="sect2">
-<h3 id="_set_up_prometheus"><a class="anchor" href="#_set_up_prometheus"></a>11.1. Set up Prometheus</h3>
+<h3 id="_set_up_prometheus"><a class="anchor" href="#_set_up_prometheus"></a>12.1. Set up Prometheus</h3>
 <div class="paragraph">
 <p>To set up and use Prometheus, you will need to install Prometheus on a
 virtual machine or container. Refer to the
@@ -3690,14 +4044,14 @@ sessions by executing: <code>awx_sessions_total{type="user"}</code>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_secret_handling"><a class="anchor" href="#ag_secret_handling"></a>12. Secret handling and connection security</h2>
+<h2 id="ag_secret_handling"><a class="anchor" href="#ag_secret_handling"></a>13. Secret handling and connection security</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This document describes how Red Hat Ansible Automation Platform
 controller handles secrets and connections in a secure fashion.</p>
 </div>
 <div class="sect2">
-<h3 id="_secret_handling"><a class="anchor" href="#_secret_handling"></a>12.1. Secret Handling</h3>
+<h3 id="_secret_handling"><a class="anchor" href="#_secret_handling"></a>13.1. Secret Handling</h3>
 <div class="paragraph">
 <p>automation controller manages three sets of secrets:</p>
 </div>
@@ -3717,7 +4071,7 @@ password vault credentials, etc.)</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="_user_passwords_for_local_users"><a class="anchor" href="#_user_passwords_for_local_users"></a>12.1.1. User passwords for local users</h4>
+<h4 id="_user_passwords_for_local_users"><a class="anchor" href="#_user_passwords_for_local_users"></a>13.1.1. User passwords for local users</h4>
 <div class="paragraph">
 <p>automation controller hashes local automation controller user passwords
 with the PBKDF2 algorithm using a SHA256 hash. Users who authenticate
@@ -3726,7 +4080,7 @@ have any password or secret stored.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_secret_handling_for_operational_use"><a class="anchor" href="#_secret_handling_for_operational_use"></a>12.1.2. Secret handling for operational use</h4>
+<h4 id="_secret_handling_for_operational_use"><a class="anchor" href="#_secret_handling_for_operational_use"></a>13.1.2. Secret handling for operational use</h4>
 <div class="paragraph">
 <p>automation controller contains the following secrets used operationally:</p>
 </div>
@@ -3818,7 +4172,7 @@ run backups/restores), run <code>setup.sh -k</code>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_secret_handling_for_automation_use"><a class="anchor" href="#_secret_handling_for_automation_use"></a>12.1.3. Secret handling for automation use</h4>
+<h4 id="_secret_handling_for_automation_use"><a class="anchor" href="#_secret_handling_for_automation_use"></a>13.1.3. Secret handling for automation use</h4>
 <div class="paragraph">
 <p>automation controller stores a variety of secrets in the database that
 are either used for automation or are a result of automation. These
@@ -3857,9 +4211,9 @@ is not accidentally logged.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_connection_security"><a class="anchor" href="#_connection_security"></a>12.2. Connection Security</h3>
+<h3 id="_connection_security"><a class="anchor" href="#_connection_security"></a>13.2. Connection Security</h3>
 <div class="sect3">
-<h4 id="_internal_services"><a class="anchor" href="#_internal_services"></a>12.2.1. Internal Services</h4>
+<h4 id="_internal_services"><a class="anchor" href="#_internal_services"></a>13.2.1. Internal Services</h4>
 <div class="paragraph">
 <p>automation controller connects to the following services as part of
 internal operation:</p>
@@ -3887,7 +4241,7 @@ protocols are configured by the default OpenSSL configuration.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_external_access"><a class="anchor" href="#_external_access"></a>12.2.2. External Access</h4>
+<h4 id="_external_access"><a class="anchor" href="#_external_access"></a>13.2.2. External Access</h4>
 <div class="paragraph">
 <p>automation controller is accessed via standard HTTP/HTTPS on standard
 ports, provided by nginx. A self-signed cert/key is installed by
@@ -3899,7 +4253,7 @@ must be reapplied on each update.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_managed_nodes"><a class="anchor" href="#_managed_nodes"></a>12.2.3. Managed Nodes</h4>
+<h4 id="_managed_nodes"><a class="anchor" href="#_managed_nodes"></a>13.2.3. Managed Nodes</h4>
 <div class="paragraph">
 <p>automation controller also connects to managed machines and services as
 part of automation. All connections to managed machines are done via
@@ -3913,7 +4267,7 @@ configuration).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_security_best_practices"><a class="anchor" href="#ag_security_best_practices"></a>13. Security Best Practices</h2>
+<h2 id="ag_security_best_practices"><a class="anchor" href="#ag_security_best_practices"></a>14. Security Best Practices</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>automation controller out-of-the-box is deployed in a secure fashion for
@@ -3923,7 +4277,7 @@ require some additional best practices to ensure security. This document
 describes best practices for automation in a secure manner.</p>
 </div>
 <div class="sect2">
-<h3 id="_general_best_practices"><a class="anchor" href="#_general_best_practices"></a>13.1. General best practices</h3>
+<h3 id="_general_best_practices"><a class="anchor" href="#_general_best_practices"></a>14.1. General best practices</h3>
 <div class="paragraph">
 <p>An application is only as secure as the underlying system. To secure Red
 Hat Enterprise Linux, start with the release-appropriate security guide:</p>
@@ -3942,7 +4296,7 @@ Hat Enterprise Linux, start with the release-appropriate security guide:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_understand_the_architecture_of_ansible_and_the_controller"><a class="anchor" href="#_understand_the_architecture_of_ansible_and_the_controller"></a>13.2. Understand the architecture of Ansible and the controller</h3>
+<h3 id="_understand_the_architecture_of_ansible_and_the_controller"><a class="anchor" href="#_understand_the_architecture_of_ansible_and_the_controller"></a>14.2. Understand the architecture of Ansible and the controller</h3>
 <div class="paragraph">
 <p>Ansible and automation controller comprise a general purpose,
 declarative, automation platform. That means that once an Ansible
@@ -3979,13 +4333,13 @@ significantly reducing the threat surface of your installation.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_granting_access"><a class="anchor" href="#_granting_access"></a>13.3. Granting access</h3>
+<h3 id="_granting_access"><a class="anchor" href="#_granting_access"></a>14.3. Granting access</h3>
 <div class="paragraph">
 <p>Granting access to certain parts of the system exposes security risks.
 Apply the following practices to help secure access:</p>
 </div>
 <div class="sect3">
-<h4 id="_minimize_administrative_accounts"><a class="anchor" href="#_minimize_administrative_accounts"></a>13.3.1. Minimize administrative accounts</h4>
+<h4 id="_minimize_administrative_accounts"><a class="anchor" href="#_minimize_administrative_accounts"></a>14.3.1. Minimize administrative accounts</h4>
 <div class="paragraph">
 <p>Minimizing the access to system administrative accounts is crucial for
 maintaining a secure system. A system administrator/root user can
@@ -4008,7 +4362,7 @@ disaster recovery only.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_minimize_local_system_access"><a class="anchor" href="#_minimize_local_system_access"></a>13.3.2. Minimize local system access</h4>
+<h4 id="_minimize_local_system_access"><a class="anchor" href="#_minimize_local_system_access"></a>14.3.2. Minimize local system access</h4>
 <div class="paragraph">
 <p>automation controller, when used with best practices, should not require
 local user access except for administrative purposes. Non-administrator
@@ -4016,7 +4370,7 @@ users should not have access to the controller system.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_remove_access_to_credentials_from_users"><a class="anchor" href="#_remove_access_to_credentials_from_users"></a>13.3.3. Remove access to credentials from users</h4>
+<h4 id="_remove_access_to_credentials_from_users"><a class="anchor" href="#_remove_access_to_credentials_from_users"></a>14.3.3. Remove access to credentials from users</h4>
 <div class="paragraph">
 <p>If an automation credential is only stored in the controller, it can be
 further secured. Services such as OpenSSH can be configured to only
@@ -4027,7 +4381,7 @@ allowing for easier auditing.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enforce_separation_of_duties"><a class="anchor" href="#_enforce_separation_of_duties"></a>13.3.4. Enforce separation of duties</h4>
+<h4 id="_enforce_separation_of_duties"><a class="anchor" href="#_enforce_separation_of_duties"></a>14.3.4. Enforce separation of duties</h4>
 <div class="paragraph">
 <p>Different pieces of automation may need to access a system at different
 levels. For example, you may have low-level system automation that
@@ -4040,13 +4394,13 @@ baseline auditing.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_available_resources"><a class="anchor" href="#_available_resources"></a>13.4. Available resources</h3>
+<h3 id="_available_resources"><a class="anchor" href="#_available_resources"></a>14.4. Available resources</h3>
 <div class="paragraph">
 <p>Several resources exist in the controller and elsewhere to ensure a
 secure platform. Consider utilizing the following functionality:</p>
 </div>
 <div class="sect3">
-<h4 id="_audit_and_logging_functionality"><a class="anchor" href="#_audit_and_logging_functionality"></a>13.4.1. Audit and logging functionality</h4>
+<h4 id="_audit_and_logging_functionality"><a class="anchor" href="#_audit_and_logging_functionality"></a>14.4.1. Audit and logging functionality</h4>
 <div class="paragraph">
 <p>For any administrative access, it is key to audit and watch for actions.
 For the system overall, this can be done via the built in audit support
@@ -4068,7 +4422,7 @@ Loggly, and more. See <code>ag_logging</code> for more information.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_existing_security_functionality"><a class="anchor" href="#_existing_security_functionality"></a>13.4.2. Existing security functionality</h4>
+<h4 id="_existing_security_functionality"><a class="anchor" href="#_existing_security_functionality"></a>14.4.2. Existing security functionality</h4>
 <div class="paragraph">
 <p>Do not disable SELinux, and do not disable the controller’s existing
 multi-tenant containment. Use the controller’s role-based access control
@@ -4079,7 +4433,7 @@ Automation Controller User Guide.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_external_account_stores"><a class="anchor" href="#_external_account_stores"></a>13.4.3. External account stores</h4>
+<h4 id="_external_account_stores"><a class="anchor" href="#_external_account_stores"></a>14.4.3. External account stores</h4>
 <div class="paragraph">
 <p>Maintaining a full set of users just in the controller can be a
 time-consuming task in a large organization, prone to error. Automation
@@ -4090,7 +4444,7 @@ error when working with permissions.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ag_security_django_password"><a class="anchor" href="#ag_security_django_password"></a>13.4.4. Django password policies</h4>
+<h4 id="ag_security_django_password"><a class="anchor" href="#ag_security_django_password"></a>14.4.4. Django password policies</h4>
 <div class="paragraph">
 <p>Controller admins can leverage Django to set password policies at
 creation time via <code>AUTH_PASSWORD_VALIDATORS</code> to validate controller user
@@ -4135,7 +4489,7 @@ effect. See <code>ag_restart_tower</code> for detail.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_manage_utility"><a class="anchor" href="#ag_manage_utility"></a>14. The <em>awx-manage</em> Utility</h2>
+<h2 id="ag_manage_utility"><a class="anchor" href="#ag_manage_utility"></a>15. The <em>awx-manage</em> Utility</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>awx-manage</code> utility is used to access detailed internal information
@@ -4150,7 +4504,7 @@ of the controller. Commands for <code>awx-manage</code> should run as the <code>
 supported.</p>
 </div>
 <div class="sect2">
-<h3 id="_inventory_import"><a class="anchor" href="#_inventory_import"></a>14.1. Inventory Import</h3>
+<h3 id="_inventory_import"><a class="anchor" href="#_inventory_import"></a>15.1. Inventory Import</h3>
 <div class="paragraph">
 <p><code>awx-manage</code> is a mechanism by which a controller administrator can
 import inventory directly into the controller, for those who cannot use
@@ -4202,7 +4556,7 @@ inventory sync as long as <code>--overwrite_vars</code> is <strong>not</strong> 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cleanup_of_old_data"><a class="anchor" href="#_cleanup_of_old_data"></a>14.2. Cleanup of old data</h3>
+<h3 id="_cleanup_of_old_data"><a class="anchor" href="#_cleanup_of_old_data"></a>15.2. Cleanup of old data</h3>
 <div class="paragraph">
 <p><code>awx-manage</code> has a variety of commands used to clean old data from the
 controller. The controller administrators can use the controller
@@ -4232,7 +4586,7 @@ data older than a specific number of days.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cluster_management"><a class="anchor" href="#_cluster_management"></a>14.3. Cluster management</h3>
+<h3 id="_cluster_management"><a class="anchor" href="#_cluster_management"></a>15.3. Cluster management</h3>
 <div class="paragraph">
 <p>Refer to the <code>ag_clustering</code> section for details on the
 <code>awx-manage provision_instance</code> and <code>awx-manage deprovision_instance</code>
@@ -4247,13 +4601,13 @@ Support.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_token_utility"><a class="anchor" href="#ag_token_utility"></a>14.4. Token and session management</h3>
+<h3 id="ag_token_utility"><a class="anchor" href="#ag_token_utility"></a>15.4. Token and session management</h3>
 <div class="paragraph">
 <p>automation controller supports the following commands for OAuth2 token
 management:</p>
 </div>
 <div class="sect3">
-<h4 id="_create_oauth2_token"><a class="anchor" href="#_create_oauth2_token"></a>14.4.1. <code>create_oauth2_token</code></h4>
+<h4 id="_create_oauth2_token"><a class="anchor" href="#_create_oauth2_token"></a>15.4.1. <code>create_oauth2_token</code></h4>
 <div class="paragraph">
 <p>Use this command to create OAuth2 tokens (specify actual username for
 <code>example_user</code> below):</p>
@@ -4272,7 +4626,7 @@ specifying a user, or supplying a username that does not exist.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ag_manage_utility_revoke_tokens"><a class="anchor" href="#ag_manage_utility_revoke_tokens"></a>14.4.2. <code>revoke_oauth2_tokens</code></h4>
+<h4 id="ag_manage_utility_revoke_tokens"><a class="anchor" href="#ag_manage_utility_revoke_tokens"></a>15.4.2. <code>revoke_oauth2_tokens</code></h4>
 <div class="paragraph">
 <p>Use this command to revoke OAuth2 tokens (both application tokens and
 personal access tokens (PAT)). By default, it revokes all application
@@ -4316,7 +4670,7 @@ actual username for <code>example_user</code> below):</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_cleartokens"><a class="anchor" href="#_cleartokens"></a>14.4.3. <code>cleartokens</code></h4>
+<h4 id="_cleartokens"><a class="anchor" href="#_cleartokens"></a>15.4.3. <code>cleartokens</code></h4>
 <div class="paragraph">
 <p>Use this command to clear tokens which have already been revoked. Refer
 to <a href="">Django&#8217;s Oauth Toolkit documentation on cleartokens</a> for more
@@ -4324,7 +4678,7 @@ detail.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_expire_sessions"><a class="anchor" href="#_expire_sessions"></a>14.4.4. <code>expire_sessions</code></h4>
+<h4 id="_expire_sessions"><a class="anchor" href="#_expire_sessions"></a>15.4.4. <code>expire_sessions</code></h4>
 <div class="paragraph">
 <p>Use this command to terminate all sessions or all sessions for a
 specific user. Consider using this command when a user changes role in
@@ -4350,7 +4704,7 @@ sessions of a specific user, you can pass their username using the
 </div>
 </div>
 <div class="sect3">
-<h4 id="_clearsessions"><a class="anchor" href="#_clearsessions"></a>14.4.5. <code>clearsessions</code></h4>
+<h4 id="_clearsessions"><a class="anchor" href="#_clearsessions"></a>15.4.5. <code>clearsessions</code></h4>
 <div class="paragraph">
 <p>Use this command to delete all sessions that have expired. Refer to
 <a href="">Django&#8217;s documentation on clearsessions</a> for more detail.</p>
@@ -4363,7 +4717,7 @@ Controller User Guide.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_analytics_gathering"><a class="anchor" href="#_analytics_gathering"></a>14.5. Analytics gathering</h3>
+<h3 id="_analytics_gathering"><a class="anchor" href="#_analytics_gathering"></a>15.5. Analytics gathering</h3>
 <div class="paragraph">
 <p>Use this command to gather analytics on-demand outside of the predefined
 window (default is 4 hours):</p>
@@ -4392,7 +4746,7 @@ the output format and is optional.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_configure_tower"><a class="anchor" href="#ag_configure_tower"></a>15. Controller Configuration</h2>
+<h2 id="ag_configure_tower"><a class="anchor" href="#ag_configure_tower"></a>16. Controller Configuration</h2>
 <div class="sectionbody">
 <div id="configure_tower_overview" class="paragraph">
 <p>You can configure various controller settings within the Settings screen
@@ -4414,7 +4768,7 @@ navigation bar or use the breadcrumbs at the top of the current view.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_authentication"><a class="anchor" href="#_authentication"></a>16. Authentication</h2>
+<h2 id="_authentication"><a class="anchor" href="#_authentication"></a>17. Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Through the controller user interface, you can set up a simplified login
@@ -4472,7 +4826,7 @@ information. Be sure to include all the information as required.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="configure_tower_jobs"><a class="anchor" href="#configure_tower_jobs"></a>17. Jobs</h2>
+<h2 id="configure_tower_jobs"><a class="anchor" href="#configure_tower_jobs"></a>18. Jobs</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Jobs tab allows you to configure the types of modules that are
@@ -4515,7 +4869,7 @@ settings.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="configure_tower_system"><a class="anchor" href="#configure_tower_system"></a>18. System</h2>
+<h2 id="configure_tower_system"><a class="anchor" href="#configure_tower_system"></a>19. System</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The System tab allows you to define the base URL for the controller
@@ -4594,7 +4948,7 @@ revoked.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="configure_tower_ui"><a class="anchor" href="#configure_tower_ui"></a>19. User Interface</h2>
+<h2 id="configure_tower_ui"><a class="anchor" href="#configure_tower_ui"></a>20. User Interface</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The User Interface tab allows you to set controller analytics settings,
@@ -4611,7 +4965,7 @@ screen.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_usability_analytics_and_data_collection"><a class="anchor" href="#_usability_analytics_and_data_collection"></a>20. Usability Analytics and Data Collection</h2>
+<h2 id="_usability_analytics_and_data_collection"><a class="anchor" href="#_usability_analytics_and_data_collection"></a>21. Usability Analytics and Data Collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Usability data collection is included with Tower to collect data to
@@ -4670,7 +5024,7 @@ Tracking State drop-down list:</p>
 <a href="https://www.redhat.com/en/about/privacy-policy" class="bare">https://www.redhat.com/en/about/privacy-policy</a>.</p>
 </div>
 <div class="sect2">
-<h3 id="_custom_logos_and_images"><a class="anchor" href="#_custom_logos_and_images"></a>20.1. Custom Logos and Images</h3>
+<h3 id="_custom_logos_and_images"><a class="anchor" href="#_custom_logos_and_images"></a>21.1. Custom Logos and Images</h3>
 <div class="paragraph">
 <p>automation controller supports the use of a custom logo. You can add a
 custom logo by uploading an image; and supply a custom login message
@@ -4712,7 +5066,7 @@ automation controller logo.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_license"><a class="anchor" href="#_license"></a>21. License</h2>
+<h2 id="_license"><a class="anchor" href="#_license"></a>22. License</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Available subscriptions or a subscription manifest authorize the use of
@@ -5014,7 +5368,7 @@ defined there.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_oauth2_token_auth"><a class="anchor" href="#ag_oauth2_token_auth"></a>22. Token-Based Authentication</h2>
+<h2 id="ag_oauth2_token_auth"><a class="anchor" href="#ag_oauth2_token_auth"></a>23. Token-Based Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>OAuth 2 is used for token-based authentication. You can manage OAuth
@@ -5030,7 +5384,7 @@ specification.</p>
 <code>ag_token_utility</code> section.</p>
 </div>
 <div class="sect2">
-<h3 id="_managing_oauth_2_applications_and_tokens"><a class="anchor" href="#_managing_oauth_2_applications_and_tokens"></a>22.1. Managing OAuth 2 Applications and Tokens</h3>
+<h3 id="_managing_oauth_2_applications_and_tokens"><a class="anchor" href="#_managing_oauth_2_applications_and_tokens"></a>23.1. Managing OAuth 2 Applications and Tokens</h3>
 <div class="paragraph">
 <p>Applications and tokens can be managed as a top-level resource at
 <code>/api/&lt;version&gt;/applications</code> and <code>/api/&lt;version&gt;/tokens</code>. These
@@ -5097,7 +5451,7 @@ during creation and are non-editable identifiers of applications, while
 and become non-editable.</p>
 </div>
 <div class="sect3">
-<h4 id="_access_rules_for_applications"><a class="anchor" href="#_access_rules_for_applications"></a>22.1.1. Access Rules for Applications</h4>
+<h4 id="_access_rules_for_applications"><a class="anchor" href="#_access_rules_for_applications"></a>23.1.1. Access Rules for Applications</h4>
 <div class="paragraph">
 <p>Access rules for applications are as follows:</p>
 </div>
@@ -5204,7 +5558,7 @@ two types of tokens.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_access_rules_for_tokens"><a class="anchor" href="#_access_rules_for_tokens"></a>22.1.2. Access rules for tokens</h4>
+<h4 id="_access_rules_for_tokens"><a class="anchor" href="#_access_rules_for_tokens"></a>23.1.2. Access rules for tokens</h4>
 <div class="paragraph">
 <p>Access rules for tokens are as follows:</p>
 </div>
@@ -5241,7 +5595,7 @@ creation only.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_use_oauth_pat"><a class="anchor" href="#ag_use_oauth_pat"></a>22.2. Using OAuth 2 Token System for Personal Access Tokens (PAT)</h3>
+<h3 id="ag_use_oauth_pat"><a class="anchor" href="#ag_use_oauth_pat"></a>23.2. Using OAuth 2 Token System for Personal Access Tokens (PAT)</h3>
 <div class="paragraph">
 <p>The easiest and most common way to obtain an OAuth 2 token is to create
 a personal access token at the <code>/api/v2/users/&lt;userid&gt;/personal_tokens/</code>
@@ -5292,7 +5646,7 @@ applicable).</p>
 <p><span class="image"><img src="images/configure-tower-system-misc-sys-token-expire.png" alt="image"></span></p>
 </div>
 <div class="sect3">
-<h4 id="_token_scope_mask_over_rbac_system"><a class="anchor" href="#_token_scope_mask_over_rbac_system"></a>22.2.1. Token scope mask over RBAC system</h4>
+<h4 id="_token_scope_mask_over_rbac_system"><a class="anchor" href="#_token_scope_mask_over_rbac_system"></a>23.2.1. Token scope mask over RBAC system</h4>
 <div class="paragraph">
 <p>The scope of an OAuth 2 token is a space-separated string composed of
 valid scope keywords, 'read' and 'write'. These keywords are
@@ -5399,7 +5753,7 @@ token, using that token&#8217;s ID. For example:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_oauth2_token_auth_grant_types"><a class="anchor" href="#ag_oauth2_token_auth_grant_types"></a>22.3. Application Functions</h3>
+<h3 id="ag_oauth2_token_auth_grant_types"><a class="anchor" href="#ag_oauth2_token_auth_grant_types"></a>23.3. Application Functions</h3>
 <div class="paragraph">
 <p>This page lists OAuth 2 utility endpoints used for authorization, token
 refresh, and revoke. The <code>/api/o/</code> endpoints are not meant to be used in
@@ -5433,7 +5787,7 @@ the controller user interface. Refer to the
 Automation Controller User Guide for more detail.</p>
 </div>
 <div class="sect3">
-<h4 id="_application_using_authorization_code_grant_type"><a class="anchor" href="#_application_using_authorization_code_grant_type"></a>22.3.1. Application using <code>authorization code</code> grant type</h4>
+<h4 id="_application_using_authorization_code_grant_type"><a class="anchor" href="#_application_using_authorization_code_grant_type"></a>23.3.1. Application using <code>authorization code</code> grant type</h4>
 <div class="paragraph">
 <p>The application <code>authorization code</code> grant type should be used when
 access tokens need to be issued directly to an external application or
@@ -5549,7 +5903,7 @@ access the controller.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_application_using_password_grant_type"><a class="anchor" href="#_application_using_password_grant_type"></a>22.3.2. Application using <code>password</code> grant type</h4>
+<h4 id="_application_using_password_grant_type"><a class="anchor" href="#_application_using_password_grant_type"></a>23.3.2. Application using <code>password</code> grant type</h4>
 <div class="paragraph">
 <p>The <code>password</code> grant type or <code>Resource owner password-based</code> grant type
 is ideal for users who have native access to the web app and should be
@@ -5622,14 +5976,14 @@ Strict-Transport-Security: max-age=15768000
 </div>
 </div>
 <div class="sect2">
-<h3 id="_application_token_functions"><a class="anchor" href="#_application_token_functions"></a>22.4. Application Token Functions</h3>
+<h3 id="_application_token_functions"><a class="anchor" href="#_application_token_functions"></a>23.4. Application Token Functions</h3>
 <div class="paragraph">
 <p>This section describes the refresh and revoke functions associated with
 tokens. Everything that follows (Refreshing and revoking tokens at the
 <code>/api/o/</code> endpoints) can currently only be done with application tokens.</p>
 </div>
 <div class="sect3">
-<h4 id="_refresh_an_existing_access_token"><a class="anchor" href="#_refresh_an_existing_access_token"></a>22.4.1. Refresh an existing access token</h4>
+<h4 id="_refresh_an_existing_access_token"><a class="anchor" href="#_refresh_an_existing_access_token"></a>23.4.1. Refresh an existing access token</h4>
 <div class="paragraph">
 <p>The following example shows an existing access token with a refresh
 token provided:</p>
@@ -5706,7 +6060,7 @@ endpoint.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ag_oauth2_token_revoke"><a class="anchor" href="#ag_oauth2_token_revoke"></a>22.4.2. Revoke an access token</h4>
+<h4 id="ag_oauth2_token_revoke"><a class="anchor" href="#ag_oauth2_token_revoke"></a>23.4.2. Revoke an access token</h4>
 <div class="paragraph">
 <p>Similarly, you can revoke an access token by using the
 <code>/api/o/revoke-token/</code> endpoint.</p>
@@ -5765,7 +6119,7 @@ checking whether the token is present in the <code>/api/v2/tokens/</code> endpoi
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_social_auth"><a class="anchor" href="#ag_social_auth"></a>23. Setting up Social Authentication</h2>
+<h2 id="ag_social_auth"><a class="anchor" href="#ag_social_auth"></a>24. Setting up Social Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Authentication methods help simplify logins for end users&#8212;&#8203;offering
@@ -5804,7 +6158,7 @@ environments requiring high levels of security while maintaining network
 access for remote users.</p>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_github"><a class="anchor" href="#ag_auth_github"></a>23.1. GitHub settings</h3>
+<h3 id="ag_auth_github"><a class="anchor" href="#ag_auth_github"></a>24.1. GitHub settings</h3>
 <div class="paragraph">
 <p>To set up social authentication for GitHub, you will need to obtain an
 OAuth2 key and secret for a web application. To do this, you must first
@@ -5862,7 +6216,7 @@ logo to allow logging in with those credentials.</p>
 <p><span class="image"><img src="images/configure-tower-auth-github-logo.png" alt="image"></span></p>
 </div>
 <div class="sect3">
-<h4 id="ag_auth_github_org"><a class="anchor" href="#ag_auth_github_org"></a>23.1.1. GitHub Organization settings</h4>
+<h4 id="ag_auth_github_org"><a class="anchor" href="#ag_auth_github_org"></a>24.1.1. GitHub Organization settings</h4>
 <div class="paragraph">
 <p>When defining account authentication with either an organization or a
 team within an organization, you should use the specific organization
@@ -5945,7 +6299,7 @@ Organization logo to allow logging in with those credentials.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="ag_auth_github_team"><a class="anchor" href="#ag_auth_github_team"></a>23.1.2. GitHub Team settings</h4>
+<h4 id="ag_auth_github_team"><a class="anchor" href="#ag_auth_github_team"></a>24.1.2. GitHub Team settings</h4>
 <div class="paragraph">
 <p>To set up social authentication for a GitHub Team, you will need to
 obtain an OAuth2 key and secret for a web application. To do this, you
@@ -6015,7 +6369,7 @@ Team logo to allow logging in with those credentials.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_github_enterprise_settings"><a class="anchor" href="#_github_enterprise_settings"></a>23.1.3. GitHub Enterprise settings</h4>
+<h4 id="_github_enterprise_settings"><a class="anchor" href="#_github_enterprise_settings"></a>24.1.3. GitHub Enterprise settings</h4>
 <div class="paragraph">
 <p>To set up social authentication for a GitHub Enterprise, you will need
 to obtain a GitHub Enterprise URL, an API URL, OAuth2 key and secret for
@@ -6094,7 +6448,7 @@ Enterprise logo to allow logging in with those credentials.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_github_enterprise_organization_settings"><a class="anchor" href="#_github_enterprise_organization_settings"></a>23.1.4. GitHub Enterprise Organization settings</h4>
+<h4 id="_github_enterprise_organization_settings"><a class="anchor" href="#_github_enterprise_organization_settings"></a>24.1.4. GitHub Enterprise Organization settings</h4>
 <div class="paragraph">
 <p>To set up social authentication for a GitHub Enterprise Org, you will
 need to obtain a GitHub Enterprise Org URL, an Org API URL, an Org
@@ -6180,7 +6534,7 @@ Enterprise Organization logo to allow logging in with those credentials.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_github_enterprise_team_settings"><a class="anchor" href="#_github_enterprise_team_settings"></a>23.1.5. GitHub Enterprise Team settings</h4>
+<h4 id="_github_enterprise_team_settings"><a class="anchor" href="#_github_enterprise_team_settings"></a>24.1.5. GitHub Enterprise Team settings</h4>
 <div class="paragraph">
 <p>To set up social authentication for a GitHub Enterprise teams, you will
 need to obtain a GitHub Enterprise Org URL, an Org API URL, an Org
@@ -6271,7 +6625,7 @@ Enterprise Teams logo to allow logging in with those credentials.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_google_oauth2"><a class="anchor" href="#ag_auth_google_oauth2"></a>23.2. Google OAuth2 settings</h3>
+<h3 id="ag_auth_google_oauth2"><a class="anchor" href="#ag_auth_google_oauth2"></a>24.2. Google OAuth2 settings</h3>
 <div class="paragraph">
 <p>To set up social authentication for Google, you will need to obtain an
 OAuth2 key and secret for a web application. To do this, you must first
@@ -6352,9 +6706,9 @@ controller.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_org_team_maps"><a class="anchor" href="#ag_org_team_maps"></a>23.3. Organization and Team Mapping</h3>
+<h3 id="ag_org_team_maps"><a class="anchor" href="#ag_org_team_maps"></a>24.3. Organization and Team Mapping</h3>
 <div class="sect3">
-<h4 id="_organization_mapping"><a class="anchor" href="#_organization_mapping"></a>23.3.1. Organization mapping</h4>
+<h4 id="_organization_mapping"><a class="anchor" href="#_organization_mapping"></a>24.3.1. Organization mapping</h4>
 <div class="paragraph">
 <p>You will need to control which users are placed into which controller
 organizations based on their username and email address (mapping out
@@ -6458,7 +6812,7 @@ SOCIAL_AUTH_SAML_ORGANIZATION_MAP = {}</pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_team_mapping"><a class="anchor" href="#_team_mapping"></a>23.3.2. Team mapping</h4>
+<h4 id="_team_mapping"><a class="anchor" href="#_team_mapping"></a>24.3.2. Team mapping</h4>
 <div class="paragraph">
 <p>Team mapping is the mapping of team members (users) from social auth
 accounts. Keys are team names (will be created if not present). Values
@@ -6550,7 +6904,7 @@ email address will be able to login.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_ent_auth"><a class="anchor" href="#ag_ent_auth"></a>24. Setting up Enterprise Authentication</h2>
+<h2 id="ag_ent_auth"><a class="anchor" href="#ag_ent_auth"></a>25. Setting up Enterprise Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes setting up authentication for the following
@@ -6589,7 +6943,7 @@ user can no longer be treated as enterprise user.</p>
 </ul>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_azure"><a class="anchor" href="#ag_auth_azure"></a>24.1. Azure AD settings</h3>
+<h3 id="ag_auth_azure"><a class="anchor" href="#ag_auth_azure"></a>25.1. Azure AD settings</h3>
 <div class="paragraph">
 <p>To set up enterprise authentication for Microsoft Azure Active Directory
 (AD), you will need to obtain an OAuth2 key and secret by registering
@@ -6651,13 +7005,13 @@ AD Identity Platform (v2)</a> overview.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ldap_authentication"><a class="anchor" href="#_ldap_authentication"></a>24.2. LDAP Authentication</h3>
+<h3 id="_ldap_authentication"><a class="anchor" href="#_ldap_authentication"></a>25.2. LDAP Authentication</h3>
 <div class="paragraph">
 <p>Refer to the <code>ag_auth_ldap</code> section.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_radius"><a class="anchor" href="#ag_auth_radius"></a>24.3. RADIUS settings</h3>
+<h3 id="ag_auth_radius"><a class="anchor" href="#ag_auth_radius"></a>25.3. RADIUS settings</h3>
 <div class="paragraph">
 <p>automation controller can be configured to centrally use RADIUS as a
 source for authentication information.</p>
@@ -6686,7 +7040,7 @@ authentication is disabled.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_saml"><a class="anchor" href="#ag_auth_saml"></a>24.4. SAML settings</h3>
+<h3 id="ag_auth_saml"><a class="anchor" href="#ag_auth_saml"></a>25.4. SAML settings</h3>
 <div class="paragraph">
 <p>SAML allows the exchange of authentication and authorization data
 between an Identity Provider (IdP - a system of servers that provide the
@@ -7604,7 +7958,7 @@ logging into automation controller.</p>
 </ol>
 </div>
 <div class="sect3">
-<h4 id="_transparent_saml_logins"><a class="anchor" href="#_transparent_saml_logins"></a>24.4.1. Transparent SAML Logins</h4>
+<h4 id="_transparent_saml_logins"><a class="anchor" href="#_transparent_saml_logins"></a>25.4.1. Transparent SAML Logins</h4>
 <div class="paragraph">
 <p>For transparent logins to work, you must first get IdP-initiated logins
 to work. To achieve this:</p>
@@ -7653,7 +8007,7 @@ you to log in with any configured method.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_enabling_logging_for_saml"><a class="anchor" href="#_enabling_logging_for_saml"></a>24.4.2. Enabling Logging for SAML</h4>
+<h4 id="_enabling_logging_for_saml"><a class="anchor" href="#_enabling_logging_for_saml"></a>25.4.2. Enabling Logging for SAML</h4>
 <div class="paragraph">
 <p>You can enable logging messages for the SAML adapter the same way you
 can enable logging for LDAP. Refer to the <code>ldap_logging</code> section.</p>
@@ -7661,7 +8015,7 @@ can enable logging for LDAP. Refer to the <code>ldap_logging</code> section.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_auth_tacacs"><a class="anchor" href="#ag_auth_tacacs"></a>24.5. TACACS+ settings</h3>
+<h3 id="ag_auth_tacacs"><a class="anchor" href="#ag_auth_tacacs"></a>25.5. TACACS+ settings</h3>
 <div class="paragraph">
 <p>Terminal Access Controller Access-Control System Plus (TACACS+) is a
 protocol that handles remote authentication and related services for
@@ -7728,7 +8082,7 @@ client. Options are <strong>ascii</strong> or <strong>pap</strong>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_auth_ldap"><a class="anchor" href="#ag_auth_ldap"></a>25. Setting up LDAP Authentication</h2>
+<h2 id="ag_auth_ldap"><a class="anchor" href="#ag_auth_ldap"></a>26. Setting up LDAP Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Note</p>
@@ -8166,7 +8520,7 @@ authentication, see <code>ug_ldap_auth_perf_tips</code> in the Automation
 Controller User Guide.</p>
 </div>
 <div class="sect2">
-<h3 id="_referrals"><a class="anchor" href="#_referrals"></a>25.1. Referrals</h3>
+<h3 id="_referrals"><a class="anchor" href="#_referrals"></a>26.1. Referrals</h3>
 <div class="paragraph">
 <p>Active Directory uses "referrals" in case the queried object is not
 available in its database. It has been noted that this does not work
@@ -8196,7 +8550,7 @@ configuration file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ldap_logging"><a class="anchor" href="#ldap_logging"></a>25.2. Enabling Logging for LDAP</h3>
+<h3 id="ldap_logging"><a class="anchor" href="#ldap_logging"></a>26.2. Enabling Logging for LDAP</h3>
 <div class="paragraph">
 <p>To enable logging for LDAP, you must set the level to <code>DEBUG</code> in the
 Settings configuration window:</p>
@@ -8227,7 +8581,7 @@ Settings configuration window:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_ldap_org_team_maps"><a class="anchor" href="#ag_ldap_org_team_maps"></a>25.3. LDAP Organization and Team Mapping</h3>
+<h3 id="ag_ldap_org_team_maps"><a class="anchor" href="#ag_ldap_org_team_maps"></a>26.3. LDAP Organization and Team Mapping</h3>
 <div class="paragraph">
 <p>Next, you will need to control which users are placed into which
 controller organizations based on LDAP attributes (mapping out between
@@ -8378,7 +8732,7 @@ not a member of the given groups will be removed from the team.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_changing_the_default_timeout_for_authentication"><a class="anchor" href="#_changing_the_default_timeout_for_authentication"></a>26. Changing the Default Timeout for Authentication</h2>
+<h2 id="_changing_the_default_timeout_for_authentication"><a class="anchor" href="#_changing_the_default_timeout_for_authentication"></a>27. Changing the Default Timeout for Authentication</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The default length of time, in seconds, that your supplied token is
@@ -8424,7 +8778,7 @@ the browser session and must be cleared.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_user_authentication_with_kerberos"><a class="anchor" href="#_user_authentication_with_kerberos"></a>27. User Authentication with Kerberos</h2>
+<h2 id="_user_authentication_with_kerberos"><a class="anchor" href="#_user_authentication_with_kerberos"></a>28. User Authentication with Kerberos</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>User authentication via Active Directory (AD), also referred to as
@@ -8557,7 +8911,7 @@ check if <code>kerberos</code> package is installed and, if so, it uses kerberos
 authentication.</p>
 </div>
 <div class="sect2">
-<h3 id="_ad_and_kerberos_credentials"><a class="anchor" href="#_ad_and_kerberos_credentials"></a>27.1. AD and Kerberos Credentials</h3>
+<h3 id="_ad_and_kerberos_credentials"><a class="anchor" href="#_ad_and_kerberos_credentials"></a>28.1. AD and Kerberos Credentials</h3>
 <div class="paragraph">
 <p>Active Directory only:</p>
 </div>
@@ -8584,7 +8938,7 @@ username.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_working_with_kerberos_tickets"><a class="anchor" href="#_working_with_kerberos_tickets"></a>27.2. Working with Kerberos Tickets</h3>
+<h3 id="_working_with_kerberos_tickets"><a class="anchor" href="#_working_with_kerberos_tickets"></a>28.2. Working with Kerberos Tickets</h3>
 <div class="paragraph">
 <p>Ansible defaults to automatically managing Kerberos tickets when both
 the username and password are specified in the machine credential for a
@@ -8609,7 +8963,7 @@ fully-qualified path to an MIT krbv5 kinit-compatible binary.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_session_limits"><a class="anchor" href="#ag_session_limits"></a>28. Working with Session Limits</h2>
+<h2 id="ag_session_limits"><a class="anchor" href="#ag_session_limits"></a>29. Working with Session Limits</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Setting a session limit allows administrators to limit the number of
@@ -8669,7 +9023,7 @@ controller instance.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_backup_restore"><a class="anchor" href="#ag_backup_restore"></a>29. Backing Up and Restoring</h2>
+<h2 id="ag_backup_restore"><a class="anchor" href="#ag_backup_restore"></a>30. Backing Up and Restoring</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The ability to backup and restore your system(s) is integrated into the
@@ -8750,7 +9104,7 @@ argument to the setup script:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_backuprestore_playbooks"><a class="anchor" href="#_backuprestore_playbooks"></a>29.1. Backup/Restore Playbooks</h3>
+<h3 id="_backuprestore_playbooks"><a class="anchor" href="#_backuprestore_playbooks"></a>30.1. Backup/Restore Playbooks</h3>
 <div class="paragraph">
 <p>In addition to the <code>install.yml</code> file included with your <code>setup.sh</code>
 setup playbook, there are also <code>backup.yml</code> and <code>restore.yml</code> files for
@@ -8808,7 +9162,7 @@ access.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_backup_and_restoration_considerations"><a class="anchor" href="#_backup_and_restoration_considerations"></a>29.2. Backup and Restoration Considerations</h3>
+<h3 id="_backup_and_restoration_considerations"><a class="anchor" href="#_backup_and_restoration_considerations"></a>30.2. Backup and Restoration Considerations</h3>
 <div class="ulist">
 <ul>
 <li>
@@ -8847,7 +9201,7 @@ extra var to specify the location of the backup file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_clustering_backup_restore"><a class="anchor" href="#ag_clustering_backup_restore"></a>29.3. Backup and Restore for Clustered Environments</h3>
+<h3 id="ag_clustering_backup_restore"><a class="anchor" href="#ag_clustering_backup_restore"></a>30.3. Backup and Restore for Clustered Environments</h3>
 <div class="paragraph">
 <p>The procedure for backup and restore for a clustered environment is
 similar to a single install, except with some considerations described
@@ -8889,7 +9243,7 @@ hostname as the backup.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="ag_clustering_backup_restore_diff_cluster"><a class="anchor" href="#ag_clustering_backup_restore_diff_cluster"></a>29.3.1. Restoring to a different cluster</h4>
+<h4 id="ag_clustering_backup_restore_diff_cluster"><a class="anchor" href="#ag_clustering_backup_restore_diff_cluster"></a>30.3.1. Restoring to a different cluster</h4>
 <div class="paragraph">
 <p>When restoring a backup to a separate instance or cluster, manual
 projects and custom settings under /etc/tower are retained. Job output
@@ -8907,7 +9261,7 @@ cluster.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="ag_custom_rebranding"><a class="anchor" href="#ag_custom_rebranding"></a>30. Using Custom Logos in automation controller</h2>
+<h2 id="ag_custom_rebranding"><a class="anchor" href="#ag_custom_rebranding"></a>31. Using Custom Logos in automation controller</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>automation controller supports the use of a custom logo. You can add a
@@ -8949,7 +9303,7 @@ automation controller logo.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="usability_data_collection"><a class="anchor" href="#usability_data_collection"></a>31. Usability Analytics and Data Collection</h2>
+<h2 id="usability_data_collection"><a class="anchor" href="#usability_data_collection"></a>32. Usability Analytics and Data Collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Usability data collection is included with Tower to collect data to
@@ -9010,7 +9364,7 @@ Tracking State drop-down list:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="user_data_insights"><a class="anchor" href="#user_data_insights"></a>32. Automation Analytics</h2>
+<h2 id="user_data_insights"><a class="anchor" href="#user_data_insights"></a>33. Automation Analytics</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When you imported your license for the f.adoc[] time, you were given
@@ -9096,7 +9450,7 @@ span of one week, two weeks, and monthly increments.</p>
 information for the following:</p>
 </div>
 <div class="sect2">
-<h3 id="_usage_by_organization"><a class="anchor" href="#_usage_by_organization"></a>32.1. Usage by organization</h3>
+<h3 id="_usage_by_organization"><a class="anchor" href="#_usage_by_organization"></a>33.1. Usage by organization</h3>
 <div class="paragraph">
 <p>This pie chart represents the number of tasks ran inside all jobs by a
 particular organization.</p>
@@ -9106,7 +9460,7 @@ particular organization.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_job_runs_by_organization"><a class="anchor" href="#_job_runs_by_organization"></a>32.2. Job runs by organization</h3>
+<h3 id="_job_runs_by_organization"><a class="anchor" href="#_job_runs_by_organization"></a>33.2. Job runs by organization</h3>
 <div class="paragraph">
 <p>This pie chart represents the controller usage across <em>all</em> controller
 clusters by organization, which is calculated by the number of jobs run
@@ -9117,7 +9471,7 @@ by that organization.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_organization_status"><a class="anchor" href="#_organization_status"></a>32.3. Organization status</h3>
+<h3 id="_organization_status"><a class="anchor" href="#_organization_status"></a>33.3. Organization status</h3>
 <div class="paragraph">
 <p>This bar chart represents the controller usage by organization and date,
 which is calculated by the number of jobs run by that organization on a
@@ -9132,7 +9486,7 @@ increments.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_details_of_data_collection"><a class="anchor" href="#_details_of_data_collection"></a>33. Details of data collection</h2>
+<h2 id="_details_of_data_collection"><a class="anchor" href="#_details_of_data_collection"></a>34. Details of data collection</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Automation Analytics collects certain classes of data from automation
@@ -9200,7 +9554,7 @@ analytics data that would be sent to Red Hat.</p>
 different set of analytics data.</p>
 </div>
 <div class="sect2">
-<h3 id="_manifest_json"><a class="anchor" href="#_manifest_json"></a>33.1. manifest.json</h3>
+<h3 id="_manifest_json"><a class="anchor" href="#_manifest_json"></a>34.1. manifest.json</h3>
 <div class="paragraph">
 <p>manifest.json is the manifest of the analytics data. It describes each
 file included in the collection, and what version of the schema for that
@@ -9229,7 +9583,7 @@ file is included. An example manifest is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_config_json"><a class="anchor" href="#_config_json"></a>33.2. config.json</h3>
+<h3 id="_config_json"><a class="anchor" href="#_config_json"></a>34.2. config.json</h3>
 <div class="paragraph">
 <p>The config.json file contains a subset of the configuration endpoint
 <code>/api/v2/config</code> from the cluster. An example config.json is:</p>
@@ -9346,7 +9700,7 @@ Analytics)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_instance_info_json"><a class="anchor" href="#_instance_info_json"></a>33.3. instance_info.json</h3>
+<h3 id="_instance_info_json"><a class="anchor" href="#_instance_info_json"></a>34.3. instance_info.json</h3>
 <div class="paragraph">
 <p>The instance_info.json file contains detailed information on the
 instances that make up the cluster, organized by instance UUID. An
@@ -9413,7 +9767,7 @@ policy, or manually managed</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_counts_json"><a class="anchor" href="#_counts_json"></a>33.4. counts.json</h3>
+<h3 id="_counts_json"><a class="anchor" href="#_counts_json"></a>34.4. counts.json</h3>
 <div class="paragraph">
 <p>The counts.json file contains the total number of objects for each
 relevant category in a cluster. An example counts.json is: :</p>
@@ -9454,7 +9808,7 @@ relevant category in a cluster. An example counts.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_org_counts_json"><a class="anchor" href="#_org_counts_json"></a>33.5. org_counts.json</h3>
+<h3 id="_org_counts_json"><a class="anchor" href="#_org_counts_json"></a>34.5. org_counts.json</h3>
 <div class="paragraph">
 <p>The org_counts.json file contains information on each organization in
 the cluster, and the number of users and teams associated with that
@@ -9483,7 +9837,7 @@ organization. An example org_counts.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cred_type_counts_json"><a class="anchor" href="#_cred_type_counts_json"></a>33.6. cred_type_counts.json</h3>
+<h3 id="_cred_type_counts_json"><a class="anchor" href="#_cred_type_counts_json"></a>34.6. cred_type_counts.json</h3>
 <div class="paragraph">
 <p>The cred_type_counts.json file contains information on the different
 credential types in the cluster, and how many credentials exist for each
@@ -9527,7 +9881,7 @@ type. An example cred_type_counts.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_inventory_counts_json"><a class="anchor" href="#_inventory_counts_json"></a>33.7. inventory_counts.json</h3>
+<h3 id="_inventory_counts_json"><a class="anchor" href="#_inventory_counts_json"></a>34.7. inventory_counts.json</h3>
 <div class="paragraph">
 <p>The inventory_counts.json file contains information on the different
 inventories in the cluster. An example inventory_counts.json is: :</p>
@@ -9580,7 +9934,7 @@ inventories in the cluster. An example inventory_counts.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_projects_by_scm_type_json"><a class="anchor" href="#_projects_by_scm_type_json"></a>33.8. projects_by_scm_type.json</h3>
+<h3 id="_projects_by_scm_type_json"><a class="anchor" href="#_projects_by_scm_type_json"></a>34.8. projects_by_scm_type.json</h3>
 <div class="paragraph">
 <p>The projects_by_scm_type.json file provides a breakdown of all projects
 in the cluster, by source control type. An example
@@ -9599,7 +9953,7 @@ projects_by_scm_type.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_query_info_json"><a class="anchor" href="#_query_info_json"></a>33.9. query_info.json</h3>
+<h3 id="_query_info_json"><a class="anchor" href="#_query_info_json"></a>34.9. query_info.json</h3>
 <div class="paragraph">
 <p>The query_info.json file provides details on when and how the data
 collection happened. An example query_info.json is:</p>
@@ -9618,7 +9972,7 @@ collection happened. An example query_info.json is:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_job_counts_json"><a class="anchor" href="#_job_counts_json"></a>33.10. job_counts.json</h3>
+<h3 id="_job_counts_json"><a class="anchor" href="#_job_counts_json"></a>34.10. job_counts.json</h3>
 <div class="paragraph">
 <p>The job_counts.json file provides details on the job history of the
 cluster, describing both how jobs were launched, and what their
@@ -9646,7 +10000,7 @@ finishing status is. An example job_counts.json is: :</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_job_instance_counts_json"><a class="anchor" href="#_job_instance_counts_json"></a>33.11. job_instance_counts.json</h3>
+<h3 id="_job_instance_counts_json"><a class="anchor" href="#_job_instance_counts_json"></a>34.11. job_instance_counts.json</h3>
 <div class="paragraph">
 <p>The job_instance_counts.json file provides the same detail as
 job_counts.json, broken down by instance. An example
@@ -9679,7 +10033,7 @@ are in instance_info.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unified_job_template_table_csv"><a class="anchor" href="#_unified_job_template_table_csv"></a>33.12. unified_job_template_table.csv</h3>
+<h3 id="_unified_job_template_table_csv"><a class="anchor" href="#_unified_job_template_table_csv"></a>34.12. unified_job_template_table.csv</h3>
 <div class="paragraph">
 <p>The unified_job_template_table.csv file provides information on job
 templates in the system. Each line contains the following fields for the
@@ -9754,7 +10108,7 @@ system.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unified_jobs_table_csv"><a class="anchor" href="#_unified_jobs_table_csv"></a>33.13. unified_jobs_table.csv</h3>
+<h3 id="_unified_jobs_table_csv"><a class="anchor" href="#_unified_jobs_table_csv"></a>34.13. unified_jobs_table.csv</h3>
 <div class="paragraph">
 <p>The unified_jobs_table.csv file provides information on jobs run by the
 system. Each line contains the following fields for a job:</p>
@@ -9852,7 +10206,7 @@ container group</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow_job_template_node_table_csv"><a class="anchor" href="#_workflow_job_template_node_table_csv"></a>33.14. workflow_job_template_node_table.csv</h3>
+<h3 id="_workflow_job_template_node_table_csv"><a class="anchor" href="#_workflow_job_template_node_table_csv"></a>34.14. workflow_job_template_node_table.csv</h3>
 <div class="paragraph">
 <p>The workflow_job_template_node_table.csv provides information on the
 nodes defined in workflow job templates on the system.</p>
@@ -9909,7 +10263,7 @@ start</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_workflow_job_node_table_csv"><a class="anchor" href="#_workflow_job_node_table_csv"></a>33.15. workflow_job_node_table.csv</h3>
+<h3 id="_workflow_job_node_table_csv"><a class="anchor" href="#_workflow_job_node_table_csv"></a>34.15. workflow_job_node_table.csv</h3>
 <div class="paragraph">
 <p>The workflow_job_node_table.csv provides information on the jobs that
 have been executed as part of a workflow on the system.</p>
@@ -9975,7 +10329,7 @@ start</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_events_table_csv"><a class="anchor" href="#_events_table_csv"></a>33.16. events_table.csv</h3>
+<h3 id="_events_table_csv"><a class="anchor" href="#_events_table_csv"></a>34.16. events_table.csv</h3>
 <div class="paragraph">
 <p>The events_table.csv file provides information on all job events from
 all job runs in the system. Each line contains the following fields for
@@ -10070,10 +10424,10 @@ a job event:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="admin_troubleshooting"><a class="anchor" href="#admin_troubleshooting"></a>34. Troubleshooting the controller</h2>
+<h2 id="admin_troubleshooting"><a class="anchor" href="#admin_troubleshooting"></a>35. Troubleshooting the controller</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_error_logs"><a class="anchor" href="#_error_logs"></a>34.1. Error logs</h3>
+<h3 id="_error_logs"><a class="anchor" href="#_error_logs"></a>35.1. Error logs</h3>
 <div class="paragraph">
 <p>The controller server errors are logged in <code>/var/log/tower</code>. Supervisors
 logs can be found in <code>/var/log/supervisor/</code>. Nginx web server errors are
@@ -10087,7 +10441,7 @@ portal at <a href="https://access.redhat.com/" class="bare">https://access.redha
 </div>
 </div>
 <div class="sect2">
-<h3 id="admin_troubleshooting_sosreport"><a class="anchor" href="#admin_troubleshooting_sosreport"></a>34.2. sosreport</h3>
+<h3 id="admin_troubleshooting_sosreport"><a class="anchor" href="#admin_troubleshooting_sosreport"></a>35.2. sosreport</h3>
 <div class="paragraph">
 <p>The <code>sosreport</code> is a utility that collects diagnostic information for
 Support to be able to use to analyze and investigate the issues you
@@ -10113,7 +10467,7 @@ sosreport</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_problems_connecting_to_your_host"><a class="anchor" href="#_problems_connecting_to_your_host"></a>34.3. Problems connecting to your host</h3>
+<h3 id="_problems_connecting_to_your_host"><a class="anchor" href="#_problems_connecting_to_your_host"></a>35.3. Problems connecting to your host</h3>
 <div class="paragraph">
 <p>If you are unable to run the <code>helloworld.yml</code> example playbook from the
 Quick Start Guide or other playbooks due to host connection errors, try
@@ -10133,7 +10487,7 @@ servers you are managing.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_unable_to_login_to_the_controller_via_http"><a class="anchor" href="#_unable_to_login_to_the_controller_via_http"></a>34.4. Unable to login to the controller via HTTP</h3>
+<h3 id="_unable_to_login_to_the_controller_via_http"><a class="anchor" href="#_unable_to_login_to_the_controller_via_http"></a>35.4. Unable to login to the controller via HTTP</h3>
 <div class="paragraph">
 <p>Access to the controller is intentionally restricted through a secure
 protocol (HTTPS). In cases where your configuration is set up to run a
@@ -10163,7 +10517,7 @@ done on every node of a cluster installation to properly take effect.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_websockets_port_for_live_events_not_working"><a class="anchor" href="#_websockets_port_for_live_events_not_working"></a>34.5. WebSockets port for live events not working</h3>
+<h3 id="_websockets_port_for_live_events_not_working"><a class="anchor" href="#_websockets_port_for_live_events_not_working"></a>35.5. WebSockets port for live events not working</h3>
 <div class="paragraph">
 <p>automation controller uses port 80/443 on the controller server to
 stream live updates of playbook activity and other events to the client
@@ -10174,7 +10528,7 @@ allows traffic through this port.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_problems_running_a_playbook"><a class="anchor" href="#_problems_running_a_playbook"></a>34.6. Problems running a playbook</h3>
+<h3 id="_problems_running_a_playbook"><a class="anchor" href="#_problems_running_a_playbook"></a>35.6. Problems running a playbook</h3>
 <div class="paragraph">
 <p>If you are unable to run the <code>helloworld.yml</code> example playbook from the
 Quick Start Guide or other playbooks due to playbook errors, try the
@@ -10202,7 +10556,7 @@ Ensure you don&#8217;t have extra or missing <code>-</code> plays.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_problems_when_running_a_job"><a class="anchor" href="#_problems_when_running_a_job"></a>34.7. Problems when running a job</h3>
+<h3 id="_problems_when_running_a_job"><a class="anchor" href="#_problems_when_running_a_job"></a>35.7. Problems when running a job</h3>
 <div class="paragraph">
 <p>If you are having trouble running a job from a playbook, you should
 review the playbook YAML file. When importing a playbook, either
@@ -10212,7 +10566,7 @@ definition is controlled by the controller and should be set to
 </div>
 </div>
 <div class="sect2">
-<h3 id="_playbooks_arent_showing_up_in_the_job_template_drop_down"><a class="anchor" href="#_playbooks_arent_showing_up_in_the_job_template_drop_down"></a>34.8. Playbooks aren&#8217;t showing up in the "Job Template" drop-down</h3>
+<h3 id="_playbooks_arent_showing_up_in_the_job_template_drop_down"><a class="anchor" href="#_playbooks_arent_showing_up_in_the_job_template_drop_down"></a>35.8. Playbooks aren&#8217;t showing up in the "Job Template" drop-down</h3>
 <div class="paragraph">
 <p>If your playbooks are not showing up in the Job Template drop-down list,
 here are a few things you can check:</p>
@@ -10236,7 +10590,7 @@ the files. You can run this command to change the ownership:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_playbook_stays_in_pending"><a class="anchor" href="#_playbook_stays_in_pending"></a>34.9. Playbook stays in pending</h3>
+<h3 id="_playbook_stays_in_pending"><a class="anchor" href="#_playbook_stays_in_pending"></a>35.9. Playbook stays in pending</h3>
 <div class="paragraph">
 <p>If you are attempting to run a playbook Job and it stays in the
 "Pending" state indefinitely, try the following:</p>
@@ -10263,7 +10617,7 @@ request</a> with the result.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_cancel_a_controller_job"><a class="anchor" href="#_cancel_a_controller_job"></a>34.10. Cancel a controller job</h3>
+<h3 id="_cancel_a_controller_job"><a class="anchor" href="#_cancel_a_controller_job"></a>35.10. Cancel a controller job</h3>
 <div class="paragraph">
 <p>When issuing a <code>cancel</code> request on a currently running controller job,
 the controller issues a <code>SIGINT</code> to the <code>ansible-playbook</code> process.
@@ -10278,7 +10632,7 @@ job is essentially removed but the dependencies will remain.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_reusing_an_external_database_causes_installations_to_fail"><a class="anchor" href="#_reusing_an_external_database_causes_installations_to_fail"></a>34.11. Reusing an external database causes installations to fail</h3>
+<h3 id="_reusing_an_external_database_causes_installations_to_fail"><a class="anchor" href="#_reusing_an_external_database_causes_installations_to_fail"></a>35.11. Reusing an external database causes installations to fail</h3>
 <div class="paragraph">
 <p>Instances have been reported where reusing the external DB during
 subsequent installation of nodes causes installation failures.</p>
@@ -10342,7 +10696,7 @@ defined there.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_private_ec2_vpc_instances_in_the_controller_inventory"><a class="anchor" href="#_private_ec2_vpc_instances_in_the_controller_inventory"></a>34.12. Private EC2 VPC Instances in the controller Inventory</h3>
+<h3 id="_private_ec2_vpc_instances_in_the_controller_inventory"><a class="anchor" href="#_private_ec2_vpc_instances_in_the_controller_inventory"></a>35.12. Private EC2 VPC Instances in the controller Inventory</h3>
 <div class="paragraph">
 <p>By default, the controller only shows instances in a VPC that have an
 Elastic IP (EIP) associated with them. To see all of your VPC instances,
@@ -10380,7 +10734,7 @@ instances if you want to configure them.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_troubleshooting_error_provided_hosts_list_is_empty"><a class="anchor" href="#_troubleshooting_error_provided_hosts_list_is_empty"></a>34.13. Troubleshooting "Error: provided hosts list is empty"</h3>
+<h3 id="_troubleshooting_error_provided_hosts_list_is_empty"><a class="anchor" href="#_troubleshooting_error_provided_hosts_list_is_empty"></a>35.13. Troubleshooting "Error: provided hosts list is empty"</h3>
 <div class="paragraph">
 <p>If you receive the message "Skipping: No Hosts Matched" when you are
 trying to run a playbook through the controller, here are a few things
@@ -10414,10 +10768,10 @@ these options.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="tips_and_tricks"><a class="anchor" href="#tips_and_tricks"></a>35. Controller Tips and Tricks</h2>
+<h2 id="tips_and_tricks"><a class="anchor" href="#tips_and_tricks"></a>36. Controller Tips and Tricks</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_using_the_controller_cli_tool"><a class="anchor" href="#_using_the_controller_cli_tool"></a>35.1. Using the Controller CLI Tool</h3>
+<h3 id="_using_the_controller_cli_tool"><a class="anchor" href="#_using_the_controller_cli_tool"></a>36.1. Using the Controller CLI Tool</h3>
 <div class="paragraph">
 <p>Automation controller has a full-featured command line interface. Refer
 to <a href="">AWX Command Line Interface</a> documentation for configuration and
@@ -10425,7 +10779,7 @@ usage instructions.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="tips_change_password"><a class="anchor" href="#tips_change_password"></a>35.2. Changing the Controller Admin Password</h3>
+<h3 id="tips_change_password"><a class="anchor" href="#tips_change_password"></a>36.2. Changing the Controller Admin Password</h3>
 <div class="paragraph">
 <p>During the installation process, you are prompted to enter an
 administrator password which is used for the <code>admin</code> superuser/first
@@ -10449,7 +10803,7 @@ see <code>ag_security_django_password</code> for detail.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_creating_a_controller_admin_from_the_commandline"><a class="anchor" href="#_creating_a_controller_admin_from_the_commandline"></a>35.3. Creating a controller Admin from the commandline</h3>
+<h3 id="_creating_a_controller_admin_from_the_commandline"><a class="anchor" href="#_creating_a_controller_admin_from_the_commandline"></a>36.3. Creating a controller Admin from the commandline</h3>
 <div class="paragraph">
 <p>Once in a while you may find it helpful to create an admin (superuser)
 account from the commandline. To create an admin, run the following
@@ -10463,7 +10817,7 @@ information as prompted:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_setting_up_a_jump_host_to_use_with_the_controller"><a class="anchor" href="#_setting_up_a_jump_host_to_use_with_the_controller"></a>35.4. Setting up a jump host to use with the controller</h3>
+<h3 id="_setting_up_a_jump_host_to_use_with_the_controller"><a class="anchor" href="#_setting_up_a_jump_host_to_use_with_the_controller"></a>36.4. Setting up a jump host to use with the controller</h3>
 <div class="paragraph">
 <p>Credentials supplied by the controller will not flow to the jump host
 via ProxyCommand. They are only used for the end-node once the tunneled
@@ -10500,7 +10854,7 @@ ansible_ssh_common_args: '-o ProxyCommand="ssh -W %h:%p -q &lt;user_name&gt;@&lt
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_ansible_outputs_for_json_commands_when_using_the_controller"><a class="anchor" href="#_view_ansible_outputs_for_json_commands_when_using_the_controller"></a>35.5. View Ansible outputs for JSON commands when using the controller</h3>
+<h3 id="_view_ansible_outputs_for_json_commands_when_using_the_controller"><a class="anchor" href="#_view_ansible_outputs_for_json_commands_when_using_the_controller"></a>36.5. View Ansible outputs for JSON commands when using the controller</h3>
 <div class="paragraph">
 <p>When working with automation controller, you can use the API to obtain
 the Ansible outputs for commands in JSON format.</p>
@@ -10515,7 +10869,7 @@ the Ansible outputs for commands in JSON format.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_locate_and_configure_the_ansible_configuration_file"><a class="anchor" href="#_locate_and_configure_the_ansible_configuration_file"></a>35.6. Locate and configure the Ansible configuration file</h3>
+<h3 id="_locate_and_configure_the_ansible_configuration_file"><a class="anchor" href="#_locate_and_configure_the_ansible_configuration_file"></a>36.6. Locate and configure the Ansible configuration file</h3>
 <div class="paragraph">
 <p>While Ansible does not require a configuration file, OS packages often
 include a default one in <code>/etc/ansible/ansible.cfg</code> for possible
@@ -10543,7 +10897,7 @@ passed to the container used for job execution.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_view_a_listing_of_all_ansible_variables"><a class="anchor" href="#_view_a_listing_of_all_ansible_variables"></a>35.7. View a listing of all ansible_ variables</h3>
+<h3 id="_view_a_listing_of_all_ansible_variables"><a class="anchor" href="#_view_a_listing_of_all_ansible_variables"></a>36.7. View a listing of all ansible_ variables</h3>
 <div class="paragraph">
 <p>Ansible by default gathers “facts” about the machines under its
 management, accessible in Playbooks and in templates. To view all facts
@@ -10561,7 +10915,7 @@ host. For more information, refer to:
 </div>
 </div>
 <div class="sect2">
-<h3 id="ag_tips_jinja_extravars"><a class="anchor" href="#ag_tips_jinja_extravars"></a>35.8. The ALLOW_JINJA_IN_EXTRA_VARS variable</h3>
+<h3 id="ag_tips_jinja_extravars"><a class="anchor" href="#ag_tips_jinja_extravars"></a>36.8. The ALLOW_JINJA_IN_EXTRA_VARS variable</h3>
 <div class="paragraph">
 <p>Setting <code>ALLOW_JINJA_IN_EXTRA_VARS = template</code> only works for saved job
 template extra variables. Prompted variables and survey variables are
@@ -10580,13 +10934,13 @@ controller UI:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_execution_environments"><a class="anchor" href="#_using_execution_environments"></a>35.9. Using execution environments</h3>
+<h3 id="_using_execution_environments"><a class="anchor" href="#_using_execution_environments"></a>36.9. Using execution environments</h3>
 <div class="paragraph">
 <p>See <code>ug_execution_environments</code> in the Automation Controller User Guide.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_configuring_the_controllerhost_hostname_for_notifications"><a class="anchor" href="#_configuring_the_controllerhost_hostname_for_notifications"></a>35.10. Configuring the <code>controllerhost</code> hostname for notifications</h3>
+<h3 id="_configuring_the_controllerhost_hostname_for_notifications"><a class="anchor" href="#_configuring_the_controllerhost_hostname_for_notifications"></a>36.10. Configuring the <code>controllerhost</code> hostname for notifications</h3>
 <div class="paragraph">
 <p>In the <code>System Settings &lt;configure_tower_system&gt;</code>, you can replace
 <code><a href="https://controller.example.com" class="bare">https://controller.example.com</a></code> in the <strong>Base URL of The Controller
@@ -10603,7 +10957,7 @@ set the hostname for notifications.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="launch_jobs_curl"><a class="anchor" href="#launch_jobs_curl"></a>35.11. Launching Jobs with curl</h3>
+<h3 id="launch_jobs_curl"><a class="anchor" href="#launch_jobs_curl"></a>36.11. Launching Jobs with curl</h3>
 <div class="paragraph">
 <p>Launching jobs with the controller API is simple. Here are some easy to
 follow examples using the <code>curl</code> tool.</p>
@@ -10650,7 +11004,7 @@ the quotes, etc.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_dynamic_inventory_and_private_ip_addresses"><a class="anchor" href="#_dynamic_inventory_and_private_ip_addresses"></a>35.12. Dynamic Inventory and private IP addresses</h3>
+<h3 id="_dynamic_inventory_and_private_ip_addresses"><a class="anchor" href="#_dynamic_inventory_and_private_ip_addresses"></a>36.12. Dynamic Inventory and private IP addresses</h3>
 <div class="paragraph">
 <p>By default, the controller only shows instances in a VPC that have an
 Elastic IP (EIP) address associated with them. To view all of your VPC
@@ -10684,7 +11038,7 @@ instances in order to usefully configure them.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller"><a class="anchor" href="#_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller"></a>35.13. Filtering instances returned by the dynamic inventory sources in the controller</h3>
+<h3 id="_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller"><a class="anchor" href="#_filtering_instances_returned_by_the_dynamic_inventory_sources_in_the_controller"></a>36.13. Filtering instances returned by the dynamic inventory sources in the controller</h3>
 <div class="paragraph">
 <p>By default, the dynamic inventory sources in the controller (AWS,
 Google, etc) return all instances available to the cloud credentials
@@ -10716,7 +11070,7 @@ synchronization operations will delete and replace your custom groups.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_an_unreleased_module_from_ansible_source_with_the_controller"><a class="anchor" href="#_using_an_unreleased_module_from_ansible_source_with_the_controller"></a>35.14. Using an unreleased module from Ansible source with the controller</h3>
+<h3 id="_using_an_unreleased_module_from_ansible_source_with_the_controller"><a class="anchor" href="#_using_an_unreleased_module_from_ansible_source_with_the_controller"></a>36.14. Using an unreleased module from Ansible source with the controller</h3>
 <div class="paragraph">
 <p>If there is a feature that is available in the latest Ansible core
 branch that you would like to leverage with your controller system,
@@ -10739,7 +11093,7 @@ via your normal package manager.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_callback_plugins_with_the_controller"><a class="anchor" href="#_using_callback_plugins_with_the_controller"></a>35.15. Using callback plugins with the controller</h3>
+<h3 id="_using_callback_plugins_with_the_controller"><a class="anchor" href="#_using_callback_plugins_with_the_controller"></a>36.15. Using callback plugins with the controller</h3>
 <div class="paragraph">
 <p>Ansible has a flexible method of handling actions during playbook runs,
 called callback plugins. You can use these plugins with the controller
@@ -10783,7 +11137,7 @@ callback plugins</a>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_connecting_to_windows_with_winrm"><a class="anchor" href="#_connecting_to_windows_with_winrm"></a>35.16. Connecting to Windows with winrm</h3>
+<h3 id="_connecting_to_windows_with_winrm"><a class="anchor" href="#_connecting_to_windows_with_winrm"></a>36.16. Connecting to Windows with winrm</h3>
 <div class="paragraph">
 <p>By default controller attempts to <code>ssh</code> to hosts. You must add the
 <code>winrm</code> connection info to the group variables to which the Windows
@@ -10806,7 +11160,7 @@ connection and failed, you should re-run the job template.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller"><a class="anchor" href="#_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller"></a>35.17. Importing existing inventory files and host/group vars into the controller</h3>
+<h3 id="_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller"><a class="anchor" href="#_importing_existing_inventory_files_and_hostgroup_vars_into_the_controller"></a>36.17. Importing existing inventory files and host/group vars into the controller</h3>
 <div class="paragraph">
 <p>To import an existing static inventory and the accompanying host and
 group vars into the controller, your inventory should be in a structure
@@ -10882,7 +11236,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-20 09:12:12 UTC
+Last updated 2022-10-20 13:25:06 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
