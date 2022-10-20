@@ -2767,22 +2767,56 @@ and execution planes</a> for more information on each type of node.</p>
 <p>Note</p>
 </div>
 <div class="paragraph">
-<p>If the Legend is not present, use the toggle on the upper right part of
-the window to enable it.</p>
+<p>If the Legend is not present, use the toggle on the upper right corner
+of the window to enable it.</p>
 </div>
 <div class="paragraph">
-<p>Also in the Legend, you can see how the color corresponds to its status,
-which is indicative of the health of the node. Node health is currently
-being statically rendered at certain points in time dictated by the API,
-and therefore, live polling of the node status is not available at this
-time. The status updates provided by the API is also not configurable.</p>
+<p>The Legend shows the <code>node status &lt;node_statuses&gt;</code> by color, which is
+indicative of the health of the node. The status of <strong>Error</strong> in the
+legend encompasses the <strong>Unavailable</strong> state (as displayed in the
+Instances list view) plus any future error conditions encountered in
+later versions of the controller. Also depicted in the legend are the
+link statuses:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Established</strong>: this is a link state that indicates a peer connection
+between nodes that are either ready, unavailable, or disabled</p>
+</li>
+<li>
+<p><strong>Adding</strong>: this is a link state indicating a peer connection between
+nodes that was selected to be added to the mesh topology</p>
+</li>
+<li>
+<p><strong>Removing</strong>: this is a link state indicating a peer connection between
+nodes that was selected to be removed from the topology</p>
+</li>
+</ul>
+</div>
+</blockquote>
 </div>
 <div class="olist arabic">
 <ol class="arabic" start="4">
 <li>
 <p>Hover over a node and the connectors highlight to show its immediate
-connected nodes or click on the node to retrieve details about it, such
-as its hostname, node type, and status.</p>
+connected nodes (peers) or click on a node to retrieve details about it,
+such as its hostname, node type, and status.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="images/topology-viewer-node-hover-click.png" alt="image"></span></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>Click on the link for instance hostname from the details displayed,
+and you will be redirected to its Details page that provides more
+information about that node, most notably for information about an
+<code>Error</code> status, as in the example below.</p>
 </li>
 </ol>
 </div>
@@ -2790,18 +2824,18 @@ as its hostname, node type, and status.</p>
 <p><span class="image"><img src="images/topology-viewer-node-view.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>Click on the link for instance hostname from the details displayed, and
-you will be redirected to its Details page to provide more information
-about that node, most notably the reason for an <code>Error</code> status.</p>
-</div>
-<div class="paragraph">
 <p><span class="image"><img src="images/topology-viewer-instance-details.png" alt="image"></span></p>
 </div>
 <div class="paragraph">
-<p>At the bottom of the Details view, you can run a health check on the
-instance on an as-needed basis, or unassign jobs from the instance. By
-default, jobs can be assigned to each node. However, you can disable it
-to exclude the node from having any jobs running on it.</p>
+<p>At the bottom of the Details view, you can remove the instance, run a
+health check on the instance on an as-needed basis, or unassign jobs
+from the instance. By default, jobs can be assigned to each node.
+However, you can disable it to exclude the node from having any jobs
+running on it.</p>
+</div>
+<div class="paragraph">
+<p>For more information on creating new nodes and scaling the mesh, refer
+to <code>ag_instances</code> in this guide for more detail.</p>
 </div>
 </div>
 </div>
@@ -10848,7 +10882,7 @@ variables in YAML format.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-12 13:05:56 UTC
+Last updated 2022-10-20 09:12:12 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
