@@ -1461,7 +1461,7 @@ installed.</p>
 </div>
 <div class="paragraph">
 <p>To view a specific license, refer to
-<code>/usr/share/doc/automation-controller-&lt;version&gt;/<strong>.txt</code>, where <code></strong></code> is
+<code>/usr/share/doc/automation-controller-&lt;version&gt;/*.txt</code>, where <code>*</code> is
 replaced by the license file name to which you are referring.</p>
 </div>
 </div>
@@ -2073,8 +2073,8 @@ to support searching for strings with spaces.</p>
 <li>
 <p>Currently, the values in the Fields are direct attributes expected to
 be returned in a <strong>GET</strong> request. Whenever you search against one of the
-values, the controller essentially does an <code><em>icontains</code> search. So, for
-example, <code>name:localhost</code> would send back <code>?name</em>icontains=localhost</code>.
+values, the controller essentially does an <code>__icontains</code> search. So, for
+example, <code>name:localhost</code> would send back <code>?name__icontains=localhost</code>.
 The controller currently performs this search for every Field value,
 even <code>id</code>, which is not ideal.</p>
 </li>
@@ -2215,7 +2215,7 @@ organization.</p>
 <div class="paragraph">
 <p>From the <strong>Details</strong> tab, you can edit or delete the organization.</p>
 </div>
-<div id="deletion_warning" class="paragraph">
+<div class="paragraph">
 <p>Note</p>
 </div>
 <div class="paragraph">
@@ -3006,7 +3006,7 @@ all available Credentials and can be sorted by <strong>Name</strong>.</p>
 Team, whereas credentials added to a User are only available to that
 specific User by default.</p>
 </div>
-<div id="deletion_warning" class="paragraph">
+<div class="paragraph">
 <p>Note</p>
 </div>
 <div class="paragraph">
@@ -6390,7 +6390,7 @@ projects).</p>
 control-based actions without being reconfigured as an SCM type
 credential.</p>
 </div>
-<div id="deletion_warning" class="paragraph">
+<div class="paragraph">
 <p>Note</p>
 </div>
 <div class="paragraph">
@@ -7451,7 +7451,7 @@ creating a new one</p>
 </li>
 </ul>
 </div>
-<div id="deletion_warning" class="paragraph">
+<div class="paragraph">
 <p>Note</p>
 </div>
 <div class="paragraph">
@@ -9672,7 +9672,7 @@ To delete a job template, you must select one or more templates and
 click the <strong>Delete</strong> button. Before deleting a job template, be sure it is
 not used in a workflow job template.</p>
 </div>
-<div id="deletion_warning" class="paragraph">
+<div class="paragraph">
 <p>Note</p>
 </div>
 <div class="paragraph">
@@ -16192,7 +16192,7 @@ image:rbac-multiple-resources-scenario.png[image]
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-20 15:37:09 UTC
+Last updated 2022-10-24 16:15:53 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
