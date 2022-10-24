@@ -1098,14 +1098,14 @@ identifier and the resulting generated named URL becomes
 <p>An important aspect of generating a unique identifier for named URL has
 to do with reserved characters. Because the identifier is part of a URL,
 the following reserved characters by URL standard is encoded by
-percentage symbols: <code>;/?:@=&amp;[]</code>. For example, if an organization is
-named <code>;/?:@=&amp;[]</code>, its unique identifier should be
-<code>%3B%2F%3F%3A%40%3D%26%5B%5D</code>. Another special reserved character is
+percentage symbols: <code>;/?:@=&amp;[]. For example, if an organization is
+named `;/?:@=&amp;[], its unique identifier should be
+`%3B%2F%3F%3A%40%3D%26%5B%5D</code>. Another special reserved character is
 <code>+</code>, which is not reserved by URL standard but used by named URL to link
-different parts of an identifier. It is encoded by <code>[+]</code>. For example,
-if an organization is named <code>[+]</code>, its unique identifier is <code>%5B[+]%5D</code>,
-where original <code>[</code> and <code>]</code> are percent encoded and <code>+</code> is converted to
-<code>[+]</code>.</p>
+different parts of an identifier. It is encoded by <code>[+]. For example,
+if an organization is named `[+], its unique identifier is `%5B[+]%5D</code>,
+where original <code>[</code> and <code>] are percent encoded and `+</code> is converted to
+`[+].</p>
 </div>
 <div class="paragraph">
 <p>Although <code>NAMED_URL_FORMATS</code> cannot be manually modified, modifications
@@ -1345,7 +1345,7 @@ is <code>awx_session_id</code> which you can see later in the <code>Set-Cookie</
 </div>
 <div class="paragraph">
 <p>The session expiration time can be changed by specifying it in the
-<code>SESSION_COOKIE_AGE</code> parameter. Refer to <code><a href="#ag_session_limits">[ag_session_limits]</a></code> for further
+<code>SESSION_COOKIE_AGE</code> parameter. Refer to <a href="#ag_session_limits">[ag_session_limits]</a> for further
 detail.</p>
 </div>
 </div>
@@ -1396,9 +1396,9 @@ Authorization header. Unlike Basic Auth, OAuth 2 tokens have a
 configurable timeout and are scopable. Tokens have a configurable
 expiration time and can be easily revoked for one user or for the entire
 automation controller system by an admin if needed. This can be done
-with the <code><a href="#ag_manage_utility_revoke_tokens">[ag_manage_utility_revoke_tokens]</a></code> management command, which is
+with the <a href="#ag_manage_utility_revoke_tokens">[ag_manage_utility_revoke_tokens]</a> management command, which is
 covered in more detail in Automation Controller Administration Guide or
-by using the API as explained in <code><a href="#ag_oauth2_token_revoke">[ag_oauth2_token_revoke]</a></code>.</p>
+by using the API as explained in <a href="#ag_oauth2_token_revoke">[ag_oauth2_token_revoke]</a>.</p>
 </div>
 <div class="paragraph">
 <p>Note</p>
@@ -1433,13 +1433,13 @@ controller are:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>For more information on the above methods, see <code><a href="#ag_oauth2_token_auth">[ag_oauth2_token_auth]</a></code> in
+<p>For more information on the above methods, see <a href="#ag_oauth2_token_auth">[ag_oauth2_token_auth]</a> in
 the Automation Controller Administration Guide.</p>
 </div>
 <div class="paragraph">
 <p>First, a user needs to create an OAuth 2 Access Token in the API or in
 their User’s <strong>Tokens</strong> tab in the UI. For further detail on creating them
-through the UI, see <code><a href="#ug_users_tokens">[ug_users_tokens]</a></code>. For the purposes of this example,
+through the UI, see <a href="#ug_users_tokens">[ug_users_tokens]</a>. For the purposes of this example,
 use the PAT method for creating a token in the API. Upon token creation,
 the user can set the scope.</p>
 </div>
@@ -1448,7 +1448,7 @@ the user can set the scope.</p>
 </div>
 <div class="paragraph">
 <p>The expiration time of the token can be configured system-wide. See
-<code><a href="#ag_use_oauth_pat">[ag_use_oauth_pat]</a></code> for more detail.</p>
+<a href="#ag_use_oauth_pat">[ag_use_oauth_pat]</a> for more detail.</p>
 </div>
 <div class="paragraph">
 <p>Token authentication is best used for any programmatic use of the
@@ -1509,7 +1509,7 @@ Command Line Interface</a> for more detail.</p>
 <div class="paragraph">
 <p>For more information on how to use OAuth 2 in the automation controller
 in the context of integrating external applications, see
-<code><a href="#ag_oauth2_token_auth">[ag_oauth2_token_auth]</a></code> in the Automation Controller Administration
+<a href="#ag_oauth2_token_auth">[ag_oauth2_token_auth]</a> in the Automation Controller Administration
 Guide.</p>
 </div>
 <div class="paragraph">
@@ -1557,7 +1557,7 @@ log you in.</p>
 </div>
 <div class="paragraph">
 <p>For the various types of supported SSO authentication methods, see
-<code><a href="#ag_social_auth</code> and <code>xref:ag_ent_auth">[ag_social_auth</code> and <code>xref:ag_ent_auth]</a></code> in the Automation Controller
+<a href="#ag_social_auth` and xref:ag_ent_auth">[ag_social_auth` and xref:ag_ent_auth]</a> in the Automation Controller
 Administration Guide.</p>
 </div>
 </div>
@@ -1566,7 +1566,7 @@ Administration Guide.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-24 20:39:08 UTC
+Last updated 2022-10-24 21:42:19 UTC
 </div>
 </div>
 <script type="text/x-mathjax-config">
