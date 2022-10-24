@@ -66,7 +66,7 @@ data older than a specific number of days.
 
 === Cluster management
 
-Refer to the `ag_clustering` section for details on the
+Refer to the `xref:ag_clustering[]` section for details on the
 `awx-manage provision_instance` and `awx-manage deprovision_instance`
 commands.
 
@@ -164,7 +164,7 @@ Use this command to delete all sessions that have expired. Refer to
 link:[Django's documentation on clearsessions] for more detail.
 
 For more information on OAuth2 token management in the controller user
-interface, see the `ug_applications_auth` section of the Automation
+interface, see the `xref:ug_applications_auth[]` section of the Automation
 Controller User Guide.
 
 === Analytics gathering

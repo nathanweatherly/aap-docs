@@ -39,5 +39,5 @@ image:qs-organization-default-expand-properties.png[Organizations
 - default expanded]
 
 Enterprise and Premium license users who want to add a new organization
-should refer to the `Organizations <userguide:ug_organizations>` section
+should refer to the `Organizations \<ug_organizations>` section
 in the Automation Controller User Guide.

@@ -4,9 +4,9 @@ An inventory is a collection of hosts managed by the controller.
 Organizations are assigned to inventories, while permissions to launch
 playbooks against inventories are controlled at the user and/or team
 level. For more information, refer to
-`Inventories <userguide:ug_inventories>`,
-`Users - Permissions <userguide:ug_users_permissions>`, and
-`Teams - Permissions <userguide:ug_teams_permissions>` in the Automation
+`Inventories \<ug_inventories>`,
+`Users - Permissions \<ug_users_permissions>`, and
+`Teams - Permissions \<ug_teams_permissions>` in the Automation
 Controller User Guide.
 
 To view existing inventories, click *Inventories* from the left
@@ -17,7 +17,7 @@ image:qs-inventories-default-list-view.png[image]
 automation controller provides a demo inventory for you to use as you
 learn how the controller works. It can be used as is or edited later as
 needed. You may create another inventory if necessary. Refer to
-`ug_inventories_add` in the Automation Controller User Guide for detail.
+`xref:ug_inventories_add[]` in the Automation Controller User Guide for detail.
 
 For the purpose of this Quick Start Guide, leave the default inventory
 as is.
