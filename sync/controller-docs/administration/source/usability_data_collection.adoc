@@ -195,15 +195,15 @@ A reference of fields collected:
 ansible_version::
   The system Ansible version on the host
 authentication_backends::
-  What user authentication backends are available. See `xref:ag_social_auth[]`
-  and `xref:ag_auth_ldap[]` for details
+  What user authentication backends are available. See xref:ag_social_auth[]
+  and xref:ag_auth_ldap[] for details
 external_logger_enabled::
   Whether external logging is enaled
 external_logger_type::
-  What logging backend is in use if enabled. See `xref:ag_logging[]` for
+  What logging backend is in use if enabled. See xref:ag_logging[] for
   details
 logging_aggregators::
-  What logging categories are sent to external logging. See `xref:ag_logging[]`
+  What logging categories are sent to external logging. See xref:ag_logging[]
   for details
 free_instances::
   How many hosts are available in the license. A value of zero means the
