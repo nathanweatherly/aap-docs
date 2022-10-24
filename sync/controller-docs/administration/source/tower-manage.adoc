@@ -61,8 +61,8 @@ than a specified number of days.
 
 * `awx-manage cleanup_activitystream [--help]`
 
-This permanently deletes any link:#activity-streams[activity stream]
-data older than a specific number of days.
+This permanently deletes any `xref:ug_activitystreams[]` data older than a
+specific number of days.
 
 === Cluster management
 

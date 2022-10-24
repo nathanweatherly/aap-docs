@@ -203,7 +203,7 @@ Note
 You can also request tokens using the `/api/o/token` endpoint by
 specifying `null` for the application type.
 
-Alternatively, you can `add tokens \<ug_tokens_auth_create>`
+Alternatively, you can `add tokens <userguide:ug_tokens_auth_create>`
 for users through the controller user interface, as well as configure
 the expiration of an access token and its associated refresh token (if
 applicable).
@@ -310,7 +310,7 @@ Note
 
 You can perform any of the application functions described here using
 the controller user interface. Refer to the
-`Applications \<ug_applications_auth>` section of the
+`Applications <userguide:ug_applications_auth>` section of the
 Automation Controller User Guide for more detail.
 
 ==== Application using `authorization code` grant type

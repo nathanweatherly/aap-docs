@@ -21,7 +21,7 @@ running properly. To learn more about these controller features or to
 learn about administration tasks, the controller API, etc., refer to the
 following documentation sets:
 
-* `Automation Controller User Guide \<ug_start>`
+* `Automation Controller User Guide <userguide:ug_start>`
 * https://access.redhat.com/documentation/en-us/red_hat_ansible_automation_platform/2.0-ea/html-single/red_hat_ansible_automation_platform_installation_guide/index[Red
 Hat Ansible Automation Platform Installation Guide]
 * `Automation Controller Administration Guide <administration:ag_start>`

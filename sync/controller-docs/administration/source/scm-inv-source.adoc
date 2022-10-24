@@ -55,7 +55,7 @@ that credential to the inventory source, the script will have access to
 those inputs like environment variables or files.
 
 For more detail, refer to
-`Credential types \<ug_credential_types>`.
+`Credential types <userguide:ug_credential_types>`.
 
 === SCM Inventory Source Fields
 

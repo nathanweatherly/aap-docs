@@ -338,7 +338,7 @@ in your inventory file, or you can stop defining instance groups in the
 inventory file altogether. You can also manage instance group topology
 through the automation controller User Interface. For more information
 on managing instance groups in the UI, refer to
-`Instance Groups \<ug_instance_groups>` in the Automation
+`Instance Groups <userguide:ug_instance_groups>` in the Automation
 Controller User Guide.
 
 Note
@@ -535,8 +535,8 @@ Kubernetes API:
 https://docs.openshift.com/online/pro/dev_guide/compute_resources.html#overview[Quotas
 and Limit Ranges].
 * To set limits directly on the pod definition launched by the
-controller, see link:#customize-the-pod-spec[Customize the Pod spec] and
-refer to the OpenShift documentation to set the options to
+controller, see `xref:ag_customize_pod_spec[]` and refer to the OpenShift
+documentation to set the options to
 https://docs.openshift.com/online/pro/dev_guide/compute_resources.html#dev-compute-resources[compute
 resources].
 

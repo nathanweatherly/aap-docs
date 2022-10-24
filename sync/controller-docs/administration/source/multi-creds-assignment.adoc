@@ -152,5 +152,5 @@ POST /api/v2/job_templates/N/launch/
 Instead of uploading sensitive credential information into the
 controller, you can link credential fields to external systems and using
 them to run your playbooks. Refer to the
-`Secret Management System \<ug_credential_plugins>` section of
+`Secret Management System <userguide:ug_credential_plugins>` section of
 the Automation Controller User Guide.

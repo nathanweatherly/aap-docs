@@ -4,9 +4,9 @@ An inventory is a collection of hosts managed by the controller.
 Organizations are assigned to inventories, while permissions to launch
 playbooks against inventories are controlled at the user and/or team
 level. For more information, refer to
-`Inventories \<ug_inventories>`,
-`Users - Permissions \<ug_users_permissions>`, and
-`Teams - Permissions \<ug_teams_permissions>` in the Automation
+`Inventories <userguide:ug_inventories>`,
+`Users - Permissions <userguide:ug_users_permissions>`, and
+`Teams - Permissions <userguide:ug_teams_permissions>` in the Automation
 Controller User Guide.
 
 To view existing inventories, click *Inventories* from the left

@@ -14,8 +14,8 @@ Hat Enterprise Linux.
 Much like Red Hat Insights, Automation Analytics is built to only
 collect the minimum amount of data needed. No credential secrets,
 personal data, automation variables, or task output is gathered. For
-more information, see link:#details-of-data-collection[Details of data
-collection] below.
+more information, see
+`Details of data collection<usability_data_collection_details>` below.
 
 In order to enable this feature, turn on data collection for Automation
 Analytics and enter your Red Hat customer credentials in the
