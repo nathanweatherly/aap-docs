@@ -10,7 +10,7 @@ Note
 
 If you have a custom dynamic inventory script, or a cloud provider that
 is not yet supported natively in the controller, you can also import
-that into the controller. Refer to xref:ag_inv_import[] in the Automation
+that into the controller. Refer to {ag_inv_import} in the Automation
 Controller Administration Guide.
 
 The Inventories window displays a list of the inventories that are
@@ -569,7 +569,7 @@ ________________________________________________________________________________
 * *Execution Environment*: Optionally search
 (image:search-button.png[search]) or enter
 the name of the execution environment with which you want to run your
-inventory imports. Refer to the xref:ug_execution_environments[] section for
+inventory imports. Refer to the {ug_execution_environments} section for
 details on building an execution environment.
 * *Source*: Choose a source for your inventory. Refer to the
 xref:ug_inventory_sources[] section for more information about each source
@@ -688,7 +688,7 @@ ________________________________________________________________________________
 [loweralpha]
 . If schedules are already set up; review, edit, or enable/disable your
 schedule preferences.
-. if schedules have not been set up, refer to xref:ug_scheduling[] for more
+. if schedules have not been set up, refer to {ug_scheduling} for more
 information.
 _____________________________________________________________________________________________
 
@@ -707,8 +707,8 @@ ________________________________________________________________________________
 [loweralpha]
 . If notifications are already set up, use the toggles to enable or
 disable the notifications to use with your particular source. For more
-detail, see xref:ug_notifications_on_off[].
-. if notifications have not been set up, refer to xref:ug_notifications[] for
+detail, see {ug_notifications_on_off}.
+. if notifications have not been set up, refer to {ug_notifications} for
 more information.
 _________________________________________________________________________________________________________________________________________________________________________________
 
@@ -766,7 +766,7 @@ for `adding a source <ug_add_inv_common_fields>`.
 . In order to pass to the custom inventory script, you can optionally
 set environment variables in the *Environment Variables* field. You may
 also place inventory scripts in source control and then run it from a
-project. See xref:ag_inv_import[] in the Automation Controller Administration
+project. See {ag_inv_import} in the Automation Controller Administration
 Guide for detail.
 
 image:inventories-create-source-sourced-from-project-example.png[Inventories
@@ -1098,7 +1098,7 @@ and then create an SCM inventory source in the automation controller
 user interface.
 
 For more information on syncing or using custom inventory scripts, refer
-to xref:ag_inv_import` in the[] in the Automation Controller Administration
+to {ag_inv_import} in the[] in the Automation Controller Administration
 Guide.
 
 [[ug_inventories_view_completed_jobs]]

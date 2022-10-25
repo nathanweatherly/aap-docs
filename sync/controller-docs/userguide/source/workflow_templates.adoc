@@ -133,7 +133,7 @@ service to sign payloads sent to automation controller. This must be
 configured in the settings on the webhook service in order for
 automation controller to accept webhooks from this service.
 
-For additional information on setting up webhooks, see xref:ug_webhooks[].
+For additional information on setting up webhooks, see {ug_webhooks}.
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 --
@@ -209,14 +209,14 @@ integrations you have setup. The *Notifications* tab is present only
 after the template has been saved.
 
 Use the toggles to enable or disable the notifications to use with your
-particular template. For more detail, see xref:ug_notifications_on_off[].
+particular template. For more detail, see {ug_notifications_on_off}.
 
-If no notifications have been set up, see xref:ug_notifications_create[] for
+If no notifications have been set up, see {ug_notifications_create} for
 detail.
 
 image:wf-template-no-notifications-blank.png[image]
 
-Refer to xref:ug_notifications_types[] for additional details on configuring
+Refer to {ug_notifications_types} for additional details on configuring
 various notification types.
 
 === View Completed Jobs
@@ -245,7 +245,7 @@ To schedule a job template run, click the *Schedules* tab.
 
 * If schedules are already set up; review, edit, or enable/disable your
 schedule preferences.
-* If schedules have not been set up, refer to xref:ug_scheduling[] for more
+* If schedules have not been set up, refer to {ug_scheduling} for more
 information.
 
 If a workflow template used in a nested workflow has a survey, or the

@@ -18,7 +18,7 @@ means that impact to one instance can potentially affect the overall
 capacity of other Groups.
 
 Instance Groups (not instances themselves) can be assigned to be used by
-jobs at various levels (see xref:ag_clustering[]). When the Task Manager is
+jobs at various levels (see {ag_clustering}). When the Task Manager is
 preparing its graph to determine which group a job will run on, it will
 commit the capacity of an Instance Group to a job that hasn’t or isn’t
 ready to start yet.

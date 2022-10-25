@@ -135,7 +135,7 @@ image:settings-jobs-jinja.png[image]
 
 === Using execution environments
 
-See xref:ug_execution_environments[] in the Automation Controller User Guide.
+See {ug_execution_environments} in the Automation Controller User Guide.
 
 === Configuring the `controllerhost` hostname for notifications
 

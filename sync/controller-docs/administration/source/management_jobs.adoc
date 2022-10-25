@@ -95,7 +95,7 @@ notification. Notification types include:
 
 image:management-job-add-notification-details.png[image]
 
-Refer to xref:ug_notifications[] in the Automation Controller User Guide for
+Refer to {ug_notifications} in the Automation Controller User Guide for
 more information.
 
 === Cleanup Expired OAuth2 Tokens
@@ -110,7 +110,7 @@ management jobs. See xref:ag_mgmt_job_schedule[] for detail.
 
 You can also set or review notifications associated with this management
 job the same way as described in xref:ag_mgmt_job_notify[] for activity
-stream management jobs, and refer to xref:ug_notifications[] in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.
 
 === Cleanup Expired Sessions
@@ -125,7 +125,7 @@ jobs. See xref:ag_mgmt_job_schedule[] for detail.
 
 You can also set or review notifications associated with this management
 job the same way as described in xref:ag_mgmt_job_notify[] for activity
-stream management jobs, and refer to xref:ug_notifications[] in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.
 
 === Removing Old Job History
@@ -152,5 +152,5 @@ jobs. See xref:ag_mgmt_job_schedule[] for detail.
 
 You can also set or review notifications associated with this management
 job the same way as described in xref:ag_mgmt_job_notify[] for activity
-stream management jobs, and refer to xref:ug_notifications[] in the
+stream management jobs, and refer to {ug_notifications} in the
 Automation Controller User Guide for more detail.

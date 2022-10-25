@@ -8,12 +8,12 @@ that website.
 
 Account authentication can be configured in the automation controller
 User Interface and saved to the PostgreSQL database. For instructions,
-refer to the xref:ag_configure_tower[] section.
+refer to the {ag_configure_tower} section.
 
 Account authentication in automation controller can be configured to
 centrally use OAuth2, while enterprise-level account authentication can
 be configured for SAML, RADIUS, or even LDAP as a source for
-authentication information. See xref:ag_ent_auth[].
+authentication information. See {ag_ent_auth}.
 
 For websites, such as Microsoft Azure, Google or GitHub, that provide
 account information, account information is often implemented using the

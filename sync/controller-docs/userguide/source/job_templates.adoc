@@ -248,7 +248,7 @@ access token (PAT) as a credential to use to send status updates back to
 the webhook service. Before you can select it, the credential must
 exist. See xref:ug_credentials_cred_types[] to create one.
 
-For additional information on setting up webhooks, see xref:ug_webhooks[].
+For additional information on setting up webhooks, see {ug_webhooks}.
 _________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 * *Concurrent Jobs*: If checked, you are allowing jobs in the queue to
@@ -322,10 +322,10 @@ integrations you have setup and their statuses, if they have ran.
 image:job-template-completed-notifications-view.png[image]
 
 Use the toggles to enable or disable the notifications to use with your
-particular template. For more detail, see xref:ug_notifications_on_off[].
+particular template. For more detail, see {ug_notifications_on_off}.
 
 If no notifications have been set up, click the *Add* button to create a
-new notification. Refer to xref:ug_notifications_types[] for additional
+new notification. Refer to {ug_notifications_types} for additional
 details on configuring various notification types and extended
 messaging.
 
@@ -358,7 +358,7 @@ To schedule a job template run, click the *Schedules* tab.
 
 * If schedules are already set up; review, edit, or enable/disable your
 schedule preferences.
-* If schedules have not been set up, refer to xref:ug_scheduling[] for more
+* If schedules have not been set up, refer to {ug_scheduling} for more
 information.
 
 If *Prompt on Launch* was selected for the *Credentials* field, and you
@@ -593,7 +593,7 @@ Note
 
 You can re-launch the most recent job from the list view to re-run on
 all hosts or just failed hosts in the specified inventory. Refer to
-xref:ug_jobs[] in the Automation Controller User Guide for more detail.
+{ug_jobs} in the Automation Controller User Guide for more detail.
 
 When slice jobs are running, job lists display the workflow and job
 slices, as well as a link to view their details individually.

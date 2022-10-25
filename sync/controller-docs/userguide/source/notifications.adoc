@@ -390,7 +390,7 @@ is returned by automation controller:
 === Create custom notifications
 
 You can `customize the text content <ir_notifications_reference>` of
-each of the xref:ug_notifications_types[] by enabling the *Customize
+each of the {ug_notifications_types} by enabling the *Customize
 Messages* portion at the bottom of the notifications form using the
 toggle button.
 

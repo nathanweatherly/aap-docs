@@ -77,7 +77,7 @@ image:users-last-login-info.png[image]
 
 When you log in as yourself, and view the details of your own user
 profile, you can manage tokens from your user profile. See
-xref:ug_users_tokens[] for more detail.
+{ug_users_tokens} for more detail.
 
 image:user-with-token-button.png[image]
 

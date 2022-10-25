@@ -5,10 +5,10 @@ The controller allows you to execute jobs via ansible playbook runs
 directly on a member of the cluster or in a namespace of an Openshift
 cluster with the necessary service account provisioned called a
 Container Group. You can execute jobs in a container group only
-as-needed per playbook. For more information, see xref:ag_container_groups[]
+as-needed per playbook. For more information, see {ag_container_groups}
 towards the end of this section.
 
-For execution environments, see xref:ug_execution_environments[] in the
+For execution environments, see {ug_execution_environments} in the
 Automation Controller User Guide.
 
 [[ag_instance_groups]]
@@ -373,7 +373,7 @@ definition, clearing out all custom pod definitions in the migration.
 
 Container groups are different from execution environments in that
 execution environments are container images and do not use a virtual
-environment. See xref:ug_execution_environments[] in the Automation
+environment. See {ug_execution_environments} in the Automation
 Controller User Guide for further detail.
 
 ==== Create a container group
@@ -385,7 +385,7 @@ To create a container group:
 [arabic]
 . Use the controller user interface to create an
 xref:ug_credentials_ocp_k8s[] credential that will be used with your
-container group, see xref:ug_credentials_add[] in the Automation Controller
+container group, see {ug_credentials_add} in the Automation Controller
 User Guide for detail.
 . Create a new container group by navigating to the Instance Groups
 configuration window by clicking *Instance Groups* from the left
@@ -469,7 +469,7 @@ To verify the deployment and termination of your container:
 [arabic]
 . Create a mock inventory and associate the container group to it by
 populating the name of the container group in the *Instance Group*
-field. See xref:ug_inventories_add[] in the Automation Controller User Guide
+field. See {ug_inventories_add} in the Automation Controller User Guide
 for detail.
 
 image:inventories-create-new-cg-test-inventory.png[Dummy
